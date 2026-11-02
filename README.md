@@ -1,4 +1,4 @@
-# Oh!nasu works サイト
+# Oh!nasu Works サイト
 
 そのまま GitHub Pages などに置ける静的サイトです（HTML + CSS のみ）。
 
@@ -8,7 +8,7 @@
 - daystitch/privacy.html … プライバシーポリシー（App Store に登録する URL）
 - daystitch/support.html … サポート（App Store に登録する URL）
 - nyangul/index.html・privacy.html・support.html … にゃんグルの紹介・プライバシー・サポート
-- assets/img/ohnasu-mark.png・favicon.png・ohnasu-icon.png … Oh!nasu works のナスのアイコン
+- assets/img/ohnasu-mark.png・favicon.png・ohnasu-icon.png … Oh!nasu Works のナスのアイコン
 - assets/site.css … 全ページ共通のデザイン
 - assets/img/ … 写真・アイコン
 
