@@ -589,3 +589,7 @@ body.ny .price-card { border: 2px solid var(--ink); box-shadow: 0 6px 0 var(--in
 .ds-hero .photo.real-hero .iphone { position: absolute; right: 0; bottom: 0; width: 29%; border: 6px solid #1B1917; border-radius: 26px; box-shadow: 0 24px 40px -18px rgb(0 0 0 / .55); }
 .app-card .media.ds-media { background: linear-gradient(160deg, var(--soft), color-mix(in srgb, var(--brand) 12%, var(--soft))); padding: 18px; }
 .app-card .media.ds-media img { object-fit: contain; border: 6px solid #1B1917; border-radius: 16px; background: #1B1917; }
+
+/* 見出しの改行：句読点の切れ目でだけ折り返す（「予定/も、」のような変な改行を防ぐ） */
+.phr { display: inline-block; }
+h1, h2, h3 { text-wrap: balance; line-break: strict; }
