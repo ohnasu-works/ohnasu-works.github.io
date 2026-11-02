@@ -565,3 +565,27 @@ body.ny .price-card { border: 2px solid var(--ink); box-shadow: 0 6px 0 var(--in
 .try-tag.pop { background: #FFC928; color: #2B2135; border: 2px solid #2B2135; box-shadow: 0 3px 0 #2B2135; }
 @media (prefers-reduced-motion: no-preference) { .try-tag.pop { animation: tagBob 2.4s ease-in-out infinite; } }
 @keyframes tagBob { 50% { transform: translateY(-3px); } }
+
+/* ================= Daystitch: 実際の画面（スクリーンショット） ================= */
+.dev { margin: 0; background: #1B1917; box-shadow: 0 26px 50px -24px rgb(0 0 0 / .5); overflow: hidden; }
+.dev img { display: block; width: 100%; height: auto; }
+.dev-phone { width: min(270px, 74%); border: 7px solid #1B1917; border-radius: 38px; }
+.dev-phone img { border-radius: 31px; }
+.dev-ipad { width: 100%; border: 8px solid #1B1917; border-radius: 22px; }
+.dev-ipad img { border-radius: 14px; }
+.dev-watch { width: 150px; border: 8px solid #121212; border-radius: 40px; }
+.dev-watch img { border-radius: 32px; }
+.stage.real, .stage.plain { background: linear-gradient(160deg, var(--soft), color-mix(in srgb, var(--brand) 12%, var(--soft))); }
+.stage.real.wide { padding: 22px; min-height: 0; }
+.stage.watches { display: flex; gap: 18px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.note-small { font-size: 12px !important; color: var(--muted); margin-top: 10px !important; }
+/* 朝・昼・夜：スマホの上の方をのぞかせる */
+.day .shot.peek { display: flex; justify-content: center; align-items: flex-start; padding-top: 22px; background: linear-gradient(160deg, var(--soft), color-mix(in srgb, var(--brand) 12%, var(--soft))); }
+.day .shot.peek img { width: 62%; height: 100%; object-fit: cover; object-position: top; border: 6px solid #1B1917; border-bottom: 0; border-radius: 26px 26px 0 0; display: block; }
+/* ヒーロー：iPad＋iPhone */
+.ds-hero .photo.real-hero { aspect-ratio: auto; overflow: visible; background: none; position: relative; padding: 0 0 34px; border-radius: 0; box-shadow: none; outline: 0; }
+.ds-hero .photo.real-hero img { height: auto; object-fit: initial; display: block; }
+.ds-hero .photo.real-hero .ipad { width: 90%; border: 8px solid #1B1917; border-radius: 22px; box-shadow: 0 30px 60px -28px rgb(0 0 0 / .55); }
+.ds-hero .photo.real-hero .iphone { position: absolute; right: 0; bottom: 0; width: 29%; border: 6px solid #1B1917; border-radius: 26px; box-shadow: 0 24px 40px -18px rgb(0 0 0 / .55); }
+.app-card .media.ds-media { background: linear-gradient(160deg, var(--soft), color-mix(in srgb, var(--brand) 12%, var(--soft))); padding: 18px; }
+.app-card .media.ds-media img { object-fit: contain; border: 6px solid #1B1917; border-radius: 16px; background: #1B1917; }

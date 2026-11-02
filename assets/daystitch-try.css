@@ -6,15 +6,17 @@
 .dstry-side { display: grid; justify-items: center; gap: 18px; }
 .dstry .phone { width: 290px; height: 590px; }
 
-/* 紙の色（アプリの「紙の色」設定と同じ考え方） */
-.dstry .screen { transition: background-color .35s, color .35s; }
-.dstry .screen[data-paper="white"] { --app-bg: #FFFFFF; --app-card: #F7F6F4; --app-line: #ECEAE6; }
-.dstry .screen[data-paper="sakura"] { --app-bg: #FCF1F1; --app-card: #FFFFFF; --app-line: #F1D9DA; --app-blue: #C8577A; }
-.dstry .screen[data-paper="mint"] { --app-bg: #EEF6F0; --app-card: #FFFFFF; --app-line: #D3E6D8; --app-blue: #2F8A63; }
-.dstry .screen[data-paper="night"] { --app-bg: #1E1C1A; --app-card: #2A2724; --app-line: #3A3632; --app-ink: #F1E8DC; --app-muted: #A99B8B; --app-blue: #8EB4EA; }
+/* 着せ替え：アプリの ThemePreset と同じ色（アクセント／紙） */
+.dstry .screen { --app-ink: #1C1C1E; --app-muted: #8E8E93; --app-line: #E5E5EA; --app-card: #FFFFFF; transition: background-color .35s, color .35s; }
+.dstry .screen[data-theme="classic"]  { --app-bg: #F2F2F7; --app-blue: #3F6FC4; }
+.dstry .screen[data-theme="sakura"]   { --app-bg: #FFF6F8; --app-blue: #C4547F; --app-line: #F3DCE4; }
+.dstry .screen[data-theme="mint"]     { --app-bg: #F3FBF8; --app-blue: #23826E; --app-line: #D5EEE6; }
+.dstry .screen[data-theme="natural"]  { --app-bg: #F6F0E4; --app-blue: #8A6A43; --app-line: #E6DCC8; --app-card: #FFFCF6; }
+.dstry .screen[data-theme="midnight"] { --app-bg: #12151C; --app-card: #1E222B; --app-line: #2C313C; --app-ink: #F2F2F7; --app-muted: #8E95A3; --app-blue: #5B8DEF; }
+.dstry .screen .bar b { font-size: 17px; }
 
 .dstry-tabs { display: flex; gap: 4px; margin: 0 12px 8px; padding: 3px; border-radius: 10px; background: var(--app-line); }
-.dstry-tabs button { flex: 1; border: 0; background: none; color: var(--app-muted); font: inherit; font-size: 11.5px; font-weight: 700; padding: 6px 0; border-radius: 8px; cursor: pointer; }
+.dstry-tabs button { flex: 1; font-size: 11px; border: 0; background: none; color: var(--app-muted); font: inherit; font-size: 11.5px; font-weight: 700; padding: 6px 0; border-radius: 8px; cursor: pointer; }
 .dstry-tabs button[aria-selected="true"] { background: var(--app-card); color: var(--app-ink); box-shadow: 0 1px 3px rgb(0 0 0 / .12); }
 .dstry-tabs .badge { display: inline-block; min-width: 16px; margin-left: 3px; padding: 0 4px; border-radius: 8px; background: var(--app-blue); color: #fff; font-size: 10px; line-height: 16px; }
 .dstry-tabs .badge:empty { display: none; }
@@ -22,7 +24,7 @@
 .dstry-list { list-style: none; margin: 0; padding: 0 12px; overflow-y: auto; height: 392px; }
 .dstry-item { display: flex; gap: 10px; align-items: flex-start; padding: 10px 10px; margin-bottom: 6px; border-radius: 12px; background: var(--app-card); border: 1px solid var(--app-line); transition: opacity .35s, transform .35s; }
 .dstry-item.leaving { opacity: 0; transform: translateX(30px); }
-.dstry-check { flex: none; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--app-muted); background: none; cursor: pointer; padding: 0; display: grid; place-items: center; margin-top: 1px; transition: background-color .2s, border-color .2s, transform .15s; }
+.dstry-check { flex: none; width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--app-blue); background: none; cursor: pointer; padding: 0; display: grid; place-items: center; margin-top: 1px; transition: background-color .2s, border-color .2s, transform .15s; }
 .dstry-check:active { transform: scale(.85); }
 .dstry-check svg { width: 12px; height: 12px; opacity: 0; transition: opacity .2s; }
 .dstry-item.done .dstry-check { background: var(--app-blue); border-color: var(--app-blue); }
@@ -32,6 +34,7 @@
 .dstry-item .t { font-size: 13px; font-weight: 700; display: block; }
 .dstry-item .meta { font-size: 10.5px; color: var(--app-muted); display: flex; gap: 8px; margin-top: 2px; }
 .dstry-item .meta .rep { color: var(--app-blue); font-weight: 700; }
+.dstry-item .meta .flag { color: #E5484D; font-weight: 700; }
 .dstry-sub { list-style: none; margin: 6px 0 0; padding: 0; }
 .dstry-sub li { display: flex; align-items: center; gap: 7px; font-size: 11.5px; padding: 3px 0; cursor: pointer; }
 .dstry-sub li::before { content: ""; width: 12px; height: 12px; border-radius: 3px; border: 1.5px solid var(--app-muted); flex: none; }
@@ -49,3 +52,4 @@
 .dstry-papers button { width: 34px; height: 34px; border-radius: 50%; border: 2px solid var(--line); cursor: pointer; padding: 0; position: relative; }
 .dstry-papers button[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 35%, transparent); }
 .dstry-hint { font-size: 12px; color: var(--muted); text-align: center; margin: 0; }
+.dstry-papers .names { width: 100%; text-align: center; font-size: 12px; color: var(--muted); }

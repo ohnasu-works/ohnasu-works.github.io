@@ -8,7 +8,7 @@
 <meta name="description" content="Daystitch（デイステッチ）: Planner & To-Do — 予定・ToDo・手書きメモ・日記・会議の文字起こし・天気まで、オールインワンの手帳アプリ。Apple Pencil で書ける手帳ページ、見やすいカレンダー、使いやすい ToDo、会議の録音から AI が議事録まで。">
 <meta property="og:title" content="Daystitch: Planner & To-Do">
 <meta property="og:description" content="手帳も、予定も、ToDo も。1 冊にステッチ。">
-<meta property="og:image" content="../assets/img/daystitch-hero.jpg">
+<meta property="og:image" content="../assets/img/daystitch/ipad-day.jpg">
 <link rel="icon" href="../assets/img/favicon.png">
 <link rel="apple-touch-icon" href="../assets/img/daystitch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,7 +58,10 @@
           <b>年額 1,500円 ／ 月額 200円（最初の 1 週間は無料）</b>
         </div>
       </div>
-      <div class="photo rise d2"><video class="media-fill" src="../assets/media/daystitch-planner.mp4" poster="../assets/img/daystitch-hero.jpg" autoplay muted loop playsinline aria-label="ステッチの入った革の手帳を広げた机"></video></div>
+      <div class="photo real-hero rise d2">
+        <img class="ipad" src="../assets/img/daystitch/ipad-day.jpg" alt="iPad の Daystitch。ToDo・予定・手書き・議事録が 1 画面に並んだ実際の画面">
+        <img class="iphone" src="../assets/img/daystitch/month.jpg" alt="iPhone の月のカレンダーの実際の画面">
+      </div>
     </div>
   </section>
 
@@ -69,20 +72,21 @@
       <div class="dstry-copy">
         <p class="label">Try it</p>
         <h2>この画面、<br>さわれます。</h2>
-        <p>Daystitch の ToDo を、ブラウザでそのまま試せます。丸をタップして完了、終わったものは「完了」タブにまとまります。チェック項目つきの ToDo や、毎日の薬のような繰り返しも。下の丸で紙の色も変えてみてください。</p>
+        <p>Daystitch の ToDo を、ブラウザでそのまま試せます。丸をタップして完了、終わったものは「完了」タブにまとまります。ToDo の中のチェックリストや、毎週の繰り返しも。下の丸で着せ替えも変えてみてください。</p>
         <ul class="checks">
-          <li>ToDo の中にチェック項目（旅行の持ち物など）</li>
-          <li>繰り返しの ToDo は、終えると次の分が自動で</li>
-          <li>紙の色やダークモードで、自分好みの 1 冊に</li>
+          <li>ToDo の中にチェックリスト（作業の手順など）</li>
+          <li>締め切りが来たものは、赤い旗で「今日」へ</li>
+          <li>着せ替えは全 10 種類。ダークモードにも対応</li>
         </ul>
       </div>
       <div class="dstry-side" id="dstry">
         <div class="phone">
-          <div class="screen" data-paper="cream">
+          <div class="screen" data-theme="classic">
             <div class="island"></div>
             <div class="bar"><b>今日</b><span></span></div>
             <div class="dstry-tabs" role="tablist" aria-label="ToDo のリスト">
               <button type="button" role="tab" data-tab="today">今日</button>
+              <button type="button" role="tab" data-tab="later">明日以降</button>
               <button type="button" role="tab" data-tab="someday">いつか</button>
               <button type="button" role="tab" data-tab="done">完了<span class="badge"></span></button>
             </div>
@@ -94,15 +98,16 @@
             </form>
           </div>
         </div>
-        <div class="dstry-papers" aria-label="紙の色">
-          <span>紙の色</span>
-          <button type="button" data-paper="cream" aria-pressed="true" aria-label="クリーム" style="background:#FBF7EF"></button>
-          <button type="button" data-paper="white" aria-pressed="false" aria-label="ホワイト" style="background:#FFFFFF"></button>
-          <button type="button" data-paper="sakura" aria-pressed="false" aria-label="さくら" style="background:#FCE3E6"></button>
-          <button type="button" data-paper="mint" aria-pressed="false" aria-label="ミント" style="background:#DDF0E2"></button>
-          <button type="button" data-paper="night" aria-pressed="false" aria-label="ナイト（ダーク）" style="background:#1E1C1A"></button>
+        <div class="dstry-papers" aria-label="着せ替え">
+          <span>着せ替え</span>
+          <button type="button" data-theme="classic" aria-pressed="true" aria-label="クラシック" style="background:#3F6FC4"></button>
+          <button type="button" data-theme="sakura" aria-pressed="false" aria-label="さくら" style="background:#C4547F"></button>
+          <button type="button" data-theme="mint" aria-pressed="false" aria-label="ミント" style="background:#23826E"></button>
+          <button type="button" data-theme="natural" aria-pressed="false" aria-label="ナチュラル" style="background:#8A6A43"></button>
+          <button type="button" data-theme="midnight" aria-pressed="false" aria-label="ミッドナイト" style="background:#12151C"></button>
+          <span class="names">着せ替え：クラシック</span>
         </div>
-        <p class="dstry-hint">※ 体験用の見本です。入力した内容は保存されません。</p>
+        <p class="dstry-hint">※ アプリの ToDo 画面をもとにした体験用の見本です。実際の画面とは細部が異なります。入力した内容は保存されません。</p>
       </div>
     </div>
   </section>
@@ -135,19 +140,19 @@
       </div>
       <div class="day">
         <article>
-          <div class="shot"><img class="media-fill" src="../assets/img/ds-morning.jpg" alt="手帳とラテが並ぶ朝のテーブル" loading="lazy"></div>
+          <div class="shot peek"><img src="../assets/img/daystitch/todo.jpg" alt="今日の予定と ToDo が並んだ実際の画面" loading="lazy"></div>
           <p class="time">07:30 · Morning</p>
           <h3>今日の予定と ToDo をひと目で</h3>
           <p>ウィジェットの 2 週間カレンダーと、Siri の「今日をまとめて」。家を出る前に 1 日の流れがわかります。</p>
         </article>
         <article>
-          <div class="shot"><video class="media-fill" src="../assets/media/meeting.mp4" poster="../assets/img/daystitch-meeting.jpg" autoplay muted loop playsinline aria-label="手帳とマイクが置かれた会議テーブル"></video></div>
+          <div class="shot peek"><img src="../assets/img/daystitch/minutes.jpg" alt="録音から作られた議事録の実際の画面" loading="lazy"></div>
           <p class="time">14:00 · Meeting</p>
           <h3>録音ボタンひとつで議事録まで</h3>
           <p>会議が終わるころには、要点と「やること」がまとまって手帳に。やることは ToDo へ送れます。</p>
         </article>
         <article>
-          <div class="shot"><video class="media-fill" src="../assets/media/pencil.mp4" poster="../assets/img/daystitch-pencil.jpg" autoplay muted loop playsinline aria-label="方眼の紙に線を引くペン先"></video></div>
+          <div class="shot peek"><img src="../assets/img/daystitch/day.jpg" alt="手書きの文字と予定が入った日のページの実際の画面" loading="lazy"></div>
           <p class="time">21:00 · Evening</p>
           <h3>手書きで 1 日をふり返る</h3>
           <p>写真やスタンプを貼って、自分だけのページに。AI が書き出しのヒントもくれます。</p>
@@ -162,7 +167,7 @@
       <div class="section-head" id="meeting">
         <p class="label">Features</p>
         <h2>使ってみたくなる、6 つの理由。</h2>
-        <p>画面はアプリの動きをわかりやすく描いたイメージです。</p>
+        <p>画像はすべて開発中のアプリの実際の画面です。表示は端末・設定・OS のバージョンによって変わることがあります。</p>
       </div>
 
       <div class="show">
@@ -178,40 +183,7 @@
           </ol>
         </div>
         <div>
-          <div class="stage">
-            <div class="backdrop"><img src="../assets/img/daystitch-meeting.jpg" alt="" loading="lazy"></div>
-            <div class="phone"><div class="screen cycle">
-              <span class="island"></span>
-              <div class="state">
-                <div class="bar"><b>11月4日(水)</b><span>日のページ</span></div>
-                <div class="rec">
-                  <span class="dot"></span>
-                  <span class="clock">12:34</span>
-                  <span class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-                  <small>録音中 · タップで止めて保存</small>
-                </div>
-              </div>
-              <div class="state">
-                <div class="bar"><b>企画レビュー</b><span>録音 42分</span></div>
-                <div class="transcribe">
-                  <small style="color:var(--app-muted)">文字に起こしています…</small>
-                  <span class="prog"><i></i></span>
-                  <p><span>00:02</span>では、来月のキャンペーンの企画案から確認します。</p>
-                  <p><span>00:15</span>デザイン案は 2 つ。A 案のほうが反応がよさそうです。</p>
-                  <p><span>00:31</span>見積もりは金曜までに先方へ送りましょう。</p>
-                </div>
-              </div>
-              <div class="state">
-                <div class="bar"><b>企画レビュー</b><span>AI 議事録</span></div>
-                <div class="minutes">
-                  <div class="card"><span class="k">要点</span><p>来月のキャンペーンは A 案で進める。見積もりと日程を今週中に固める。</p></div>
-                  <div class="card"><span class="k">決まったこと</span><ul><li>デザインは A 案</li><li>公開は 12 月第 1 週</li></ul></div>
-                  <div class="card"><span class="k">やること</span><ul><li>田中: 見積書を送る（金曜）</li><li>佐藤: 撮影の手配</li></ul></div>
-                  <div class="pastebtn">要点と議事録をページに貼る</div>
-                </div>
-              </div>
-            </div></div>
-          </div>
+          <div class="stage real"><figure class="dev dev-phone"><img src="../assets/img/daystitch/minutes.jpg" alt="録音から作られた議事録の画面。要点・議事録・全文のタブと「ToDo に追加」ボタンがある実際の画面" loading="lazy"></figure></div>
         </div>
       </div>
 
@@ -223,21 +195,7 @@
           <div class="chips points"><span>締め切り</span><span>チェックリスト</span><span>繰り返し</span><span>リマインダー</span><span>完了の記録</span><span>AI でステップ分け</span></div>
         </div>
         <div>
-          <div class="stage">
-            <div class="backdrop"><img src="../assets/img/ds-todo-desk.jpg" alt="" loading="lazy"></div>
-            <div class="phone"><div class="screen">
-              <span class="island"></span>
-              <div class="bar"><b>ToDo</b><span>残り 4 件</span></div>
-              <div class="tabs"><span class="on">今日</span><span>明日以降</span><span>いつか</span><span>完了</span></div>
-              <div class="rows">
-                <div class="row done-anim"><span class="ck red"></span><div><div class="t">企画書を仕上げる</div><div class="meta"><span>16:00</span><span>#仕事</span></div></div></div>
-                <div class="row"><span class="ck"></span><div><div>賃貸の契約書を返送</div><div class="meta"><span class="flag">⚑ 締切 今日</span><span>#家</span></div></div></div>
-                <div class="swipe"><div class="act"><span class="o">明日へ</span><span class="r">削除</span></div><div class="row"><span class="ck"></span><div><div>請求書を送る</div><div class="meta"><span>#仕事</span></div></div></div></div>
-                <div class="row"><span class="ck"></span><div><div>ダンボールを用意</div><div class="meta"><span>引っ越し準備</span></div></div></div>
-              </div>
-              <div class="proj"><span class="ring"></span><div><b>引っ越し準備</b><div style="font-size:10px;color:var(--app-muted)">2 / 4 完了 · ⚑ 締切 あと20日</div></div></div>
-            </div></div>
-          </div>
+          <div class="stage real"><figure class="dev dev-phone"><img src="../assets/img/daystitch/todo.jpg" alt="ToDo 画面。今日・明日以降・いつか・完了のタブと、チェックリスト付きの ToDo が並んだ実際の画面" loading="lazy"></figure></div>
         </div>
       </div>
 
@@ -249,24 +207,7 @@
           <div class="chips points"><span>祝日・振替休日</span><span>六曜</span><span>天気</span><span>繰り返し予定</span><span>2 週間ウィジェット</span></div>
         </div>
         <div>
-          <div class="stage">
-            <div class="backdrop"><img src="../assets/img/ds-morning.jpg" alt="" loading="lazy"></div>
-            <div class="phone"><div class="screen">
-              <span class="island"></span>
-              <div class="bar"><b>2026年11月</b><span>週</span></div>
-              <div class="week">
-                <div class="d"><span>月</span><span class="n">2</span><span class="rk">先勝</span></div>
-                <div class="d hol-day today"><span>火</span><span class="n">3</span><span class="rk">友引</span><span class="hol">文化の日</span></div>
-                <div class="d"><span>水</span><span class="n">4</span><span class="rk">先負</span><span class="ev pop blue">15:00<br>会議</span></div>
-                <div class="d"><span>木</span><span class="n">5</span><span class="rk">仏滅</span><span class="ev green">ジム</span></div>
-                <div class="d"><span>金</span><span class="n">6</span><span class="rk">大安</span></div>
-                <div class="d sat"><span>土</span><span class="n">7</span><span class="rk">赤口</span></div>
-                <div class="d sun"><span>日</span><span class="n">8</span><span class="rk">先勝</span></div>
-              </div>
-              <div class="qa"><span class="typed">明日15時 会議 @本社</span><span class="caret"></span></div>
-              <div class="qa-hint">📅 11月4日(水) 15:00 ・ 本社</div>
-            </div></div>
-          </div>
+          <div class="stage real"><figure class="dev dev-phone"><img src="../assets/img/daystitch/week.jpg" alt="週表示のカレンダー。六曜・天気と予定が時間ごとに並んだ実際の画面" loading="lazy"></figure></div>
         </div>
       </div>
 
@@ -278,9 +219,7 @@
           <div class="chips points"><span>写真・カメラ</span><span>スタンプ</span><span>マスキングテープ</span><span>図形</span><span>テキスト</span><span>ページを画像で共有</span></div>
         </div>
         <div>
-          <div class="stage" style="padding:0">
-            <div class="backdrop" style="position:relative;width:100%;height:100%;min-height:420px"><img src="../assets/img/ds-ipad.jpg" alt="タブレットとペン、革の手帳が並ぶ机" loading="lazy" style="filter:none"></div>
-          </div>
+          <div class="stage real wide"><figure class="dev dev-ipad"><img src="../assets/img/daystitch/ipad-day.jpg" alt="iPad の日のページ。予定・手書きの文字・録音の議事録・スタンプが 1 ページに並んだ実際の画面" loading="lazy"></figure></div>
         </div>
       </div>
 
@@ -288,12 +227,13 @@
         <div>
           <p class="catno">05 · Apple Intelligence &amp; Siri</p>
           <h3>話しかけるだけで、<br>手帳が答える。</h3>
-          <p>Apple Intelligence で、話し言葉から予定や ToDo を作成。今日のブリーフィング、週のふり返り、大きな ToDo の分解、空き時間への割り当て、AI で描いた絵を日記に。すべて追加料金なし、端末の中で処理されます。</p>
+          <p>Apple Intelligence で、話し言葉から予定や ToDo を作成。今日のブリーフィング、週のふり返り、大きな ToDo の分解、空き時間への割り当て、AI で描いた絵を日記に。Apple Intelligence なら追加料金なし、端末の中で処理されます。ChatGPT や Gemini に切り替えることもできます。</p>
+          <p class="note-small">※ Apple Intelligence の機能は対応端末（iPhone 15 Pro 以降、M1 以降の iPad、iPad mini（A17 Pro））と iOS 26 以降が必要です。Siri への話しかけは会話の例です。</p>
           <div class="chips points"><span>「次の予定は？」</span><span>「今日の ToDo」</span><span>「今日をまとめて」</span><span>「会議を録音」</span><span>「手帳を検索」</span></div>
         </div>
         <div>
-          <div class="stage">
-            <div class="backdrop"><img src="../assets/img/studio-hero.jpg" alt="" loading="lazy"></div>
+          <div class="stage plain">
+
             <div class="bubbles">
               <div class="bubble me">Daystitch で次の予定は？</div>
               <div class="bubble ai"><small>Daystitch</small>次の予定は、明日の15:00から「会議」です、場所は本社。</div>
@@ -311,13 +251,9 @@
           <p>Apple Watch で予定を確認して、ToDo をタップで完了。音声で ToDo を追加すれば、iPhone の手帳にもすぐ反映されます。文字盤には次の予定と残りの件数を。</p>
         </div>
         <div>
-          <div class="stage">
-            <div class="backdrop"><img src="../assets/img/ds-watch.jpg" alt="" loading="lazy"></div>
-            <div class="watch"><div class="face">
-              <small>11月4日(水)</small>
-              <div class="nx"><small>次の予定</small><b>会議</b>15:00〜16:00</div>
-              <div class="td"><span>ToDo</span><b>残り 3</b></div>
-            </div></div>
+          <div class="stage real watches">
+            <figure class="dev dev-watch"><img src="../assets/img/daystitch/watch-schedule.jpg" alt="Apple Watch に今日の予定が並んでいる実際の画面" loading="lazy"></figure>
+            <figure class="dev dev-watch"><img src="../assets/img/daystitch/watch-todo.jpg" alt="Apple Watch の ToDo 一覧と「ToDo を追加」ボタンの実際の画面" loading="lazy"></figure>
           </div>
         </div>
       </div>

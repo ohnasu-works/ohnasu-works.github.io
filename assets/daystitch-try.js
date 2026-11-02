@@ -13,11 +13,14 @@
 
   var uid = 0;
   function item(o) { o.id = ++uid; o.done = false; return o; }
+  // アプリのスクリーンショットと同じ ToDo（今日・明日以降・いつか）
   var items = [
-    item({ list: 'today', t: '朝の薬を飲む', meta: '8:00', rep: '毎日' }),
-    item({ list: 'today', t: '企画書を提出', meta: '期限 今日 17:00' }),
-    item({ list: 'today', t: '旅行の準備', sub: [['パスポート', true], ['充電器', false], ['日焼け止め', false]] }),
-    item({ list: 'today', t: '牛乳を買う', meta: '帰り道' }),
+    item({ list: 'today', t: '企画書のドラフトを仕上げる', meta: '今日', sub: [['構成を決める', true], ['グラフを作る', true], ['見直して送る', false]] }),
+    item({ list: 'today', t: '請求書を送る', meta: '今日', flag: '締切 今日' }),
+    item({ list: 'today', t: '経費精算', meta: '今日' }),
+    item({ list: 'today', t: '牛乳とパンを買う', meta: '今日' }),
+    item({ list: 'later', t: 'ゴミ出し', meta: '明日', rep: '毎週' }),
+    item({ list: 'later', t: '母に電話する', meta: '土曜' }),
     item({ list: 'someday', t: '気になるカフェに行く' }),
     item({ list: 'someday', t: '読みたい本をまとめる' })
   ];
@@ -36,7 +39,7 @@
     });
     var doneCount = items.filter(function (i) { return i.done; }).length;
     root.querySelector('.dstry-tabs .badge').textContent = doneCount ? doneCount : '';
-    root.querySelector('.bar b').textContent = { today: '今日', someday: 'いつか', done: '完了' }[tab];
+    root.querySelector('.bar b').textContent = 'ToDo';
     if (!shown.length) {
       list.innerHTML = '<li class="dstry-empty">' + (tab === 'done' ? 'チェックを付けると<br>ここにまとまります' : 'ToDoはありません 🎉') + '</li>';
       return;
@@ -44,7 +47,8 @@
     list.innerHTML = shown.map(function (i) {
       var meta = [];
       if (i.rep) meta.push('<span class="rep">🔁 ' + esc(i.rep) + '</span>');
-      if (i.meta) meta.push('<span>' + esc(i.meta) + '</span>');
+      if (i.meta) meta.push('<span>📅 ' + esc(i.meta) + '</span>');
+      if (i.flag) meta.push('<span class="flag">⚑ ' + esc(i.flag) + '</span>');
       if (i.sub) meta.push('<span>' + i.sub.filter(function (s) { return s[1]; }).length + '/' + i.sub.length + '</span>');
       var sub = i.sub && !i.done ? '<ul class="dstry-sub">' + i.sub.map(function (s, k) {
         return '<li data-sub="' + k + '" class="' + (s[1] ? 'on' : '') + '" role="checkbox" aria-checked="' + s[1] + '" tabindex="0">' + esc(s[0]) + '</li>';
@@ -71,7 +75,7 @@
         it.done = true;
         if (it.rep) {
           // 繰り返しの ToDo は、次の分が自動でできる
-          items.push(item({ list: it.list, t: it.t, meta: '明日 ' + it.meta, rep: it.rep }));
+          items.push(item({ list: 'later', t: it.t, meta: '来週', rep: it.rep }));
           toast('次の「' + it.t + '」を用意しました');
         } else {
           toast('「完了」にまとめました');
@@ -97,15 +101,17 @@
     input.value = ''; render();
   });
 
+  var nameEl = root.querySelector('.dstry-papers .names');
   root.querySelectorAll('.dstry-papers button').forEach(function (b) {
     b.addEventListener('click', function () {
-      screen.setAttribute('data-paper', b.dataset.paper);
+      screen.setAttribute('data-theme', b.dataset.theme);
+      if (nameEl) nameEl.textContent = '着せ替え：' + b.getAttribute('aria-label');
       root.querySelectorAll('.dstry-papers button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
     });
   });
 
   // 日付は今日にする
   var d = new Date(), w = '日月火水木金土'[d.getDay()];
-  root.querySelector('.bar span').textContent = (d.getMonth() + 1) + '月' + d.getDate() + '日（' + w + '）';
+  root.querySelector('.bar span').textContent = (d.getMonth() + 1) + '月' + d.getDate() + '日(' + w + ')';
   render();
 })();
