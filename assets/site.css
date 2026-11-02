@@ -593,3 +593,17 @@ body.ny .price-card { border: 2px solid var(--ink); box-shadow: 0 6px 0 var(--in
 /* 見出しの改行：句読点の切れ目でだけ折り返す（「予定/も、」のような変な改行を防ぐ） */
 .phr { display: inline-block; }
 h1, h2, h3 { text-wrap: balance; line-break: strict; }
+
+/* トップのフッター：アプリごとにまとめる */
+.foot-grid .wrap { display: grid; grid-template-columns: auto 1fr; gap: 24px 48px; align-items: start; }
+.fg-brand { display: grid; gap: 4px; }
+.fg-brand b { color: var(--ink); font-size: 15px; }
+.fg-cols { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 24px !important; }
+.fg-cols div { display: grid; gap: 8px; align-content: start; }
+.fg-cols p { margin: 0 0 2px; font-size: 12px; font-weight: 700; color: var(--ink); letter-spacing: .04em; }
+@media (max-width: 640px) {
+  .foot-grid .wrap { grid-template-columns: 1fr; }
+  .fg-cols { grid-template-columns: 1fr 1fr; }
+  .fg-cols div:last-child { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .fg-cols div:last-child p { width: 100%; }
+}
