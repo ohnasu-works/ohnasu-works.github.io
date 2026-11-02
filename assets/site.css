@@ -558,3 +558,10 @@ body.ny .price-card { border: 2px solid var(--ink); box-shadow: 0 6px 0 var(--in
 .hero-app .row > span { min-width: 0; }
 .hero-app .row small { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 480px) { .hero-app .row { padding: 10px; gap: 8px; } .hero-app .row img { width: 32px; height: 32px; } .hero-app .row b { font-size: 15px; } }
+
+/* ---- 体験への入口（トップのアプリカード） ---- */
+.hero-app { position: relative; }
+.try-tag { position: absolute; top: 10px; left: 10px; z-index: 1; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: #fff; color: #1F1D22; box-shadow: 0 4px 14px -4px rgb(0 0 0 / .35); }
+.try-tag.pop { background: #FFC928; color: #2B2135; border: 2px solid #2B2135; box-shadow: 0 3px 0 #2B2135; }
+@media (prefers-reduced-motion: no-preference) { .try-tag.pop { animation: tagBob 2.4s ease-in-out infinite; } }
+@keyframes tagBob { 50% { transform: translateY(-3px); } }

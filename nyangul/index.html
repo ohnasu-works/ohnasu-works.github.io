@@ -13,7 +13,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@700;800;900&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/nyangul-play.css">
 </head>
 <body class="ny">
 
@@ -24,7 +26,8 @@
       <span>Oh!nasu works <small>No.02 にゃんグル</small></span>
     </a>
     <nav class="nav" aria-label="ページ内メニュー">
-      <a href="#features">できること</a>
+      <a href="#play">遊んでみる</a>
+      <a class="hide-sm" href="#features">できること</a>
       <a class="hide-sm" href="#games">ゲーム</a>
       <a class="hide-sm" href="#cards">トレカ</a>
       <a href="#price">料金</a>
@@ -48,8 +51,8 @@
         <p class="lead rise d3">ハングルの口の形から、文法・敬語・最新の若者言葉まで。<b>ゲーム、ストーリー、教本、トレカ集め、着せ替え、推し写真。</b>「もう1回やりたい」が続いて、気づけば韓国語が読める・聞ける・書ける・話せる。推しがいる人も、韓国ドラマ好きも、遊びながら学べる韓国語学習ゲームです。</p>
         <div class="btn-row rise d3">
           <!-- ★ 公開後に App Store の URL と公式バッジ画像に差し替える -->
+          <a class="btn btn-play" href="#play">🎈 ブラウザで遊んでみる</a>
           <span class="btn btn-primary" aria-disabled="true">App Store（近日公開）</span>
-          <a class="btn btn-ghost" href="#features">できることを見る</a>
         </div>
         <div class="launch rise d3">
           <span>発売記念セール · 2027年2月28日まで</span>
@@ -66,6 +69,63 @@
         <div><b>8</b><span>種のミニゲーム</span></div>
         <div><b>21</b><span>人のキャラ</span></div>
         <div><b>96</b><span>枚のトレカ</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- web体験：バルーンキャッチ -->
+  <section class="section tinted nyplay" id="play">
+    <div class="wrap nyplay-wrap">
+      <div class="nyplay-copy">
+        <p class="label">Play now</p>
+        <h2><span style="white-space:nowrap">アプリの中のゲームを、</span><span style="white-space:nowrap">ここで1回。</span></h2>
+        <p>にゃんグルに入っている8種のミニゲームのひとつ「バルーンキャッチ」を、ブラウザでそのまま遊べます。DJハムが言った韓国語の風船を、空に逃げる前にタップ！</p>
+        <ul>
+          <li>全5問・約1分。登録もダウンロードもいりません</li>
+          <li>アプリ版は約3,000語・レベル5まで、エンドレスモードも</li>
+          <li>音が出ます（右下のボタンで消せます）</li>
+        </ul>
+      </div>
+      <div id="nyplay" data-img="../assets/img/nyangul/">
+        <div class="nyplay-stage" role="application" aria-label="バルーンキャッチ（体験版）">
+          <div class="nyplay-screen nyplay-lobby">
+            <img class="art" src="../assets/img/nyangul/game_balloon.jpg" alt="ハングルの風船とユナ・テヒョン・ニャン、DJハムのイラスト">
+            <p class="nyplay-title">バルーンキャッチ</p>
+            <p class="nyplay-rules nyplay-card">DJハムが韓国語を言うよ。その言葉が書かれた風船が飛んでいくので、空に逃げる前にタップして割ろう！ ちがう風船や逃がすとライフが減るよ。</p>
+            <button class="nyplay-btn" type="button" data-act="start">スタート！</button>
+            <p class="nyplay-note">体験版：入門レベルの5問</p>
+          </div>
+          <div class="nyplay-screen nyplay-play" hidden>
+            <div class="nyplay-top">
+              <span class="nyplay-hearts" role="img" aria-label="ライフ"></span>
+              <span class="nyplay-combo" aria-live="polite"></span>
+              <span class="nyplay-round"></span>
+              <span class="nyplay-pill nyplay-score"></span>
+            </div>
+            <div class="nyplay-callout nyplay-card nyplay-hint">
+              <img src="../assets/img/nyangul/cast_ham.jpg" alt="DJハム">
+              <span class="txt"><small></small><b aria-live="polite"></b></span>
+              <button class="nyplay-speak" type="button" data-act="say" aria-label="もう一度聞く">🔊</button>
+              <button class="nyplay-speak slow" type="button" data-act="slow" aria-label="ゆっくり聞く">🐢</button>
+            </div>
+            <div class="nyplay-sky"></div>
+          </div>
+          <div class="nyplay-screen nyplay-result" hidden>
+            <img class="pic" src="../assets/img/nyangul/react_trio_perfect.jpg" alt="">
+            <p class="nyplay-title">クリア！</p>
+            <div class="nyplay-stars" aria-hidden="true">★★★</div>
+            <p class="nyplay-score"></p>
+            <ul class="nyplay-words nyplay-card" aria-label="今日の単語"></ul>
+            <div class="nyplay-cta nyplay-card"><strong>続きはアプリで！</strong>すごろく式コース・全8章のストーリー・トレカ集め。ゲームはあと7種類あります。</div>
+            <div class="nyplay-actions">
+              <button class="nyplay-btn sub" type="button" data-act="start">もう1回</button>
+              <!-- ★ 公開後に App Store の URL に差し替える -->
+              <a class="nyplay-btn" href="#price" style="text-decoration:none;font-size:16px;padding:10px 18px">アプリの料金を見る</a>
+            </div>
+          </div>
+          <button class="nyplay-mute" type="button" data-act="mute" aria-label="音を消す">🔊</button>
+        </div>
       </div>
     </div>
   </section>
@@ -411,5 +471,6 @@
     </nav>
   </div>
 </footer>
+<script src="../assets/nyangul-play.js" defer></script>
 </body>
 </html>

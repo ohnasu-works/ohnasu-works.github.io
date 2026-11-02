@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/daystitch-try.css">
 </head>
 <body class="ds">
 
@@ -25,7 +26,8 @@
       <span>Oh!nasu works <small>No.01 Daystitch</small></span>
     </a>
     <nav class="nav" aria-label="ページ内メニュー">
-      <a href="#features">機能</a>
+      <a href="#try">触ってみる</a>
+      <a class="hide-sm" href="#features">機能</a>
       <a class="hide-sm" href="#meeting">議事録</a>
       <a href="#price">料金</a>
       <a href="support.html">サポート</a>
@@ -48,8 +50,8 @@
         <p class="lead rise d3">予定、ToDo、手書きメモ、日記、会議の文字起こし、天気まで。<b>これ 1 つで全部そろう、オールインワンの手帳アプリ</b>です。いくつものアプリを行き来しなくていい、かゆいところに手が届く 1 冊を。</p>
         <div class="btn-row rise d3">
           <!-- ★ 公開後に App Store の URL と公式バッジ画像に差し替える -->
-          <span class="btn btn-primary" aria-disabled="true">App Store（近日公開）</span>
-          <a class="btn btn-ghost" href="#features">機能を見る</a>
+          <a class="btn btn-primary" href="#try">ToDo を触ってみる</a>
+          <span class="btn btn-ghost" aria-disabled="true">App Store（近日公開）</span>
         </div>
         <div class="launch rise d3">
           <span>発売記念価格 · 2027年2月28日までのご登録</span>
@@ -57,6 +59,51 @@
         </div>
       </div>
       <div class="photo rise d2"><video class="media-fill" src="../assets/media/daystitch-planner.mp4" poster="../assets/img/daystitch-hero.jpg" autoplay muted loop playsinline aria-label="ステッチの入った革の手帳を広げた机"></video></div>
+    </div>
+  </section>
+
+
+  <!-- 触れるToDo -->
+  <section class="section dstry" id="try" style="padding-bottom:0">
+    <div class="wrap dstry-wrap">
+      <div class="dstry-copy">
+        <p class="label">Try it</p>
+        <h2>この画面、<br>さわれます。</h2>
+        <p>Daystitch の ToDo を、ブラウザでそのまま試せます。丸をタップして完了、終わったものは「完了」タブにまとまります。チェック項目つきの ToDo や、毎日の薬のような繰り返しも。下の丸で紙の色も変えてみてください。</p>
+        <ul class="checks">
+          <li>ToDo の中にチェック項目（旅行の持ち物など）</li>
+          <li>繰り返しの ToDo は、終えると次の分が自動で</li>
+          <li>紙の色やダークモードで、自分好みの 1 冊に</li>
+        </ul>
+      </div>
+      <div class="dstry-side" id="dstry">
+        <div class="phone">
+          <div class="screen" data-paper="cream">
+            <div class="island"></div>
+            <div class="bar"><b>今日</b><span></span></div>
+            <div class="dstry-tabs" role="tablist" aria-label="ToDo のリスト">
+              <button type="button" role="tab" data-tab="today">今日</button>
+              <button type="button" role="tab" data-tab="someday">いつか</button>
+              <button type="button" role="tab" data-tab="done">完了<span class="badge"></span></button>
+            </div>
+            <ul class="dstry-list" aria-live="polite"></ul>
+            <div class="dstry-toast" role="status"></div>
+            <form class="dstry-add" autocomplete="off">
+              <input type="text" placeholder="＋ ToDo を追加" aria-label="ToDo を追加" maxlength="40">
+              <button type="submit" aria-label="追加">＋</button>
+            </form>
+          </div>
+        </div>
+        <div class="dstry-papers" aria-label="紙の色">
+          <span>紙の色</span>
+          <button type="button" data-paper="cream" aria-pressed="true" aria-label="クリーム" style="background:#FBF7EF"></button>
+          <button type="button" data-paper="white" aria-pressed="false" aria-label="ホワイト" style="background:#FFFFFF"></button>
+          <button type="button" data-paper="sakura" aria-pressed="false" aria-label="さくら" style="background:#FCE3E6"></button>
+          <button type="button" data-paper="mint" aria-pressed="false" aria-label="ミント" style="background:#DDF0E2"></button>
+          <button type="button" data-paper="night" aria-pressed="false" aria-label="ナイト（ダーク）" style="background:#1E1C1A"></button>
+        </div>
+        <p class="dstry-hint">※ 体験用の見本です。入力した内容は保存されません。</p>
+      </div>
     </div>
   </section>
 
@@ -324,5 +371,6 @@
     </nav>
   </div>
 </footer>
+<script src="../assets/daystitch-try.js" defer></script>
 </body>
 </html>
