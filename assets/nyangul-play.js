@@ -30,7 +30,9 @@
   var scr = { lobby: $('.nyplay-lobby'), play: $('.nyplay-play'), result: $('.nyplay-result') };
 
   // ---- 効果音（ブラウザ内で合成。ファイル読み込みなし）----
-  var ac = null, muted = false;
+  // 音は最初オフ（電車や職場でも安心）。オンにした人だけ鳴らし、選んだ設定は覚えておく
+  var ac = null, muted = true;
+  try { muted = localStorage.getItem('nyplay.sound') !== 'on'; } catch (e) { muted = true; }
   function audio() {
     if (!ac) { try { ac = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { ac = null; } }
     if (ac && ac.state === 'suspended') ac.resume();
@@ -71,8 +73,9 @@
     koVoice = vs.filter(function (v) { return /^ko/i.test(v.lang); })[0] || null;
   }
   if (canSpeak) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
-  function speak(text, slow) {
-    if (!canSpeak || muted) return;
+  // manual：🔊ボタンを自分で押した時は、音オフでもその単語だけ読み上げる
+  function speak(text, slow, manual) {
+    if (!canSpeak || (muted && !manual)) return;
     try {
       speechSynthesis.cancel();
       var u = new SpeechSynthesisUtterance(text);
@@ -122,7 +125,7 @@
       sky.appendChild(el);
       return { el: el, lane: lanes[i], delay: Math.random() * 0.9, speed: 0.88 + Math.random() * 0.24, sway: Math.random() * 6, popped: false };
     });
-    $('.nyplay-hint small').textContent = koVoice ? '聞こえた言葉の風船を割ろう！' : 'この意味の風船を割ろう！';
+    $('.nyplay-hint small').textContent = (koVoice && !muted) ? '聞こえた言葉の風船を割ろう！' : 'この意味の風船を割ろう！';
     $('.nyplay-hint b').textContent = 'ヒント：' + item[1];
     $('.nyplay-round').textContent = (st.round + 1) + ' / ' + ROUNDS;
     st.t0 = performance.now() + 500;
@@ -236,7 +239,7 @@
       li.querySelector('.j').textContent = l.w[1];
       if (canSpeak && koVoice) {
         var b = document.createElement('button'); b.type = 'button'; b.textContent = '🔊'; b.setAttribute('aria-label', l.w[0] + ' を聞く');
-        b.addEventListener('click', function () { speak(l.w[0]); });
+        b.addEventListener('click', function () { speak(l.w[0], false, true); });
         li.insertBefore(b, li.firstChild);
       }
       ul.appendChild(li);
@@ -247,14 +250,25 @@
 
   // ---- ボタン ----
   root.querySelectorAll('[data-act="start"]').forEach(function (b) { b.addEventListener('click', start); });
-  root.querySelector('[data-act="say"]').addEventListener('click', function () { if (st.q) speak(st.q.item[0]); });
-  root.querySelector('[data-act="slow"]').addEventListener('click', function () { if (st.q) speak(st.q.item[0], true); });
+  root.querySelector('[data-act="say"]').addEventListener('click', function () { if (st.q) speak(st.q.item[0], false, true); });
+  root.querySelector('[data-act="slow"]').addEventListener('click', function () { if (st.q) speak(st.q.item[0], true, true); });
   var muteBtn = root.querySelector('[data-act="mute"]');
+  function syncMute() {
+    muteBtn.textContent = muted ? '🔇 音オフ' : '🔊 音オン';
+    muteBtn.setAttribute('aria-pressed', muted ? 'false' : 'true');
+    muteBtn.setAttribute('aria-label', muted ? '音はオフです。押すと効果音と読み上げが鳴ります' : '音はオンです。押すと音を消します');
+    muteBtn.classList.toggle('on', !muted);
+    var note = root.querySelector('.nyplay-sound-note');
+    if (note) note.textContent = muted ? '🔇 音なしで遊べます' : '🔊 効果音と読み上げが鳴ります';
+  }
   muteBtn.addEventListener('click', function () {
-    muted = !muted; muteBtn.textContent = muted ? '🔇' : '🔊';
-    muteBtn.setAttribute('aria-label', muted ? '音を出す' : '音を消す');
+    muted = !muted;
+    try { localStorage.setItem('nyplay.sound', muted ? 'off' : 'on'); } catch (e) { /* 保存できなくても動く */ }
     if (muted && canSpeak) speechSynthesis.cancel();
+    if (!muted) { audio(); tone(880, 0, 0.08, 'square', 0.06); }
+    syncMute();
   });
+  syncMute();
   // 読み上げボタンは、韓国語の音声が使える端末だけ表示
   function syncSpeakButtons() {
     var on = !!(canSpeak && koVoice);
