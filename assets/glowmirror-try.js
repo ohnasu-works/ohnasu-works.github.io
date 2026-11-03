@@ -65,7 +65,6 @@
   screen.innerHTML =
     '<div class="island"></div>' +
     '<div class="gx-mirror"><video playsinline muted></video><img class="fallback" alt="" hidden src="' + root.dataset.demo + '"></div>' +
-    '<div class="gx-ring" aria-hidden="true"><i></i><i></i></div>' +
     '<div class="gx-guide" aria-hidden="true"><i class="v"></i><i class="h1"></i><i class="h2"></i></div>' +
     '<div class="gx-count" aria-live="polite"></div>' +
     '<div class="gx-ui">' +
@@ -85,9 +84,9 @@
     // 静止画の確認画面
     '<div class="gx-frozen" hidden><canvas></canvas>' +
       '<div class="gx-top">' + glass('fClose', 'xmark', T.close) + glass('fFlip', 'flip', T.flip) + '</div>' +
-      '<div class="gx-bottom"><button type="button" class="gx-pill" data-act="fCompare">' + svg('stackPlus', 18) + '<span>' + T.addCompare + '</span></button>' +
+      '<div class="gx-bottom gx-freeze-row"><span class="gxslot">' + glass('fCompare', 'stackPlus', T.addCompare) + '</span>' +
       '<button type="button" class="gx-play" data-act="fResume" aria-label="Resume">' + svg('play', 24) + '</button>' +
-      '<button type="button" class="gx-pill" data-act="fSave">' + svg('saveIcon', 18) + '<span>' + T.save + '</span></button></div>' +
+      '<span class="gxslot">' + glass('fSave', 'saveIcon', T.save) + '</span></div>' +
     '</div>' +
     // 10秒動画の確認画面
     '<div class="gx-review" hidden><video playsinline muted loop></video>' +

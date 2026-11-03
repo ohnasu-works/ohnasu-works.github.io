@@ -35,12 +35,6 @@
 .gmx .island { z-index: 9; }
 .gx-mirror { position: absolute; inset: 0; overflow: hidden; }
 .gx-mirror video, .gx-mirror img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 45%; }
-/* ライト：アプリと同じく上と下だけを暖かい色で光らせる */
-.gx-ring { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s; z-index: 2; }
-.gx-ring i { position: absolute; left: 0; right: 0; height: 19%; }
-.gx-ring i:first-child { top: 0; background: linear-gradient(#FFF1DC 0%, #FFF1DC 60%, rgb(255 241 220 / 0) 100%); }
-.gx-ring i:last-child { bottom: 0; background: linear-gradient(0deg, #FFF1DC 0%, #FFF1DC 60%, rgb(255 241 220 / 0) 100%); }
-.gmx.lit .gx-ring { opacity: 1; }
 .gx-guide { position: absolute; inset: 0; pointer-events: none; display: none; z-index: 2; }
 .gmx.guided .gx-guide { display: block; }
 .gx-guide i { position: absolute; background: rgb(255 255 255 / .7); box-shadow: 0 0 2px rgb(0 0 0 / .4); }
@@ -112,10 +106,13 @@
 .gm-faq details { border: 1px solid var(--line); border-radius: 16px; padding: 14px 18px; background: var(--surface); }
 .gm-faq summary { cursor: pointer; font-weight: 700; }
 .gm-faq p { color: var(--muted); margin: 10px 0 0; }
-/* ライトの光の上でもボタンが見えるように（アプリと同じく下に濃い色を敷く） */
-.gmx.lit .gx-ui .gx .c, .gmx.lit .gx-zoom { background: rgb(0 0 0 / .5); }
-.gmx.lit .gx-ui .gx.on .c { background: #fff; box-shadow: 0 0 0 1px rgb(0 0 0 / .25), 0 2px 6px rgb(0 0 0 / .3); }
-.gmx.lit .gx-ui .gx-row .gx .l { color: #2A2622; text-shadow: none; font-weight: 700; }
-.gmx.lit .gx-shutter { border-color: rgb(0 0 0 / .45); background: rgb(0 0 0 / .35); }
-.gmx.lit .gx-tray .gx .l { color: #fff; text-shadow: 0 1px 3px rgb(0 0 0 / .7); font-weight: 500; }
-.gmx.lit .gx-tray { background: rgb(0 0 0 / .55); }
+/* ライト：アプリと同じく、鏡の映像そのものを明るくする（上下の光などの飾りは出さない） */
+.gx-mirror video, .gx-mirror img, .gx-frozen canvas, .gx-review video { transition: filter .3s; }
+.gmx.lit .gx-mirror video, .gmx.lit .gx-mirror img, .gmx.lit .gx-frozen canvas, .gmx.lit .gx-review video { filter: brightness(1.32) contrast(1.04); }
+/* 静止画の確認画面：アプリと同じく左右を同じ幅にして、▶を真ん中に */
+.gx-freeze-row { justify-content: center; gap: 18px; }
+.gx-freeze-row .gxslot { width: 92px; display: grid; justify-items: center; }
+.gx-freeze-row .gx { width: auto; }
+.gx-play { flex: none; width: 66px; height: 66px; border-radius: 50%; border: 3px solid rgb(255 255 255 / .9); background: rgb(0 0 0 / .22); color: #fff; padding: 0 0 0 3px; box-shadow: 0 2px 8px rgb(0 0 0 / .3); }
+/* 10秒動画の確認画面：4つのボタンを真ん中にそろえる */
+.gx-bottom.col .gx-row { display: flex; justify-content: center; gap: 10px; }
