@@ -647,3 +647,8 @@ body.gm .section-head h2, body.gm .ds-hero h1 { font-family: var(--font-serif); 
 }
 .app-card .body { display: flex; flex-direction: column; gap: 14px; }
 .app-card .body .btn-row { margin-top: auto; padding-top: 4px; }
+/* トップの3枚：アプリ名が見切れないように */
+.hero-apps .hero-app .row { gap: 8px; padding: 10px 10px; }
+.hero-apps .hero-app .row img { width: 34px; height: 34px; border-radius: 9px; }
+.hero-apps .hero-app .row b { font-size: clamp(13px, 1.25vw, 15.5px); overflow: visible; text-overflow: clip; }
+.hero-apps .hero-app .row small { font-size: 11px; }
