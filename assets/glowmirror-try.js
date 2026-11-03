@@ -12,6 +12,7 @@
     open: '鏡をひらく', intro: 'カメラを使って、あなたの顔を映します。<br>映像はこの端末の中だけで表示されます。',
     resume: 'ページに戻りました。もう一度押すと鏡がひらきます', closed: '鏡をとじました。もう一度押すとひらきます',
     noCamera: 'カメラが使えないため、見本の写真で表示しています',
+    noFrame: 'カメラの映像が届きませんでした。ほかのアプリ（グロウミラー本体など）がカメラを使っていたら閉じて、もう一度お試しください。今は見本の写真で表示しています',
     appOnly: 'この機能はアプリ版でお試しください', saveNote: 'アプリでは「写真」に保存されます（ここでは保存しません）',
     compareNote: 'アプリではビフォーアフターに追加されます', resetDone: '設定を元に戻しました',
     recLeft: '残り', sec: '秒', noRec: 'このブラウザでは動画を試せません', tapToShow: '右下の「表示」で戻ります'
@@ -23,6 +24,7 @@
     open: 'Open the mirror', intro: 'Uses your camera to show your face.<br>The video stays on this device.',
     resume: 'Welcome back. Tap to open the mirror again', closed: 'Mirror closed. Tap to open it again',
     noCamera: 'No camera available, showing a sample photo',
+    noFrame: 'No video from the camera. If another app is using it, close that app and try again. Showing a sample photo for now',
     appOnly: 'Try this one in the app', saveNote: 'The app saves to Photos (nothing is saved here)',
     compareNote: 'The app adds it to Before & After', resetDone: 'Settings reset',
     recLeft: '', sec: 's left', noRec: 'Video isn’t supported in this browser', tapToShow: 'Tap Show (bottom right) to bring them back'
@@ -106,7 +108,7 @@
   let stream = null, live = false, mirrored = true, light = false, guide = false, scale = 1, frozenMirrored = true;
   let timerId = 0, countdown = 0, recorder = null, chunks = [], recTimer = 0, recLeft = 0, dimTimer = 0, toastTimer = 0, speedIdx = 0, recUrl = '';
 
-  function say(msg) { toast.textContent = msg; toast.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('on'), 1800); }
+  function say(msg) { toast.textContent = msg; toast.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('on'), msg.length > 40 ? 5000 : 1800); }
   function setGlass(a, icon, label, active) {
     const b = btn(a); if (!b) return;
     if (icon) b.querySelector('.c').innerHTML = svg(icon);
@@ -131,8 +133,15 @@
     try {
       if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) throw new Error('nocam');
       stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: { ideal: 1280 }, height: { ideal: 1280 } }, audio: false });
-      video.srcObject = stream; await video.play(); live = true; fallback.hidden = true;
-    } catch (e) { live = false; fallback.hidden = false; say(T.noCamera); }
+      video.muted = true; video.setAttribute('playsinline', ''); video.setAttribute('autoplay', '');
+      video.srcObject = stream;
+      const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+      await Promise.race([video.play().catch(() => {}), wait(3000)]);
+      // 映像が届くまで最大4秒待つ（ほかのアプリがカメラを使っていると真っ暗になるため）
+      for (let i = 0; i < 20 && !video.videoWidth; i++) await wait(200);
+      if (!video.videoWidth) { stream.getTracks().forEach((t) => t.stop()); stream = null; throw new Error('noframe'); }
+      live = true; fallback.hidden = true;
+    } catch (e) { live = false; fallback.hidden = false; video.srcObject = null; say(e && e.message === 'noframe' ? T.noFrame : T.noCamera); }
     if (offBtn) offBtn.hidden = false;
     apply();
   }
