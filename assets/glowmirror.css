@@ -116,3 +116,21 @@
 .gx-play { flex: none; width: 66px; height: 66px; border-radius: 50%; border: 3px solid rgb(255 255 255 / .9); background: rgb(0 0 0 / .22); color: #fff; padding: 0 0 0 3px; box-shadow: 0 2px 8px rgb(0 0 0 / .3); }
 /* 10秒動画の確認画面：4つのボタンを真ん中にそろえる */
 .gx-bottom.col .gx-row { display: flex; justify-content: center; gap: 10px; }
+
+/* ヒーロー：アプリ名を大きく */
+.gm-name { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.gm-name img { width: 76px; height: 76px; border-radius: 18px; box-shadow: 0 10px 24px rgba(120, 90, 40, .22); flex: none; }
+.gm-name b { display: block; font-family: var(--font-serif); font-size: clamp(26px, 3vw, 34px); line-height: 1.2; color: var(--ink); }
+.gm-name small { display: block; margin-top: 4px; font-size: 13.5px; color: var(--muted); letter-spacing: .02em; }
+/* 料金の横：ダウンロード */
+.gm-buy { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; align-items: stretch; }
+@media (max-width: 820px) { .gm-buy { grid-template-columns: 1fr; } }
+.gm-buy .price-card { margin: 0; }
+.gm-dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; padding: clamp(22px, 3vw, 30px); border-radius: var(--radius); border: 1px solid var(--line); background: var(--soft); }
+.gm-dl h3 { font-family: var(--font-serif); font-size: 22px; }
+.gm-dl p { color: var(--muted); font-size: 14px; margin-top: 6px; }
+.gm-dl .btn { margin-top: 14px; }
+.gm-qr { width: 132px; height: 132px; border-radius: 16px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; text-align: center; padding: 8px; }
+.gm-qr img { width: 100%; height: auto; display: block; }
+.gm-qr span { font-size: 11.5px; color: #8A7F72; line-height: 1.5; }
+@media (max-width: 480px) { .gm-dl { grid-template-columns: 1fr; justify-items: start; } }
