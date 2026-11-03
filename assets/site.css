@@ -652,3 +652,15 @@ body.gm .section-head h2, body.gm .ds-hero h1 { font-family: var(--font-serif); 
 .hero-apps .hero-app .row img { width: 34px; height: 34px; border-radius: 9px; }
 .hero-apps .hero-app .row b { font-size: clamp(13px, 1.25vw, 15.5px); overflow: visible; text-overflow: clip; }
 .hero-apps .hero-app .row small { font-size: 11px; }
+
+/* アプリページ上部：アプリ名を大きく（3アプリ共通） */
+.app-name { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.app-name img { width: 52px; height: 52px; border-radius: 12px; flex: none; }
+.app-name b { display: block; font-family: var(--font-display); font-weight: 800; font-size: clamp(26px, 3vw, 34px); line-height: 1.2; color: var(--ink); letter-spacing: -.01em; }
+body.ds .app-name b, body.gm .app-name b { font-family: var(--font-serif); font-weight: 700; letter-spacing: 0; }
+.app-name small { display: block; margin-top: 4px; font-size: 13.5px; line-height: 1.55; color: var(--muted); letter-spacing: .02em; }
+.app-name small span { white-space: nowrap; }
+/* 日本語の文章を文節の切れ目で改行する（data-budoux を付けた所） */
+[data-budoux] { word-break: keep-all; overflow-wrap: anywhere; }
+body.ny .stats span { white-space: nowrap; letter-spacing: -.02em; }
+@media (max-width: 400px) { body.ny .stats span { font-size: 11.5px; } }

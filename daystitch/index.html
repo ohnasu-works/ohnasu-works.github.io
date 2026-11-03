@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=Shippori+Mincho:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css?v=4">
 <link rel="stylesheet" href="../assets/daystitch-try.css">
 <link rel="stylesheet" href="../assets/daystitch-why.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap">
@@ -39,460 +39,431 @@
 </header>
 
 <main>
-  <section class="ds-hero">
-    <div class="wrap grid">
-      <div>
-        <div class="appline rise">
-          <img src="../assets/img/daystitch-icon.png" alt="Daystitch のアイコン">
-          <div>
-            <p class="label" style="margin:0">Daystitch: Planner &amp; To-Do <span style="font-weight:600;letter-spacing:0">（デイステッチ）</span></p>
-            <p style="font-size:14px;color:var(--muted)">iPhone · iPad · Apple Watch</p>
-          </div>
-        </div>
-        <h1 class="rise d2"><span class="phr">手帳も、</span><span class="phr">予定も、</span><span class="phr">ToDo も。</span><br>1 冊にステッチ。</h1>
-        <p class="lead rise d3">予定、ToDo、手書きメモ、日記、会議の文字起こし、天気まで。<b>これ 1 つで全部そろう、オールインワンの手帳アプリ</b>です。いくつものアプリを行き来しなくていい、かゆいところに手が届く 1 冊を。</p>
-        <div class="btn-row rise d3">
-          <!-- ★ 公開後に App Store の URL と公式バッジ画像に差し替える -->
-          <a class="btn btn-primary" href="#try">ToDo を触ってみる</a>
-          <span class="btn btn-ghost" aria-disabled="true">App Store（近日公開）</span>
-        </div>
-        <div class="launch rise d3">
-          <span>発売記念価格 · 2027年2月28日までのご登録</span>
-          <b>年額 1,500円 ／ 月額 200円（最初の 1 週間は無料）</b>
-        </div>
-      </div>
-      <div class="photo real-hero rise d2">
-        <img class="ipad" src="../assets/img/daystitch/ipad-day.jpg" alt="iPad の Daystitch。ToDo・予定・手書き・議事録が 1 画面に並んだ実際の画面">
-        <img class="iphone" src="../assets/img/daystitch/month.jpg" alt="iPhone の月のカレンダーの実際の画面">
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 触れるToDo -->
-  <section class="section dstry" id="try" style="padding-bottom:0">
-    <div class="wrap dstry-wrap">
-      <div class="dstry-copy">
-        <p class="label">Try it</p>
-        <h2>この画面、<br>さわれます。</h2>
-        <p>Daystitch の ToDo を、ブラウザでそのまま試せます。丸をタップして完了、終わったものは「完了」タブにまとまります。ToDo の中のチェックリストや、毎週の繰り返しも。下の丸で着せ替えも変えてみてください。</p>
-        <ul class="checks">
-          <li>ToDo の中にチェックリスト（作業の手順など）</li>
-          <li>締め切りが来たものは、赤い旗で「今日」へ</li>
-          <li>着せ替えは全 10 種類。ダークモードにも対応</li>
-        </ul>
-      </div>
-      <div class="dstry-side" id="dstry">
-        <div class="phone">
-          <div class="screen" data-theme="classic">
-            <div class="island"></div>
-            <div class="bar"><b>今日</b><span></span></div>
-            <div class="dstry-tabs" role="tablist" aria-label="ToDo のリスト">
-              <button type="button" role="tab" data-tab="today">今日</button>
-              <button type="button" role="tab" data-tab="later">明日以降</button>
-              <button type="button" role="tab" data-tab="someday">いつか</button>
-              <button type="button" role="tab" data-tab="done">完了<span class="badge"></span></button>
-            </div>
-            <ul class="dstry-list" aria-live="polite"></ul>
-            <div class="dstry-toast" role="status"></div>
-            <form class="dstry-add" autocomplete="off">
-              <input type="text" placeholder="＋ ToDo を追加" aria-label="ToDo を追加" maxlength="40">
-              <button type="submit" aria-label="追加">＋</button>
-            </form>
-          </div>
-        </div>
-        <div class="dstry-papers" aria-label="着せ替え">
-          <span>着せ替え</span>
-          <button type="button" data-theme="classic" aria-pressed="true" aria-label="クラシック" style="background:#3F6FC4"></button>
-          <button type="button" data-theme="sakura" aria-pressed="false" aria-label="さくら" style="background:#C4547F"></button>
-          <button type="button" data-theme="mint" aria-pressed="false" aria-label="ミント" style="background:#23826E"></button>
-          <button type="button" data-theme="natural" aria-pressed="false" aria-label="ナチュラル" style="background:#8A6A43"></button>
-          <button type="button" data-theme="midnight" aria-pressed="false" aria-label="ミッドナイト" style="background:#12151C"></button>
-          <span class="names">着せ替え：クラシック</span>
-        </div>
-        <p class="dstry-hint">※ アプリの ToDo 画面をもとにした体験用の見本です。実際の画面とは細部が異なります。入力した内容は保存されません。</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="wrap"><hr class="stitch"></div>
-
-  <!-- ここが違う：4つの強み -->
-  <section class="section why" id="why">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Why Daystitch</p>
-        <h2><span class="phr">ほかの手帳アプリと、</span><span class="phr">ここが違う。</span></h2>
-        <p>予定と ToDo だけなら、どのアプリでもできます。Daystitch が力を入れたのは、その日の記録を「残す・探す・続ける」こと。5 つのちがいを、実際の画面と見本でどうぞ。</p>
-      </div>
-
-      <div class="why-block">
-        <div>
-          <p class="why-no">01 · Day page</p>
-          <h3><span class="phr">その日のことが、</span><span class="phr">1 ページに全部。</span></h3>
-          <p class="lead2">日のページには、予定も ToDo も手書きも、会議の議事録も写真もいっしょに。天気と気分も自動で並ぶので、あとから見返したとき「あの日」がそのまま残っています。</p>
-          <div class="vs">
-            <div class="them"><small>よくある手帳アプリ</small>予定と文字のメモが中心。録音や写真は別のアプリに分かれがち</div>
-            <div class="us"><small>Daystitch</small>予定・ToDo・手書き・写真・スタンプ・録音の議事録・天気を 1 ページに</div>
-          </div>
-        </div>
-        <div class="why-visual">
-          <div class="pinned">
-            <figure class="dev dev-ipad"><img src="../assets/img/daystitch/ipad-day.jpg" alt="iPad の日のページ。ToDo・予定・天気・手書き・議事録・スタンプが 1 画面に並んだ実際の画面" loading="lazy"></figure>
-            <span class="pin" style="left:11%;top:58%">1</span>
-            <span class="pin" style="left:30%;top:36%">2</span>
-            <span class="pin" style="left:37%;top:17%">3</span>
-            <span class="pin" style="left:62%;top:22%">4</span>
-            <span class="pin" style="left:79%;top:44%">5</span>
-            <span class="pin" style="left:57%;top:85%">6</span>
-          </div>
-          <ol class="legend">
-            <li><b>1</b>ToDo とチェックリスト</li>
-            <li><b>2</b>その日の予定</li>
-            <li><b>3</b>天気・最高／最低気温・気分</li>
-            <li><b>4</b>Apple Pencil・指で手書き</li>
-            <li><b>5</b>録音から作った議事録</li>
-            <li><b>6</b>写真・スタンプ・マスキングテープ</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="why-block rev">
-        <div>
-          <p class="why-no">02 · Search</p>
-          <h3><span class="phr">手書きの文字も、</span><span class="phr">会議の一言も、</span><span class="phr">検索で見つかる。</span></h3>
-          <p class="lead2">検索窓にひとこと入れるだけで、予定・ToDo（中のチェック項目まで）・手書きの文字・貼った文章・録音の文字起こし全文まで、まとめて探します。手書きの文字は端末の中で読み取るので、外に送られません。</p>
-          <div class="vs">
-            <div class="them"><small>よくある手帳アプリ</small>探せるのは打ち込んだ文字だけ。手書きや録音の中身は探せないことが多い</div>
-            <div class="us"><small>Daystitch</small>手書き・録音の全文・チェック項目まで、1 回の検索でまとめて</div>
-          </div>
-        </div>
-        <div class="why-visual">
-          <div class="srch" id="dsearch">
-            <label class="srch-bar"><span aria-hidden="true">🔍</span><input type="search" value="見積" aria-label="検索の見本に言葉を入れる" maxlength="20"></label>
-            <div class="srch-chips" aria-label="試せる言葉">
-              <button type="button" data-q="見積">見積</button>
-              <button type="button" data-q="薬">薬</button>
-              <button type="button" data-q="12 月">12 月</button>
-              <button type="button" data-q="A案">A案</button>
-            </div>
-            <ul class="srch-res" aria-live="polite"></ul>
-          </div>
-          <p class="why-cap">見本のデータで検索を試せます（アプリの検索と同じ範囲を探します）</p>
-        </div>
-      </div>
-
-      <div class="why-block">
-        <div>
-          <p class="why-no">03 · Habits</p>
-          <h3><span class="phr">お薬も、読書も。</span><span class="phr">続いた日が、</span><span class="phr">目に見える。</span></h3>
-          <p class="lead2">習慣は 1 タップで記録。「朝の薬」「夜の薬」のように分けておけば、飲んだかどうか迷いません。いまの連続日数・最長記録・30 日間の達成率が見えるから、続けるのが楽しくなります。ホーム画面のウィジェットからも、アプリを開かずに記録できます。</p>
-          <div class="vs">
-            <div class="them"><small>よくある手帳アプリ</small>習慣やお薬の記録は、別の習慣アプリで</div>
-            <div class="us"><small>Daystitch</small>手帳の中で記録。連続日数・最長記録・達成率まで</div>
-          </div>
-        </div>
-        <div class="why-visual">
-          <div class="habit-wrap">
-            <figure class="dev dev-phone"><img src="../assets/img/daystitch/habit.jpg" alt="習慣の画面。朝の薬・夜の薬・水を飲む・読書・ストレッチの記録と連続日数が並んだ実際の画面" loading="lazy"></figure>
-            <div class="tiles">
-              <div class="tile"><small>🔥 いまの連続</small><b>14<span>日</span></b></div>
-              <div class="tile"><small>🏆 最長記録</small><b>32<span>日</span></b></div>
-              <div class="tile"><small>📈 30 日間の達成率</small><b>87<span>%</span></b><div class="bar"><i></i></div></div>
-            </div>
-          </div>
-          <p class="why-cap">右の数字は表示の例です</p>
-        </div>
-      </div>
-
-      <div class="why-block rev">
-        <div>
-          <p class="why-no">04 · Weather</p>
-          <h3><span class="phr">予報だけじゃない。</span><span class="phr">あの日の天気も、</span><span class="phr">手帳に残る。</span></h3>
-          <p class="lead2">カレンダーには 10 日先までの天気と最高／最低気温。そして過去の日も、2021 年 8 月以降ならその日の天気が表示されます。日記を見返すと「この日は雨だったな」まで思い出せる手帳です。地域は現在地か、47 都道府県から選べます。</p>
-          <div class="vs">
-            <div class="them"><small>よくある手帳アプリ</small>天気は出ないか、今日と数日先の予報まで</div>
-            <div class="us"><small>Daystitch</small>10 日先の予報に加えて、過去の日の天気もそのまま残る</div>
-          </div>
-        </div>
-        <div class="why-visual">
-          <div class="wx">
-            <div class="wx-card">
-              <div class="hd"><b>今週の天気</b><span>カレンダーの週表示に</span></div>
-              <div class="wx-strip">
-                <div>月<span class="i">⛅️</span><span class="t">18°<em>/11°</em></span></div>
-                <div class="today">火<span class="i">☀️</span><span class="t">21°<em>/12°</em></span></div>
-                <div>水<span class="i">🌧</span><span class="t">16°<em>/12°</em></span></div>
-                <div>木<span class="i">🌧</span><span class="t">15°<em>/10°</em></span></div>
-                <div>金<span class="i">⛅️</span><span class="t">19°<em>/9°</em></span></div>
-                <div>土<span class="i">☀️</span><span class="t">20°<em>/10°</em></span></div>
-                <div>日<span class="i">☀️</span><span class="t">22°<em>/11°</em></span></div>
-              </div>
-            </div>
-            <div class="wx-card">
-              <div class="hd"><b>1 年前の今日をひらくと</b><span>日のページ</span></div>
-              <div class="wx-memory">
-                <span class="big" aria-hidden="true">🌧</span>
-                <div><p><b>雨</b>　14° / 9°</p><p class="hand">「傘を忘れて駅まで走った。でも企画は通った！」</p></div>
-              </div>
-            </div>
-            <div class="wx-tl"><span>2021年8月</span><i></i><span>今日</span><span>10日先</span></div>
-          </div>
-          <p class="why-cap">天気・気温は表示の例です（天気データ： Weather）</p>
-        </div>
-      </div>
-
-
-      <div class="why-block meet">
-        <div>
-          <p class="why-no">05 · Meeting</p>
-          <h3><span class="phr">議事録で終わらない。</span><span class="phr">会議のあとまで、</span><span class="phr">手帳がつなぐ。</span></h3>
-          <p class="lead2">議事録を作るアプリはほかにもあります。Daystitch の違いは、そのあと。議事録はその日のページに残り、「やること」は ToDo へ、文字起こしの全文は検索の対象に。会議が手帳の中で続いていきます。</p>
-          <div class="vs">
-            <div class="them"><small>よくある議事録アプリ</small>議事録を作ったら、手帳や ToDo へは自分で書き写す</div>
-            <div class="us"><small>Daystitch</small>日のページに貼る・ToDo へ送る・全文を検索、まで 1 つのアプリで</div>
-          </div>
-        </div>
-        <div class="why-visual">
-          <ol class="mflow">
-            <li>
-              <span class="st">1</span>
-              <div class="mcard"><p class="mt">録音する</p>
-                <div class="rec"><span class="dot"></span><span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><b>32:14</b></div>
-                <p class="ms">日のページの 🎙 から。録音しながらメモも書けます</p></div>
-            </li>
-            <li>
-              <span class="st">2</span>
-              <div class="mcard"><p class="mt">自動で文字起こし <em>端末の中で</em></p>
-                <p class="mono">00:02 では、来月の企画案から確認します。<br>00:31 見積もりは金曜までに送りましょう。</p>
-                <p class="ms">止めるだけで始まります。1 時間の会議も OK</p></div>
-            </li>
-            <li>
-              <span class="st">3</span>
-              <div class="mcard"><p class="mt">AI が要点にまとめる</p>
-                <p class="sum">・発売日は 12 月 5 日に決定<br>・SNS 広告を先行して実施<br>・予算は前回比 10% 増で承認</p>
-                <p class="ms">長い会議は区切って読み、最後にまとめ直します</p></div>
-            </li>
-            <li>
-              <span class="st">4</span>
-              <div class="mcard"><p class="mt">議事録の形に</p>
-                <p class="sum">【日時】15:00〜16:00<br>【決定事項】発売日 12/5、SNS 広告を先行<br>【次回】11/2 進捗確認</p>
-                <p class="ms">「要点・議事録・全文」をタブで切り替え</p></div>
-            </li>
-            <li class="last">
-              <span class="st">5</span>
-              <div class="mcard"><p class="mt">手帳の中で、続きへ</p>
-                <div class="outs">
-                  <span>📄 日のページに貼る<small>要点だけ／議事録だけ／両方</small></span>
-                  <span>✅ やることを ToDo へ<small>担当つきで 1 タップ</small></span>
-                  <span>🔍 全文が検索の対象に<small>「あの会議で何て言った？」も</small></span>
-                </div></div>
-            </li>
-          </ol>
-          <p class="why-cap">内容は表示の例です。音声は端末の中に残り、文字起こし・要点・議事録は iCloud で iPhone と iPad に同期されます。</p>
-        </div>
-      </div>
-
-      <div class="why-table">
-        <h3><span class="phr">ひと目でわかる、</span><span class="phr">ちがい。</span></h3>
-        <table>
-          <thead><tr><th scope="col"></th><th scope="col">よくある手帳アプリ</th><th scope="col" class="us">Daystitch</th></tr></thead>
-          <tbody>
-            <tr><td>日のページ</td><td class="them">予定と文字のメモが中心</td><td class="us">手書き・写真・スタンプ・録音の議事録まで 1 ページに</td></tr>
-            <tr><td>検索</td><td class="them">打ち込んだ文字だけ</td><td class="us">手書きの文字・録音の全文・チェック項目までまとめて</td></tr>
-            <tr><td>習慣・お薬</td><td class="them">別の習慣アプリが必要なことも</td><td class="us">手帳の中で記録。連続日数・最長記録・達成率</td></tr>
-            <tr><td>天気</td><td class="them">出ないか、数日先の予報まで</td><td class="us">10 日先の予報＋過去の日の天気も残る</td></tr>
-            <tr><td>会議</td><td class="them">録音・議事録は別のアプリ。手帳へは書き写す</td><td class="us">録音 → 文字起こし → 要点 → 議事録 → 日のページ・ToDo・検索へ</td></tr>
-            <tr><td>日本の暦</td><td class="them">祝日まで</td><td class="us">祝日・振替休日・六曜（大安・仏滅など）</td></tr>
-          </tbody>
-        </table>
-        <p class="note-small">※「よくある手帳アプリ」は一般的な傾向をまとめたもので、特定の製品を指すものではありません。</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="wrap"><hr class="stitch"></div>
-
-  <!-- all in one -->
-  <section class="section" id="allinone">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">All in one</p>
-        <h2><span class="phr">アプリを行き来するのは、</span><span class="phr">もうおしまい。</span></h2>
-        <p>カレンダー、ToDo、メモ、録音、天気。ふだん別々のアプリでやっていたことが、Daystitch（デイステッチ）1 つで片づきます。</p>
-      </div>
-      <div class="chips">
-        <span>📅 カレンダー（年・月・週・日）</span><span>💊 習慣・お薬の飲み忘れ防止（朝の薬・夜の薬）</span><span>✅ ToDo・チェックリスト・繰り返し</span><span>✍️ 手書きメモ（Apple Pencil・指）</span><span>🎙 会議を録音 → 文字起こし → 議事録</span><span>☀️ 天気・最高／最低気温</span><span>🎌 祝日・六曜</span><span>📷 写真・スタンプ・マスキングテープ</span><span>🔍 手書きの文字も検索</span><span>🤖 Apple の AI（追加料金なし）</span><span>⌚️ Apple Watch・ウィジェット・Siri</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="wrap"><hr class="stitch"></div>
-
-  <!-- a day with Daystitch -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">A day with Daystitch</p>
-        <h2><span class="phr">朝から夜まで、</span><span class="phr">1 冊でつながる。</span></h2>
-        <p>予定を確かめる朝、会議の多い昼、ふり返る夜。どの時間も、同じ手帳の中で続いていきます。</p>
-      </div>
-      <div class="day">
-        <article>
-          <div class="shot peek"><img src="../assets/img/daystitch/todo.jpg" alt="今日の予定と ToDo が並んだ実際の画面" loading="lazy"></div>
-          <p class="time">07:30 · Morning</p>
-          <h3>今日の予定と ToDo をひと目で</h3>
-          <p>ウィジェットの 2 週間カレンダーと、Siri の「今日をまとめて」。家を出る前に 1 日の流れがわかります。</p>
-        </article>
-        <article>
-          <div class="shot peek"><img src="../assets/img/daystitch/minutes.jpg" alt="録音から作られた議事録の実際の画面" loading="lazy"></div>
-          <p class="time">14:00 · Meeting</p>
-          <h3>録音ボタンひとつで議事録まで</h3>
-          <p>会議が終わるころには、要点と「やること」がまとまって手帳に。やることは ToDo へ送れます。</p>
-        </article>
-        <article>
-          <div class="shot peek"><img src="../assets/img/daystitch/day.jpg" alt="手書きの文字と予定が入った日のページの実際の画面" loading="lazy"></div>
-          <p class="time">21:00 · Evening</p>
-          <h3>手書きで 1 日をふり返る</h3>
-          <p>写真やスタンプを貼って、自分だけのページに。AI が書き出しのヒントもくれます。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- showcase -->
-  <section class="section" id="features" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head" id="meeting">
-        <p class="label">Features</p>
-        <h2><span class="phr">使ってみたくなる、</span><span class="phr">6 つの理由。</span></h2>
-        <p>画像はすべて開発中のアプリの実際の画面です。表示は端末・設定・OS のバージョンによって変わることがあります。</p>
-      </div>
-
-      <div class="show">
-        <div>
-          <p class="catno">01 · Meeting notes</p>
-          <h3>会議が終わったら、<br>議事録はもう手帳の中に。</h3>
-          <p>日のページで録音ボタンを押すだけ。止めると自動で文字に起こし、AI が「要点・決まったこと・やること」にまとめます。長い会議も区切って読み取ります。</p>
-          <ol class="flow points">
-            <li>録音ボタンを押す（録音中もメモできます）</li>
-            <li>止めると自動で文字起こし</li>
-            <li>AI が議事録にまとめる</li>
-            <li>「ページに貼る」で手帳へ。やることは ToDo へ</li>
-          </ol>
-        </div>
-        <div>
-          <div class="stage real"><figure class="dev dev-phone"><img src="../assets/img/daystitch/minutes.jpg" alt="録音から作られた議事録の画面。要点・議事録・全文のタブと「ToDo に追加」ボタンがある実際の画面" loading="lazy"></figure></div>
-        </div>
-      </div>
-
-      <div class="show rev">
-        <div>
-          <p class="catno">02 · To-Do</p>
-          <h3>やることは、<br>スワイプで片づく。</h3>
-          <p>「今日・明日以降・いつか」の 3 つに分けるだけ。行をタップすればその場でメモやチェックリストを書けて、終わったものは「完了」に日付ごとにたまっていきます。締め切りが来たものは、赤い旗で自動的に「今日」へ。</p>
-          <div class="chips points"><span>締め切り</span><span>チェックリスト</span><span>繰り返し</span><span>リマインダー</span><span>完了の記録</span><span>AI でステップ分け</span></div>
-        </div>
-        <div>
-          <div class="stage real"><figure class="dev dev-phone"><img src="../assets/img/daystitch/todo.jpg" alt="ToDo 画面。今日・明日以降・いつか・完了のタブと、チェックリスト付きの ToDo が並んだ実際の画面" loading="lazy"></figure></div>
-        </div>
-      </div>
-
-      <div class="show">
-        <div>
-          <p class="catno">03 · Calendar</p>
-          <h3>「明日15時 会議」と打てば、<br>もう予定。</h3>
-          <p>年・月・週・日の 4 つの表示。日本の祝日と六曜（大安・仏滅など）、天気もいっしょに。iPhone のカレンダー（Google・Outlook の予定も）を重ねて見られます。</p>
-          <div class="chips points"><span>祝日・振替休日</span><span>六曜</span><span>天気</span><span>繰り返し予定</span><span>2 週間ウィジェット</span></div>
-        </div>
-        <div>
-          <div class="stage real"><figure class="dev dev-phone"><img src="../assets/img/daystitch/week.jpg" alt="週表示のカレンダー。六曜・天気と予定が時間ごとに並んだ実際の画面" loading="lazy"></figure></div>
-        </div>
-      </div>
-
-      <div class="show rev">
-        <div>
-          <p class="catno">04 · Handwriting</p>
-          <h3><span class="phr">書くほど、</span><span class="phr">ページが伸びる。</span></h3>
-          <p>Apple Pencil や指で自由に。下まで書き進めるとページが広がり、消しゴムは「なぞった所だけ」と「線ごと」を切り替え。写真・スタンプ・マスキングテープも貼れて、手書きの文字はあとから検索できます。</p>
-          <div class="chips points"><span>写真・カメラ</span><span>スタンプ</span><span>マスキングテープ</span><span>図形</span><span>テキスト</span><span>ページを画像で共有</span></div>
-        </div>
-        <div>
-          <div class="stage real wide"><figure class="dev dev-ipad"><img src="../assets/img/daystitch/ipad-day.jpg" alt="iPad の日のページ。予定・手書きの文字・録音の議事録・スタンプが 1 ページに並んだ実際の画面" loading="lazy"></figure></div>
-        </div>
-      </div>
-
-      <div class="show">
-        <div>
-          <p class="catno">05 · Apple Intelligence &amp; Siri</p>
-          <h3>話しかけるだけで、<br>手帳が答える。</h3>
-          <p>Apple Intelligence で、話し言葉から予定や ToDo を作成。今日のブリーフィング、週のふり返り、大きな ToDo の分解、空き時間への割り当て、AI で描いた絵を日記に。Apple Intelligence なら追加料金なし、端末の中で処理されます。ChatGPT や Gemini に切り替えることもできます。</p>
-          <p class="note-small">※ Apple Intelligence の機能は対応端末（iPhone 15 Pro 以降、M1 以降の iPad、iPad mini（A17 Pro））と iOS 26 以降が必要です。Siri への話しかけは会話の例です。</p>
-          <div class="chips points"><span>「次の予定は？」</span><span>「今日の ToDo」</span><span>「今日をまとめて」</span><span>「会議を録音」</span><span>「手帳を検索」</span></div>
-        </div>
-        <div>
-          <div class="stage plain">
-
-            <div class="bubbles">
-              <div class="bubble me">Daystitch で次の予定は？</div>
-              <div class="bubble ai"><small>Daystitch</small>次の予定は、明日の15:00から「会議」です、場所は本社。</div>
-              <div class="bubble me b2">Daystitch で今日の ToDo</div>
-              <div class="bubble ai b2"><small>Daystitch</small>今日の ToDo は残り 3 件です。企画書を仕上げる、請求書を送る、賃貸の契約書を返送。</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="show rev">
-        <div>
-          <p class="catno">06 · Apple Watch</p>
-          <h3><span class="phr">手首で、</span><span class="phr">次の予定と</span><br>今日の ToDo。</h3>
-          <p>Apple Watch で予定を確認して、ToDo をタップで完了。音声で ToDo を追加すれば、iPhone の手帳にもすぐ反映されます。文字盤には次の予定と残りの件数を。</p>
-        </div>
-        <div>
-          <div class="stage real watches">
-            <figure class="dev dev-watch"><img src="../assets/img/daystitch/watch-schedule.jpg" alt="Apple Watch に今日の予定が並んでいる実際の画面" loading="lazy"></figure>
-            <figure class="dev dev-watch"><img src="../assets/img/daystitch/watch-todo.jpg" alt="Apple Watch の ToDo 一覧と「ToDo を追加」ボタンの実際の画面" loading="lazy"></figure>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="wrap"><hr class="stitch"></div>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">And more</p>
-        <h2><span class="phr">ほかにも、</span><span class="phr">毎日に効く機能。</span></h2>
-      </div>
-      <div class="chips">
-        <span>iPhone・iPad を iCloud で同期</span><span>習慣トラッカー（朝の薬・夜の薬の記録にも）</span><span>カウントダウン</span><span>気分スタンプ</span><span>iPhone のカレンダーを重ねて表示</span><span>10 種類の着せ替え</span><span>使わない機能はオフに</span><span>横断検索</span><span>バックアップ</span><span>ダークモード</span><span>iPad のキーボードショートカット</span><span>コントロールセンターから入力</span><span>広告なし・追跡なし</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="price" style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Price</p>
-        <h2><span class="phr">まずは 1 週間、</span><span class="phr">無料で。</span></h2>
-        <p>すべての機能を 1 週間お試しいただけます。期間内に解約すれば料金はかかりません。</p>
-      </div>
-      <div class="price-card">
-        <p class="pill">発売記念価格 · 2027年2月28日までのご登録</p>
-        <p class="price" style="margin-top:12px">¥1,500 <small>/ 年</small></p>
-        <p style="margin:2px 0 0;font-weight:700">または ¥200 <small>/ 月</small></p>
-        <ul>
-          <li>年額プランは月額プランより 4 割ほどお得</li>
-          <li>発売記念価格で登録した方は、値上げ後も今の価格のまま</li>
-          <li>2027年3月1日以降のご登録は年額 3,000円・月額 400円</li>
-          <li>自動更新。「設定 › Apple ID › サブスクリプション」からいつでも解約できます</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+<section class="ds-hero">
+<div class="wrap grid">
+<div>
+<div class="app-name rise">
+<img alt="Daystitch のアイコン" src="../assets/img/daystitch-icon.png"/>
+<div><b>Daystitch</b><small data-budoux="1"><span>Planner &amp; To-Do</span> <span>（デイステッチ）</span><br/><span>​iPhone · iPad · Apple Watch</span></small></div>
+</div>
+<h1 class="rise d2"><span class="phr">手帳も、</span><span class="phr">予定も、</span><span class="phr">ToDo も。</span><br/>1 冊にステッチ。</h1>
+<p class="lead rise d3" data-budoux="1">予定、​ToDo、​手書きメモ、​日記、​会議の​文字起こし、​天気まで。<b>​これ 1 つで​全部​そろう、​オールインワンの​手帳​アプリ</b>です。​いくつもの​アプリを​行き来しなくて​いい、​かゆい​ところに​手が​届く 1 冊を。</p>
+<div class="btn-row rise d3">
+<!-- ★ 公開後に App Store の URL と公式バッジ画像に差し替える -->
+<a class="btn btn-primary" href="#try">ToDo を触ってみる</a>
+<span aria-disabled="true" class="btn btn-ghost">App Store（近日公開）</span>
+</div>
+<div class="launch rise d3" data-budoux="1">
+<span>発売記念価格 · 202​7年2月28日までの​ご登録</span>
+<b><span style="white-space:nowrap">年額 1,500円 ／ 月額 200円</span><br><span style="white-space:nowrap">（最初の 1 週間は無料）</span></b>
+</div>
+</div>
+<div class="photo real-hero rise d2">
+<img alt="iPad の Daystitch。ToDo・予定・手書き・議事録が 1 画面に並んだ実際の画面" class="ipad" src="../assets/img/daystitch/ipad-day.jpg"/>
+<img alt="iPhone の月のカレンダーの実際の画面" class="iphone" src="../assets/img/daystitch/month.jpg"/>
+</div>
+</div>
+</section>
+<!-- 触れるToDo -->
+<section class="section dstry" id="try" style="padding-bottom:0">
+<div class="wrap dstry-wrap">
+<div class="dstry-copy">
+<p class="label">Try it</p>
+<h2>この画面、<br/>さわれます。</h2>
+<p data-budoux="1">Daystitch の ToDo を、​ブラウザで​そのまま​試せます。​丸を​タップして​完了、​終わった​ものは​「完了」​タブに​まとまります。​ToDo の​中の​チェックリストや、​毎週の​繰り返しも。​下の​丸で​着せ替えも​変えてみてください。</p>
+<ul class="checks">
+<li data-budoux="1">ToDo の​中に​チェックリスト​（作業の​手順など）</li>
+<li data-budoux="1">締め切りが​来た​ものは、​赤い旗で​「今日」へ</li>
+<li data-budoux="1">着せ替えは​全 10 種類。​ダークモードにも​対応</li>
+</ul>
+</div>
+<div class="dstry-side" id="dstry">
+<div class="phone">
+<div class="screen" data-theme="classic">
+<div class="island"></div>
+<div class="bar"><b>今日</b><span></span></div>
+<div aria-label="ToDo のリスト" class="dstry-tabs" role="tablist">
+<button data-tab="today" role="tab" type="button">今日</button>
+<button data-tab="later" role="tab" type="button">明日以降</button>
+<button data-tab="someday" role="tab" type="button">いつか</button>
+<button data-tab="done" role="tab" type="button">完了<span class="badge"></span></button>
+</div>
+<ul aria-live="polite" class="dstry-list"></ul>
+<div class="dstry-toast" role="status"></div>
+<form autocomplete="off" class="dstry-add">
+<input aria-label="ToDo を追加" maxlength="40" placeholder="＋ ToDo を追加" type="text"/>
+<button aria-label="追加" type="submit">＋</button>
+</form>
+</div>
+</div>
+<div aria-label="着せ替え" class="dstry-papers">
+<span>着せ替え</span>
+<button aria-label="クラシック" aria-pressed="true" data-theme="classic" style="background:#3F6FC4" type="button"></button>
+<button aria-label="さくら" aria-pressed="false" data-theme="sakura" style="background:#C4547F" type="button"></button>
+<button aria-label="ミント" aria-pressed="false" data-theme="mint" style="background:#23826E" type="button"></button>
+<button aria-label="ナチュラル" aria-pressed="false" data-theme="natural" style="background:#8A6A43" type="button"></button>
+<button aria-label="ミッドナイト" aria-pressed="false" data-theme="midnight" style="background:#12151C" type="button"></button>
+<span class="names">着せ替え：クラシック</span>
+</div>
+<p class="dstry-hint">※ アプリの ToDo 画面をもとにした体験用の見本です。実際の画面とは細部が異なります。入力した内容は保存されません。</p>
+</div>
+</div>
+</section>
+<div class="wrap"><hr class="stitch"/></div>
+<!-- ここが違う：4つの強み -->
+<section class="section why" id="why">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Why Daystitch</p>
+<h2><span class="phr">ほかの手帳アプリと、</span><span class="phr">ここが違う。</span></h2>
+<p data-budoux="1">予定と ToDo だけなら、​どの​アプリでも​できます。​Daystitch が​力を​入れたのは、​その​日の​記録を​「残す・探す・続ける」​こと。​5 つの​ちがいを、​実際の​画面と​見本で​どうぞ。</p>
+</div>
+<div class="why-block">
+<div>
+<p class="why-no">01 · Day page</p>
+<h3><span class="phr">その日のことが、</span><span class="phr">1 ページに全部。</span></h3>
+<p class="lead2" data-budoux="1">日の​ページには、​予定も ToDo も​手書きも、​会議の​議事録も​写真も​いっしょに。​天気と​気分も​自動で​並ぶので、​あとから​見返した​とき​「あの​日」が​そのまま​残っています。</p>
+<div class="vs">
+<div class="them" data-budoux="1"><small>よく​ある​手帳​アプリ</small>予定と​文字の​メモが​中心。​録音や​写真は​別の​アプリに​分かれがち</div>
+<div class="us" data-budoux="1"><small>Daystitch</small>予定・ToDo・手書き・写真・スタンプ・録音の​議事録・天気を 1 ページに</div>
+</div>
+</div>
+<div class="why-visual">
+<div class="pinned">
+<figure class="dev dev-ipad"><img alt="iPad の日のページ。ToDo・予定・天気・手書き・議事録・スタンプが 1 画面に並んだ実際の画面" loading="lazy" src="../assets/img/daystitch/ipad-day.jpg"/></figure>
+<span class="pin" style="left:11%;top:58%">1</span>
+<span class="pin" style="left:30%;top:36%">2</span>
+<span class="pin" style="left:37%;top:17%">3</span>
+<span class="pin" style="left:62%;top:22%">4</span>
+<span class="pin" style="left:79%;top:44%">5</span>
+<span class="pin" style="left:57%;top:85%">6</span>
+</div>
+<ol class="legend">
+<li data-budoux="1"><b>1</b>ToDo と​チェックリスト</li>
+<li data-budoux="1"><b>2</b>​その​日の​予定</li>
+<li data-budoux="1"><b>3</b>天気・​最高／​最低気温・気分</li>
+<li data-budoux="1"><b>4</b>Apple Pencil・指で​手書き</li>
+<li data-budoux="1"><b>5</b>録音から​作った​議事録</li>
+<li data-budoux="1"><b>6</b>写真・スタンプ・マスキングテープ</li>
+</ol>
+</div>
+</div>
+<div class="why-block rev">
+<div>
+<p class="why-no">02 · Search</p>
+<h3><span class="phr">手書きの文字も、</span><span class="phr">会議の一言も、</span><span class="phr">検索で見つかる。</span></h3>
+<p class="lead2" data-budoux="1">検索窓に​ひとこと​入れるだけで、​予定・ToDo​（中の​チェック項目まで）・手書きの​文字・​貼った​文章・録音の​文字起こし全文まで、​まとめて​探します。​手書きの​文字は​端末の​中で​読み取るので、外に​送られません。</p>
+<div class="vs">
+<div class="them" data-budoux="1"><small>よく​ある​手帳​アプリ</small>探せるのは​打ち込んだ​文字だけ。​手書きや​録音の​中身は​探せないことが​多い</div>
+<div class="us" data-budoux="1"><small>Daystitch</small>手書き・録音の​全文・チェック項目まで、​1 回の​検索で​まとめて</div>
+</div>
+</div>
+<div class="why-visual">
+<div class="srch" id="dsearch">
+<label class="srch-bar"><span aria-hidden="true">🔍</span><input aria-label="検索の見本に言葉を入れる" maxlength="20" type="search" value="見積"/></label>
+<div aria-label="試せる言葉" class="srch-chips">
+<button data-q="見積" type="button">見積</button>
+<button data-q="薬" type="button">薬</button>
+<button data-q="12 月" type="button">12 月</button>
+<button data-q="A案" type="button">A案</button>
+</div>
+<ul aria-live="polite" class="srch-res"></ul>
+</div>
+<p class="why-cap" data-budoux="1">見本の​データで​検索を​試せます​（アプリの​検索と​同じ​範囲を​探します）</p>
+</div>
+</div>
+<div class="why-block">
+<div>
+<p class="why-no">03 · Habits</p>
+<h3><span class="phr">お薬も、読書も。</span><span class="phr">続いた日が、</span><span class="phr">目に見える。</span></h3>
+<p class="lead2" data-budoux="1">習慣は 1 タップで​記録。​「朝の​薬」​「夜の​薬」のように​分けて​おけば、​飲んだか​どうか​迷いません。​いまの​連続日数・​最長記録・30 日間の​達成率が​見えるから、​続けるのが​楽しくなります。​ホーム画面の​ウィジェットからも、​アプリを​開かずに​記録できます。</p>
+<div class="vs">
+<div class="them" data-budoux="1"><small>よく​ある​手帳​アプリ</small>習慣や​お薬の​記録は、​別の​習慣アプリで</div>
+<div class="us" data-budoux="1"><small>Daystitch</small>手帳の​中で​記録。​連続日数・​最長記録・達成率まで</div>
+</div>
+</div>
+<div class="why-visual">
+<div class="habit-wrap">
+<figure class="dev dev-phone"><img alt="習慣の画面。朝の薬・夜の薬・水を飲む・読書・ストレッチの記録と連続日数が並んだ実際の画面" loading="lazy" src="../assets/img/daystitch/habit.jpg"/></figure>
+<div class="tiles">
+<div class="tile"><small data-budoux="1">🔥 いまの​連続</small><b>14<span>日</span></b></div>
+<div class="tile"><small data-budoux="1">🏆 最長記録</small><b>32<span>日</span></b></div>
+<div class="tile"><small data-budoux="1">📈 30 日間の​達成率</small><b>87<span>%</span></b><div class="bar"><i></i></div></div>
+</div>
+</div>
+<p class="why-cap" data-budoux="1">右の​数字は​表示の​例です</p>
+</div>
+</div>
+<div class="why-block rev">
+<div>
+<p class="why-no">04 · Weather</p>
+<h3><span class="phr">予報だけじゃない。</span><span class="phr">あの日の天気も、</span><span class="phr">手帳に残る。</span></h3>
+<p class="lead2" data-budoux="1">カレンダーには 10 日先までの​天気と​最高／​最低気温。​そして​過去の​日も、​2021 年 8 月以降なら​その​日の​天気が​表示されます。​日記を​見返すと​「この​日は​雨だったな」まで​思い出せる​手帳です。​地域は​現在​地か、​47 都道府県から​選べます。</p>
+<div class="vs">
+<div class="them" data-budoux="1"><small>よく​ある​手帳​アプリ</small>天気は​出ないか、​今日と​数日先の​予報まで</div>
+<div class="us" data-budoux="1"><small>Daystitch</small>10 日先の​予報に​加えて、​過去の​日の​天気も​そのまま​残る</div>
+</div>
+</div>
+<div class="why-visual">
+<div class="wx">
+<div class="wx-card">
+<div class="hd"><b>今週の天気</b><span>カレンダーの週表示に</span></div>
+<div class="wx-strip">
+<div>月<span class="i">⛅️</span><span class="t">18°<em>/11°</em></span></div>
+<div class="today">火<span class="i">☀️</span><span class="t">21°<em>/12°</em></span></div>
+<div>水<span class="i">🌧</span><span class="t">16°<em>/12°</em></span></div>
+<div>木<span class="i">🌧</span><span class="t">15°<em>/10°</em></span></div>
+<div>金<span class="i">⛅️</span><span class="t">19°<em>/9°</em></span></div>
+<div>土<span class="i">☀️</span><span class="t">20°<em>/10°</em></span></div>
+<div>日<span class="i">☀️</span><span class="t">22°<em>/11°</em></span></div>
+</div>
+</div>
+<div class="wx-card">
+<div class="hd"><b>1 年前の今日をひらくと</b><span>日のページ</span></div>
+<div class="wx-memory">
+<span aria-hidden="true" class="big">🌧</span>
+<div><p data-budoux="1"><b>雨</b>　14° / 9°</p><p class="hand" data-budoux="1">「傘を​忘れて​駅まで​走った。​でも​企画は​通った！」</p></div>
+</div>
+</div>
+<div class="wx-tl"><span>2021年8月</span><i></i><span>今日</span><span>10日先</span></div>
+</div>
+<p class="why-cap" data-budoux="1">天気・気温は​表示の​例です​（天気データ： Weather）</p>
+</div>
+</div>
+<div class="why-block meet">
+<div>
+<p class="why-no">05 · Meeting</p>
+<h3><span class="phr">議事録で終わらない。</span><span class="phr">会議のあとまで、</span><span class="phr">手帳がつなぐ。</span></h3>
+<p class="lead2" data-budoux="1">議事録を​作る​アプリは​ほかにも​あります。​Daystitch の​違いは、​その​あと。​議事録は​その​日の​ページに​残り、​「やる​こと」は ToDo へ、​文字起こしの​全文は​検索の​対象に。​会議が​手帳の​中で​続いていきます。</p>
+<div class="vs">
+<div class="them" data-budoux="1"><small>よく​ある​議事録アプリ</small>議事録を​作ったら、​手帳や ToDo へは​自分で​書き写す</div>
+<div class="us" data-budoux="1"><small>Daystitch</small>日の​ページに​貼る​・ToDo へ​送る​・全文を​検索、​まで 1 つの​アプリで</div>
+</div>
+</div>
+<div class="why-visual">
+<ol class="mflow">
+<li>
+<span class="st">1</span>
+<div class="mcard"><p class="mt" data-budoux="1">録音する</p>
+<div class="rec"><span class="dot"></span><span aria-hidden="true" class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><b>32:14</b></div>
+<p class="ms" data-budoux="1">日の​ページの 🎙 から。​録音しながら​メモも​書けます</p></div>
+</li>
+<li>
+<span class="st">2</span>
+<div class="mcard"><p class="mt" data-budoux="1">自動で​文字起こし <em>端末の​中で</em></p>
+<p class="mono" data-budoux="1">00:02 では、​来月の​企画案から​確認します。<br/>​00:31 見積もりは​金曜までに​送りましょう。</p>
+<p class="ms" data-budoux="1">止めるだけで​始まります。​1 時間の​会議も OK</p></div>
+</li>
+<li>
+<span class="st">3</span>
+<div class="mcard"><p class="mt" data-budoux="1">AI が​要点に​まとめる</p>
+<p class="sum" data-budoux="1">・発売日は 12 月 5 日に​決定<br/>・SNS 広告を​先行して​実施<br/>・予算は​前回比 10% 増で​承認</p>
+<p class="ms" data-budoux="1">長い​会議は​区切って​読み、​最後に​まとめ直します</p></div>
+</li>
+<li>
+<span class="st">4</span>
+<div class="mcard"><p class="mt" data-budoux="1">議事録の​形に</p>
+<p class="sum" data-budoux="1">【日​時】​15:00〜16:00<br/>​【決定事項】​発売日 12/5、​SNS 広告を​先行<br/>​【​次回】​11/2 進捗確認</p>
+<p class="ms" data-budoux="1">「要点・議事録・全文」を​タブで​切り替え</p></div>
+</li>
+<li class="last">
+<span class="st">5</span>
+<div class="mcard"><p class="mt" data-budoux="1">手帳の​中で、​続きへ</p>
+<div class="outs">
+<span>📄 日のページに貼る<small data-budoux="1">要点だけ／議事録だけ／両方</small></span>
+<span>✅ やることを ToDo へ<small data-budoux="1">担​当つきで 1 タップ</small></span>
+<span>🔍 全文が検索の対象に<small data-budoux="1">「あの​会議で​何て​言った？」も</small></span>
+</div></div>
+</li>
+</ol>
+<p class="why-cap" data-budoux="1">内容は​表示の​例です。​音声は​端末の​中に​残り、​文字起こし・要点・議事録は iCloud で iPhone と iPad に​同期されます。</p>
+</div>
+</div>
+<div class="why-table">
+<h3><span class="phr">ひと目でわかる、</span><span class="phr">ちがい。</span></h3>
+<table>
+<thead><tr><th scope="col"></th><th scope="col">よくある手帳アプリ</th><th class="us" scope="col">Daystitch</th></tr></thead>
+<tbody>
+<tr><td>日のページ</td><td class="them">予定と文字のメモが中心</td><td class="us">手書き・写真・スタンプ・録音の議事録まで 1 ページに</td></tr>
+<tr><td>検索</td><td class="them">打ち込んだ文字だけ</td><td class="us">手書きの文字・録音の全文・チェック項目までまとめて</td></tr>
+<tr><td>習慣・お薬</td><td class="them">別の習慣アプリが必要なことも</td><td class="us">手帳の中で記録。連続日数・最長記録・達成率</td></tr>
+<tr><td>天気</td><td class="them">出ないか、数日先の予報まで</td><td class="us">10 日先の予報＋過去の日の天気も残る</td></tr>
+<tr><td>会議</td><td class="them">録音・議事録は別のアプリ。手帳へは書き写す</td><td class="us">録音 → 文字起こし → 要点 → 議事録 → 日のページ・ToDo・検索へ</td></tr>
+<tr><td>日本の暦</td><td class="them">祝日まで</td><td class="us">祝日・振替休日・六曜（大安・仏滅など）</td></tr>
+</tbody>
+</table>
+<p class="note-small" data-budoux="1">※​「よく​ある​手帳​アプリ」は​一般的な​傾向を​まとめた​もので、​特定の​製品を​指す​ものではありません。</p>
+</div>
+</div>
+</section>
+<div class="wrap"><hr class="stitch"/></div>
+<!-- all in one -->
+<section class="section" id="allinone">
+<div class="wrap">
+<div class="section-head">
+<p class="label">All in one</p>
+<h2><span class="phr">アプリを行き来するのは、</span><span class="phr">もうおしまい。</span></h2>
+<p data-budoux="1">カレンダー、​ToDo、​メモ、​録音、​天気。​ふだん​別々の​アプリで​やっていた​ことが、​Daystitch​（デイステッチ）​1 つで​片づきます。</p>
+</div>
+<div class="chips">
+<span>📅 カレンダー（年・月・週・日）</span><span>💊 習慣・お薬の飲み忘れ防止（朝の薬・夜の薬）</span><span>✅ ToDo・チェックリスト・繰り返し</span><span>✍️ 手書きメモ（Apple Pencil・指）</span><span>🎙 会議を録音 → 文字起こし → 議事録</span><span>☀️ 天気・最高／最低気温</span><span>🎌 祝日・六曜</span><span>📷 写真・スタンプ・マスキングテープ</span><span>🔍 手書きの文字も検索</span><span>🤖 Apple の AI（追加料金なし）</span><span>⌚️ Apple Watch・ウィジェット・Siri</span>
+</div>
+</div>
+</section>
+<div class="wrap"><hr class="stitch"/></div>
+<!-- a day with Daystitch -->
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<p class="label">A day with Daystitch</p>
+<h2><span class="phr">朝から夜まで、</span><span class="phr">1 冊でつながる。</span></h2>
+<p data-budoux="1">予定を​確かめる​朝、​会議の​多い​昼、​ふり返る夜。​どの​時間も、​同じ​手帳の​中で​続いていきます。</p>
+</div>
+<div class="day">
+<article>
+<div class="shot peek"><img alt="今日の予定と ToDo が並んだ実際の画面" loading="lazy" src="../assets/img/daystitch/todo.jpg"/></div>
+<p class="time">07:30 · Morning</p>
+<h3 data-budoux="1">今日の​予定と ToDo を​ひと目で</h3>
+<p data-budoux="1">ウィジェットの 2 週間カレンダーと、​Siri の​「今日を​まとめて」。​家を​出る​前に 1 日の​流れが​わかります。</p>
+</article>
+<article>
+<div class="shot peek"><img alt="録音から作られた議事録の実際の画面" loading="lazy" src="../assets/img/daystitch/minutes.jpg"/></div>
+<p class="time">14:00 · Meeting</p>
+<h3 data-budoux="1">録音ボタンひとつで​議事録まで</h3>
+<p data-budoux="1">会議が​終わる​ころには、​要点と​「やる​こと」が​まとまって​手帳に。​やる​ことは ToDo へ​送れます。</p>
+</article>
+<article>
+<div class="shot peek"><img alt="手書きの文字と予定が入った日のページの実際の画面" loading="lazy" src="../assets/img/daystitch/day.jpg"/></div>
+<p class="time">21:00 · Evening</p>
+<h3 data-budoux="1">手書きで 1 日を​ふり返る</h3>
+<p data-budoux="1">写真や​スタンプを​貼って、​自分だけの​ページに。​AI が​書き出しの​ヒントも​くれます。</p>
+</article>
+</div>
+</div>
+</section>
+<!-- showcase -->
+<section class="section" id="features" style="padding-top:0">
+<div class="wrap">
+<div class="section-head" id="meeting">
+<p class="label">Features</p>
+<h2><span class="phr">使ってみたくなる、</span><span class="phr">6 つの理由。</span></h2>
+<p data-budoux="1">画像は​すべて​開発中の​アプリの​実際の​画面です。​表示は​端末・設定・OS の​バージョンに​よって​変わることがあります。</p>
+</div>
+<div class="show">
+<div>
+<p class="catno">01 · Meeting notes</p>
+<h3 data-budoux="1">会議が​終わったら、<br/>​議事録は​もう​手帳の​中に。</h3>
+<p data-budoux="1">日の​ページで​録音ボタンを​押すだけ。​止めると​自動で​文字に​起こし、​AI が​「要点・決まった​こと・やる​こと」に​まとめます。​長い​会議も​区切って​読み取ります。</p>
+<ol class="flow points">
+<li data-budoux="1">録音ボタンを​押す​（録音中も​メモできます）</li>
+<li data-budoux="1">止めると​自動で​文字起こし</li>
+<li data-budoux="1">AI が​議事録に​まとめる</li>
+<li data-budoux="1">「ページに​貼る」で​手帳へ。​やる​ことは ToDo へ</li>
+</ol>
+</div>
+<div>
+<div class="stage real"><figure class="dev dev-phone"><img alt="録音から作られた議事録の画面。要点・議事録・全文のタブと「ToDo に追加」ボタンがある実際の画面" loading="lazy" src="../assets/img/daystitch/minutes.jpg"/></figure></div>
+</div>
+</div>
+<div class="show rev">
+<div>
+<p class="catno">02 · To-Do</p>
+<h3 data-budoux="1">やる​ことは、<br/>​スワイプで​片づく。</h3>
+<p data-budoux="1">「今日・明日以降​・いつか」の 3 つに​分けるだけ。​行を​タップすれば​その​場で​メモや​チェックリストを​書けて、​終わった​ものは​「完了」に​日付ごとに​たまっていきます。​締め切りが​来た​ものは、​赤い旗で​自動的に​「今日」へ。</p>
+<div class="chips points"><span>締め切り</span><span>チェックリスト</span><span>繰り返し</span><span>リマインダー</span><span>完了の記録</span><span>AI でステップ分け</span></div>
+</div>
+<div>
+<div class="stage real"><figure class="dev dev-phone"><img alt="ToDo 画面。今日・明日以降・いつか・完了のタブと、チェックリスト付きの ToDo が並んだ実際の画面" loading="lazy" src="../assets/img/daystitch/todo.jpg"/></figure></div>
+</div>
+</div>
+<div class="show">
+<div>
+<p class="catno">03 · Calendar</p>
+<h3 data-budoux="1">「明日15時 会議」と​打てば、<br/>​もう​予定。</h3>
+<p data-budoux="1">年・月・週・日の 4 つの​表示。​日本の​祝日と​六曜​（大安・仏滅など）、​天気も​いっしょに。​iPhone の​カレンダー​（Google・Outlook の​予定も）を​重ねて​見られます。</p>
+<div class="chips points"><span>祝日・振替休日</span><span>六曜</span><span>天気</span><span>繰り返し予定</span><span>2 週間ウィジェット</span></div>
+</div>
+<div>
+<div class="stage real"><figure class="dev dev-phone"><img alt="週表示のカレンダー。六曜・天気と予定が時間ごとに並んだ実際の画面" loading="lazy" src="../assets/img/daystitch/week.jpg"/></figure></div>
+</div>
+</div>
+<div class="show rev">
+<div>
+<p class="catno">04 · Handwriting</p>
+<h3><span class="phr">書くほど、</span><span class="phr">ページが伸びる。</span></h3>
+<p data-budoux="1">Apple Pencil や​指で​自由に。​下まで​書き進めると​ページが​広がり、​消しゴムは​「なぞった​所だけ」と​「線ごと」を​切り替え。​写真・スタンプ・マスキングテープも​貼れて、​手書きの​文字は​あとから​検索できます。</p>
+<div class="chips points"><span>写真・カメラ</span><span>スタンプ</span><span>マスキングテープ</span><span>図形</span><span>テキスト</span><span>ページを画像で共有</span></div>
+</div>
+<div>
+<div class="stage real wide"><figure class="dev dev-ipad"><img alt="iPad の日のページ。予定・手書きの文字・録音の議事録・スタンプが 1 ページに並んだ実際の画面" loading="lazy" src="../assets/img/daystitch/ipad-day.jpg"/></figure></div>
+</div>
+</div>
+<div class="show">
+<div>
+<p class="catno">05 · Apple Intelligence &amp; Siri</p>
+<h3 data-budoux="1">話しかけるだけで、<br/>​手帳が​答える。</h3>
+<p data-budoux="1">Apple Intelligence で、​話し​言葉から​予定や ToDo を​作成。​今日の​ブリーフィング、​週の​ふり返り、​大きな ToDo の​分解、​空き時間への​割り当て、​AI で​描いた​絵を​日記に。​Apple Intelligence なら​追加料金なし、​端末の​中で​処理されます。​ChatGPT や Gemini に​切り替えることもできます。</p>
+<p class="note-small" data-budoux="1">※ Apple Intelligence の​機能は​対応端末​（iPhone 15 Pro 以降、​M1 以降の iPad、​iPad mini​（A17 Pro））と iOS 26 以降が​必要です。​Siri への​話しかけは​会話の​例です。</p>
+<div class="chips points"><span>「次の予定は？」</span><span>「今日の ToDo」</span><span>「今日をまとめて」</span><span>「会議を録音」</span><span>「手帳を検索」</span></div>
+</div>
+<div>
+<div class="stage plain">
+<div class="bubbles">
+<div class="bubble me">Daystitch で次の予定は？</div>
+<div class="bubble ai"><small>Daystitch</small>次の予定は、明日の15:00から「会議」です、場所は本社。</div>
+<div class="bubble me b2">Daystitch で今日の ToDo</div>
+<div class="bubble ai b2"><small>Daystitch</small>今日の ToDo は残り 3 件です。企画書を仕上げる、請求書を送る、賃貸の契約書を返送。</div>
+</div>
+</div>
+</div>
+</div>
+<div class="show rev">
+<div>
+<p class="catno">06 · Apple Watch</p>
+<h3><span class="phr">手首で、</span><span class="phr">次の予定と</span><br/>今日の ToDo。</h3>
+<p data-budoux="1">Apple Watch で​予定を​確認して、​ToDo を​タップで​完了。​音声で ToDo を​追加すれば、​iPhone の​手帳にも​すぐ​反映されます。​文字盤には​次の​予定と​残りの​件数を。</p>
+</div>
+<div>
+<div class="stage real watches">
+<figure class="dev dev-watch"><img alt="Apple Watch に今日の予定が並んでいる実際の画面" loading="lazy" src="../assets/img/daystitch/watch-schedule.jpg"/></figure>
+<figure class="dev dev-watch"><img alt="Apple Watch の ToDo 一覧と「ToDo を追加」ボタンの実際の画面" loading="lazy" src="../assets/img/daystitch/watch-todo.jpg"/></figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="wrap"><hr class="stitch"/></div>
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<p class="label">And more</p>
+<h2><span class="phr">ほかにも、</span><span class="phr">毎日に効く機能。</span></h2>
+</div>
+<div class="chips">
+<span>iPhone・iPad を iCloud で同期</span><span>習慣トラッカー（朝の薬・夜の薬の記録にも）</span><span>カウントダウン</span><span>気分スタンプ</span><span>iPhone のカレンダーを重ねて表示</span><span>10 種類の着せ替え</span><span>使わない機能はオフに</span><span>横断検索</span><span>バックアップ</span><span>ダークモード</span><span>iPad のキーボードショートカット</span><span>コントロールセンターから入力</span><span>広告なし・追跡なし</span>
+</div>
+</div>
+</section>
+<section class="section" id="price" style="padding-top:0">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Price</p>
+<h2><span class="phr">まずは 1 週間、</span><span class="phr">無料で。</span></h2>
+<p data-budoux="1">すべての​機能を 1 週間​お試しいただけます。​期間内に​解約すれば​料金は​かかりません。</p>
+</div>
+<div class="price-card">
+<p class="pill" data-budoux="1">発売記念価格 · 202​7年2月28日までの​ご登録</p>
+<p class="price" data-budoux="1" style="margin-top:12px">¥1,500 <small>/ 年</small></p>
+<p data-budoux="1" style="margin:2px 0 0;font-weight:700">または ¥200 <small>/ 月</small></p>
+<ul>
+<li data-budoux="1">年額プランは​月額プランより 4 割ほど​お得</li>
+<li data-budoux="1">発売記念価格で​登録した​方は、​値上げ後も​今の​価格の​まま</li>
+<li data-budoux="1">202​7年3月1日以降の​ご登録は​年額 3,000円・月額 400円</li>
+<li data-budoux="1">自動更新。​「設定 › Apple ID › サブスクリプション」から​いつでも​解約できます</li>
+</ul>
+</div>
+</div>
+</section>
 </main>
 
 <footer class="site-footer">

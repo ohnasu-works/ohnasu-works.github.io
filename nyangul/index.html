@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@700;800;900&display=swap">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css?v=4">
 <link rel="stylesheet" href="../assets/nyangul-play.css">
 </head>
 <body class="ny">
@@ -37,428 +37,407 @@
 </header>
 
 <main>
-  <section class="ds-hero">
-    <div class="wrap grid">
-      <div>
-        <div class="appline rise">
-          <img src="../assets/img/nyangul/icon.png" alt="にゃんグルのアイコン">
-          <div>
-            <p class="label" style="margin:0">にゃんグル <span style="font-weight:600;letter-spacing:0">（Nyangul）</span></p>
-            <p style="font-size:14px;color:var(--muted)">iPhone · iPad ・ 日本語／English</p>
-          </div>
-        </div>
-        <h1 class="rise d2">推しと一緒に、<br><span style="white-space:nowrap">韓国語で</span><span style="white-space:nowrap">デビュー！</span></h1>
-        <p class="lead rise d3">ハングルの口の形から、文法・敬語・最新の若者言葉まで。<b>ゲーム、ストーリー、教本、トレカ集め、着せ替え、推し写真。</b>「もう1回やりたい」が続いて、気づけば韓国語が読める・聞ける・書ける・話せる。推しがいる人も、韓国ドラマ好きも、遊びながら学べる韓国語学習ゲームです。</p>
-        <div class="btn-row rise d3">
-          <!-- ★ 公開後に App Store の URL と公式バッジ画像に差し替える -->
-          <a class="btn btn-play" href="#play">🎈 ブラウザで遊んでみる</a>
-          <span class="btn btn-primary" aria-disabled="true">App Store（近日公開）</span>
-        </div>
-        <div class="launch rise d3">
-          <span>発売記念セール · 2027年2月28日まで</span>
-          <b>プレミアム（買い切り） <span style="white-space:nowrap">2,000円 → 1,400円</span></b>
-        </div>
-      </div>
-      <div class="photo rise d2"><img src="../assets/img/nyangul/home_hero.jpg" alt="ユナ・テヒョン・ネコのニャンがステージで踊るにゃんグルのイラスト"></div>
-    </div>
-    <div class="wrap">
-      <div class="stats rise d3" aria-label="にゃんグルの中身">
-        <div><b>5</b><span>段階のコース</span></div>
-        <div><b>8</b><span>章のストーリー</span></div>
-        <div><b>24</b><span>課の教本</span></div>
-        <div><b>8</b><span>種のミニゲーム</span></div>
-        <div><b>21</b><span>人のキャラ</span></div>
-        <div><b>96</b><span>枚のトレカ</span></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- web体験：バルーンキャッチ -->
-  <section class="section tinted nyplay" id="play">
-    <div class="wrap nyplay-wrap">
-      <div class="nyplay-copy">
-        <p class="label">Play now</p>
-        <h2><span style="white-space:nowrap">アプリの中のゲームを、</span><span style="white-space:nowrap">ここで1回。</span></h2>
-        <p>にゃんグルに入っている8種のミニゲームのひとつ「バルーンキャッチ」を、ブラウザでそのまま遊べます。DJハムが言った韓国語の風船を、空に逃げる前にタップ！</p>
-        <ul>
-          <li>全5問・約1分。登録もダウンロードもいりません</li>
-          <li>アプリ版は約3,000語・レベル5まで、エンドレスモードも</li>
-          <li>最初は音なし。音を出したい時だけ、右下のボタンでオンにできます</li>
-        </ul>
-      </div>
-      <div id="nyplay" data-img="../assets/img/nyangul/">
-        <div class="nyplay-stage" role="application" aria-label="バルーンキャッチ（体験版）">
-          <div class="nyplay-screen nyplay-lobby">
-            <img class="art" src="../assets/img/nyangul/game_balloon.jpg" alt="ハングルの風船とユナ・テヒョン・ニャン、DJハムのイラスト">
-            <p class="nyplay-title">バルーンキャッチ</p>
-            <p class="nyplay-rules nyplay-card">DJハムが韓国語を言うよ。その言葉が書かれた風船が飛んでいくので、空に逃げる前にタップして割ろう！ ちがう風船や逃がすとライフが減るよ。</p>
-            <button class="nyplay-btn" type="button" data-act="start">スタート！</button>
-            <p class="nyplay-note">体験版：入門レベルの5問</p>
-            <p class="nyplay-note nyplay-sound-note"></p>
-          </div>
-          <div class="nyplay-screen nyplay-play" hidden>
-            <div class="nyplay-top">
-              <span class="nyplay-hearts" role="img" aria-label="ライフ"></span>
-              <span class="nyplay-combo" aria-live="polite"></span>
-              <span class="nyplay-round"></span>
-              <span class="nyplay-pill nyplay-score"></span>
-            </div>
-            <div class="nyplay-callout nyplay-card nyplay-hint">
-              <img src="../assets/img/nyangul/cast_ham.jpg" alt="DJハム">
-              <span class="txt"><small></small><b aria-live="polite"></b></span>
-              <button class="nyplay-speak" type="button" data-act="say" aria-label="もう一度聞く">🔊</button>
-              <button class="nyplay-speak slow" type="button" data-act="slow" aria-label="ゆっくり聞く">🐢</button>
-            </div>
-            <div class="nyplay-sky"></div>
-          </div>
-          <div class="nyplay-screen nyplay-result" hidden>
-            <img class="pic" src="../assets/img/nyangul/react_trio_perfect.jpg" alt="">
-            <p class="nyplay-title">クリア！</p>
-            <div class="nyplay-stars" aria-hidden="true">★★★</div>
-            <p class="nyplay-score"></p>
-            <ul class="nyplay-words nyplay-card" aria-label="今日の単語"></ul>
-            <div class="nyplay-cta nyplay-card"><strong>続きはアプリで！</strong>すごろく式コース・全8章のストーリー・トレカ集め。ゲームはあと7種類あります。</div>
-            <div class="nyplay-actions">
-              <button class="nyplay-btn sub" type="button" data-act="start">もう1回</button>
-              <!-- ★ 公開後に App Store の URL に差し替える -->
-              <a class="nyplay-btn" href="#price" style="text-decoration:none;font-size:16px;padding:10px 18px">アプリの料金を見る</a>
-            </div>
-          </div>
-          <button class="nyplay-mute" type="button" data-act="mute" aria-pressed="false">🔇 音オフ</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="wrap"><hr class="stitch"></div>
-
-  <!-- difference -->
-  <section class="section" id="features">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Why Nyangul</p>
-        <h2><span style="white-space:nowrap">よくある韓国語アプリと、</span><span style="white-space:nowrap">ここがちがう。</span></h2>
-        <p>単語を覚えるだけ、問題を解くだけでは続きません。にゃんグルは「勉強」を「遊び」と「推し活」の中に溶かしこみました。</p>
-      </div>
-      <table class="compare">
-        <thead><tr><th scope="col"></th><th scope="col">よくある学習アプリ</th><th scope="col" class="us">にゃんグル</th></tr></thead>
-        <tbody>
-          <tr><td>続ける理由</td><td class="them">連続記録だけ</td><td class="us">ストーリー・トレカ・着せ替え・推しの好感度・毎日のミッション</td></tr>
-          <tr><td>学び方</td><td class="them">単語カードと選択問題</td><td class="us">コース＋教本で体系的に、8種のゲームで反復、ドラマのセリフで実践</td></tr>
-          <tr><td>書く</td><td class="them">ほぼ対応なし</td><td class="us">指・Apple Pencil の手書き判定、書き取りラッシュ</td></tr>
-          <tr><td>打つ</td><td class="them">日本語キーボードのまま</td><td class="us">韓国の若い人と同じ並びのキーボードで、タイピングとメッセージ返信</td></tr>
-          <tr><td>話す・聞く</td><td class="them">音声を聞くだけ</td><td class="us">声で答えて発音を採点（ヨントン発音診断）、キャラの声で読み上げ</td></tr>
-          <tr><td>実力の確認</td><td class="them">正答率だけ</td><td class="us">TOPIK形式のミニ模試で、級の目安と分野別の正答率</td></tr>
-          <tr><td>自分らしさ</td><td class="them">—</td><td class="us">推しの写真をアイコン・壁紙・ホーム・クリア画面に</td></tr>
-          <tr><td>料金</td><td class="them">月額のサブスクが多い</td><td class="us">無料で始めて、気に入ったら買い切り（定期購入なし）</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- course -->
-  <section class="section tinted">
-    <div class="wrap split">
-      <div class="photo"><img src="../assets/img/nyangul/onboarding_3.jpg" alt="本の階段をのぼってトロフィーを目指すキャラたち" style="object-position: center 30%"></div>
-      <div>
-        <p class="label">Course</p>
-        <h2><span style="white-space:nowrap">すごろく式のコースで、</span><span style="white-space:nowrap">入門から上級へ。</span></h2>
-        <p>ハングルの読み方から始まって、初級・初中級・中級・上級の5段階。ステージは10問前後で、6割正解で合格、8割でハイレベル、全問正解でパーフェクト。まちがえた問題はその場で聞き直せて、苦手な単語は自動で復習に出てきます。</p>
-        <ul class="checks">
-          <li>入門：母音・子音・パッチムを、音と口の形で</li>
-          <li>各段階の最後は卒業試験。合格すると次の段階へ</li>
-          <li>入門〜初中級（約185ステージ）は無料。中級・上級はプレミアムで</li>
-        </ul>
-      </div>
-    </div>
-    <div class="wrap">
-      <div class="thumb-row">
-        <figure><img src="../assets/img/nyangul/level_intro.jpg" alt="" loading="lazy"><figcaption>入門</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/level_beginner.jpg" alt="" loading="lazy"><figcaption>初級</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/level_elementary.jpg" alt="" loading="lazy"><figcaption>初中級</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/level_intermediate.jpg" alt="" loading="lazy"><figcaption>中級</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/level_advanced.jpg" alt="" loading="lazy"><figcaption>上級</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- story -->
-  <section class="section">
-    <div class="wrap split rev">
-      <div>
-        <p class="label">Story mode</p>
-        <h2><span style="white-space:nowrap">練習生から、</span><span style="white-space:nowrap">デビューステージへ。</span></h2>
-        <p>主人公はユナ・テヒョン・ネコのニャンから選べて、名前と誕生日も自由に。スカウト、練習生の初日、屋台で腹ごしらえ、チムジルバンで作戦会議、ドラマ OST の撮影、はじめてのファンミーティング…。全8章の物語の中で、章ごとに韓国語の課題をクリアしていきます。</p>
-        <ul class="checks">
-          <li>章ごとに推しとのイベントと会話</li>
-          <li>課題はクイズ・リスニング・ドラマのセリフなど章ごとにちがう</li>
-          <li>最終章は卒業試験に合格してデビュー！</li>
-        </ul>
-      </div>
-      <div class="photo"><img src="../assets/img/nyangul/story_ch8.jpg" alt="紙吹雪が舞うデビューステージの背景" style="object-position: center 35%"></div>
-    </div>
-    <div class="wrap">
-      <div class="thumb-row">
-        <figure><img src="../assets/img/nyangul/story_ch1.jpg" alt="" loading="lazy"><figcaption>第1章 スカウト</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/story_ch3.jpg" alt="" loading="lazy"><figcaption>第3章 屋台</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/story_ch6.jpg" alt="" loading="lazy"><figcaption>第6章 ドラマOST</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/home_hero_5.jpg" alt="" loading="lazy"><figcaption>第7章 ファンミ</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/story_ch8.jpg" alt="" loading="lazy"><figcaption>第8章 デビュー</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- textbook -->
-  <section class="section tinted">
-    <div class="wrap split">
-      <div>
-        <p class="label">Textbook</p>
-        <h2><span style="white-space:nowrap">にゃんグル教本、</span><span style="white-space:nowrap">全40課。</span></h2>
-        <p>ゲームだけでは身につきにくい「しくみ」は、教本でしっかり。ㅡ と ㅜ の口の形のちがいのような超入門から、助詞・活用・変則・敬語、TOPIK 3〜6級の重要文法、書き言葉と作文の書き方、パンマル（ため口）、略語・新語・推し活用語まで。例文はすべて読み上げ（ゆっくり再生つき）、各課の最後にミニクイズ。</p>
-        <ul class="checks">
-          <li>超入門・初級・中級・上級／若者言葉の4段階</li>
-          <li>「갓생」「꾸안꾸」「최애」など、SNS やファンの言葉も</li>
-          <li>第1・2課は無料。英語表示にすると本文もすべて英語に</li>
-        </ul>
-      </div>
-      <div class="lesson-mock" aria-label="教本のページのイメージ">
-        <p class="lv">第2課・超入門</p>
-        <h4>基本の母音と口の形</h4>
-        <p style="color:var(--muted);font-size:14px">ㅜ は唇を丸く突き出す「ウ」。ㅡ は唇を横に引いたまま（「イ」の口のまま）出す「ウ」です。</p>
-        <div class="ex"><div><b>우유</b><br><span>牛乳</span></div><span>🔊 🐢</span></div>
-        <div class="ex"><div><b>그</b><br><span>その</span></div><span>🔊 🐢</span></div>
-        <div class="q">Q. 唇を横に引いたまま出す「ウ」は？<br><span class="ok">ㅡ</span><span>ㅜ</span><span>ㅗ</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- games -->
-  <section class="section" id="games">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Mini games</p>
-        <h2><span style="white-space:nowrap">8種類のミニゲームで、</span><span style="white-space:nowrap">遊ぶほど身につく。</span></h2>
-        <p>ゲームごとに鍛えられる力がちがいます。どれもレベル1〜5とエンドレスの6段階で、★を集めると次のレベルと衣装が開きます。スコアは Game Center のランキングで、世界中のプレイヤーと競えます。</p>
-      </div>
-      <div class="game-grid">
-        <article class="game"><img src="../assets/img/nyangul/game_speed.jpg" alt="スピードクイズ" loading="lazy"><div><p class="tag">単語・瞬発力</p><h3>スピードクイズ</h3><p>60秒で何問とけるか。コンボでスコアが伸びる</p></div></article>
-        <article class="game"><img src="../assets/img/nyangul/game_memory.jpg" alt="神経衰弱" loading="lazy"><div><p class="tag">単語・記憶</p><h3>神経衰弱</h3><p>韓国語と日本語のカードをペアに</p></div></article>
-        <article class="game"><img src="../assets/img/nyangul/game_blocks.jpg" alt="ハングル積み木" loading="lazy"><div><p class="tag">文字のしくみ</p><h3>ハングル積み木</h3><p>子音と母音を組み立てて文字をつくる</p></div></article>
-        <article class="game"><img src="../assets/img/nyangul/game_balloon.jpg" alt="バルーンキャッチ" loading="lazy"><div><p class="tag">リスニング</p><h3>バルーンキャッチ</h3><p>聞こえた言葉の風船をタップ</p></div></article>
-        <article class="game"><img src="../assets/img/nyangul/game_writing.jpg" alt="書き取りラッシュ" loading="lazy"><div><p class="tag">書く</p><h3>書き取りラッシュ</h3><p>指や Apple Pencil で早書き勝負</p></div></article>
-        <article class="game"><img src="../assets/img/nyangul/game_typing.jpg" alt="タイピングラッシュ" loading="lazy"><div><p class="tag">打つ</p><h3>タイピングラッシュ</h3><p>落ちてくる言葉を下に着く前に打ち返す</p></div></article>
-        <article class="game"><img src="../assets/img/nyangul/game_drama.jpg" alt="ドラマ名セリフ劇場" loading="lazy"><div><p class="tag">フレーズ・聞く</p><h3>ドラマ名セリフ劇場</h3><p>名セリフの（　）に入る言葉を当てる</p></div></article>
-        <article class="game"><img src="../assets/img/nyangul/game_shop.jpg" alt="トッポくんの屋台" loading="lazy"><div><p class="tag">数え方・聞く</p><h3>トッポくんの屋台</h3><p>注文を聞いて、料理と数をそろえて出す</p></div></article>
-      </div>
-      <p class="note">さらに、キャラごとの「キャラワールド」（21のワールド）で、プチゲームを次々にクリアするモードも。ゲームのレベル1〜3は無料で遊べます。</p>
-    </div>
-  </section>
-
-  <!-- cards -->
-  <section class="section tinted" id="cards">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Trading cards</p>
-        <h2><span style="white-space:nowrap">キラキラのトレカを、</span><span style="white-space:nowrap">全96枚コンプリート。</span></h2>
-        <p>ゲーム・ミッション・ログインでコインをためて、トレカガチャへ。カプセルがゆれて、虹色の光が出たら SR 以上が確定！カードは1枚ずつめくって開けます。コインはゲームで集めるもので、お金では買えません。</p>
-      </div>
-      <div class="banner-img"><img src="../assets/img/nyangul/gacha_banner.jpg" alt="カプセルガチャからホログラムのカードが飛び出すイラスト" loading="lazy"></div>
-      <div class="rarity" aria-label="レア度">
-        <span>N</span><span>R</span><span>SR</span><span class="ssr">SSR キラ（虹色に光る）</span><span class="sp">SP スペシャル（1%）</span><span>誕生日カード</span>
-      </div>
-      <div class="card-row">
-        <figure><img src="../assets/img/nyangul/card_ssr_yuna.jpg" alt="ユナの SSR カード" loading="lazy"></figure>
-        <figure><img src="../assets/img/nyangul/card_ssr_seojun.jpg" alt="ソジュン室長の SSR カード" loading="lazy"></figure>
-        <figure><img src="../assets/img/nyangul/card_ssr_talgi.jpg" alt="タルギちゃんの SSR カード" loading="lazy"></figure>
-        <figure><img src="../assets/img/nyangul/card_sp_6.jpg" alt="SP カード「3人の楽屋ショット」" loading="lazy"></figure>
-        <figure><img src="../assets/img/nyangul/card_sp_9.jpg" alt="SP カード「ニャンのお昼寝」" loading="lazy"></figure>
-      </div>
-      <ul class="checks" style="margin-top:22px">
-        <li>21人それぞれに N・R・SR・SSR の4枚。4枚そろうと「コンプ」でボーナスコイン</li>
-        <li>SSR は全員に専用のイラスト。主人公3人には SP カードも</li>
-        <li>キャラの誕生日にはお祝いイベントと、その日だけの誕生日カード</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- wardrobe -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Wardrobe</p>
-        <h2><span style="white-space:nowrap">楽屋で着せ替え、</span><span style="white-space:nowrap">全36着。</span></h2>
-        <p>ユナ・テヒョン・ニャンに12着ずつ。ゲームの★、キャラワールドの制覇、毎日の目標達成のスタンプで、新しい衣装が届きます。選んだ衣装は、コースやゲームの中のキャラにも反映されます。</p>
-      </div>
-      <div class="outfit-row">
-        <figure><img src="../assets/img/nyangul/outfit_yuna_angel.jpg" alt="天使のステージ衣装" loading="lazy"><figcaption>天使のステージ衣装</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_yuna_hanbok.jpg" alt="韓服（ユナ）" loading="lazy"><figcaption>韓服（ユナ）</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_yuna_princess.jpg" alt="プリンセス" loading="lazy"><figcaption>プリンセス</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_yuna_cafe.jpg" alt="カフェ店員" loading="lazy"><figcaption>カフェ店員</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_taehyung_prince.jpg" alt="王子さま" loading="lazy"><figcaption>王子さま</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_taehyung_chef.jpg" alt="シェフ" loading="lazy"><figcaption>シェフ</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_taehyung_hanbok.jpg" alt="韓服（テヒョン）" loading="lazy"><figcaption>韓服（テヒョン）</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_nyan_king.jpg" alt="王さま" loading="lazy"><figcaption>王さま</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_nyan_space.jpg" alt="宇宙飛行士" loading="lazy"><figcaption>宇宙飛行士</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/outfit_nyan_superstar.jpg" alt="スーパースター" loading="lazy"><figcaption>スーパースター</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- photos -->
-  <section class="section tinted">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Your oshi</p>
-        <h2><span style="white-space:nowrap">好きな写真に、</span><span style="white-space:nowrap">まるごと差し替え。</span></h2>
-        <p>自分で撮った・手に入れた推しの写真を、アプリのあちこちに。指でずらして位置を、ピンチで大きさを決めてから保存できます。写真は端末の中だけに保存され、外部に送られることはありません。</p>
-      </div>
-      <div class="slot-grid">
-        <div class="slot"><span class="big">👤</span><h3>推しのアイコン</h3><p>トーク・ヨントン・ホームに出る、推しの顔アイコン。</p></div>
-        <div class="slot"><span class="big">🏠</span><h3>ホームの大きな絵</h3><p>コース画面いちばん上の絵を、最大5枚の写真で日替わりに。</p></div>
-        <div class="slot"><span class="big">🖼️</span><h3>壁紙</h3><p>コースやトークの背景に。文字が読みやすい暗さも調整できます。</p></div>
-        <div class="slot"><span class="big">🎉</span><h3>クリア画面</h3><p>ステージやゲームをクリアしたら、最大10枚の写真からランダムでごほうび。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- talk -->
-  <section class="section">
-    <div class="wrap split">
-      <div class="photo"><img src="../assets/img/nyangul/call_yuna.jpg" alt="ビデオ通話の画面のユナ" style="object-position: center 20%"></div>
-      <div>
-        <p class="label">Talk &amp; video call</p>
-        <h2><span style="white-space:nowrap">推しと韓国語で、</span><span style="white-space:nowrap">おしゃべり。</span></h2>
-        <p>推しとのトークは、選んで答えるか、声で答えるか。ヨントン（ビデオ通話）発音診断では、推しに伝わる発音かを20フレーズで採点します。話すほど好感度が上がり、100%になると特別な演出とメッセージが。</p>
-        <ul class="checks">
-          <li>毎日変わる話題と、好感度で開くエピソード</li>
-          <li>「今日のあいさつ」で毎日推しとひとこと</li>
-          <li>会わない日が続くと好感度が少しずつ下がる…毎日会いに来てね</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- write & type -->
-  <section class="section tinted">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Write · Type · Listen · Speak</p>
-        <h2><span style="white-space:nowrap">読む・聞く・書く・</span><span style="white-space:nowrap">打つ・話す、</span><span style="white-space:nowrap">ぜんぶ。</span></h2>
-        <p>「読めるけど書けない」「聞けるけど話せない」をなくすために、5つの力をそれぞれの練習で。</p>
-      </div>
-      <div class="features">
-        <div class="feature"><div class="ico">✍️</div><h3>手書き・Apple Pencil</h3><p>指で書いたハングルを判定。iPad なら Apple Pencil で、ノートに書くように本格的な書き取りを。</p></div>
-        <div class="feature"><div class="ico">⌨️</div><h3>タイピング</h3><p>韓国の若い人と同じ並びのキーボードで練習。iPhone の韓国語キーボードにも切り替えられます。</p></div>
-        <div class="feature"><div class="ico">💬</div><h3>メッセージ返信</h3><p>推しから届いたメッセージに、韓国語で返事を打つ。実際のやりとりでそのまま使える30問。</p></div>
-        <div class="feature"><div class="ico">🎧</div><h3>リスニング</h3><p>聞いて意味を選ぶ・聞こえた通りに書く。10問1セットで、ゆっくり再生もできます。</p></div>
-        <div class="feature"><div class="ico">🗣️</div><h3>会話モード</h3><p>場面ごとの会話に、3択で答えるか、自分で話して・書いて答えるか。ヒントつき。</p></div>
-        <div class="feature"><div class="ico">📚</div><h3>辞書・ジャンル別</h3><p>全単語を検索できる辞書と、カテゴリ・場面ごとの10問セット。苦手な単語だけの表示も。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- exam -->
-  <section class="section">
-    <div class="wrap split rev">
-      <div>
-        <p class="label">Exam mode</p>
-        <h2><span style="white-space:nowrap">TOPIK形式の、</span><span style="white-space:nowrap">ミニ模試。</span></h2>
-        <p>ヒントも日本語訳もなし。時間制限つきで、リスニングは1問2回まで。TOPIK I・IIあわせて160問の問題バンクから、1回25問を毎回ちがう組み合わせで出すミニ模試と、語彙・文法・リスニングの検定で、今の実力を確かめられます。終わったら級の目安と分野別の正答率、まちがえた問題の解説まで。</p>
-        <p class="note">※TOPIK形式の問題・級の目安は本アプリのオリジナルで、実際の試験とは関係ありません。1回の問題数は本番より少ない「ミニ模試」です。読み上げ・リスニングはiPhoneの読み上げ音声です。</p>
-      </div>
-      <div class="photo"><img src="../assets/img/nyangul/exam_hero.jpg" alt="試験に向けて勉強するキャラたち" loading="lazy"></div>
-    </div>
-  </section>
-
-  <!-- daily -->
-  <section class="section tinted">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Every day</p>
-        <h2><span style="white-space:nowrap">毎日開きたくなる、</span><span style="white-space:nowrap">しかけ。</span></h2>
-      </div>
-      <div class="features">
-        <div class="feature"><div class="ico">✅</div><h3>デイリーミッション</h3><p>毎日変わる3つのミッション。全部クリアでボーナスコイン。</p></div>
-        <div class="feature"><div class="ico">🔥</div><h3>1日の目標と連続記録</h3><p>自分で決めた目標XPを達成するとスタンプとコイン。目標が高いほどごほうびも大きく。</p></div>
-        <div class="feature"><div class="ico">🎂</div><h3>誕生日イベント</h3><p>キャラの誕生日にはお祝いの演出と、その日だけの誕生日カード。主人公の誕生日は好きな日に設定できます。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- cast -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Characters</p>
-        <h2><span style="white-space:nowrap">個性ゆたかな、</span><span style="white-space:nowrap">21人の仲間たち。</span></h2>
-        <p>DJ のハムスター、ハモる三つ子のイチゴ、ドラマの名監督のカエル、財閥3世の室長まで。キャラ図鑑では、それぞれのプロフィールと口ぐせ（読み上げつき）が見られます。</p>
-      </div>
-      <div class="cast-grid">
-        <figure><img src="../assets/img/nyangul/cast_yuna.jpg" alt="ユナ" loading="lazy"><figcaption>ユナ</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_taehyung.jpg" alt="テヒョン" loading="lazy"><figcaption>テヒョン</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_nyan.jpg" alt="ニャン" loading="lazy"><figcaption>ニャン</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_ham.jpg" alt="DJハム" loading="lazy"><figcaption>DJハム</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_talgi.jpg" alt="タルギちゃん" loading="lazy"><figcaption>タルギちゃん</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_toppo.jpg" alt="トッポくん" loading="lazy"><figcaption>トッポくん</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_imo.jpg" alt="パクおばちゃん" loading="lazy"><figcaption>パクおばちゃん</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_bungeo.jpg" alt="プンオ社長" loading="lazy"><figcaption>プンオ社長</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_minjun.jpg" alt="ミンジュン" loading="lazy"><figcaption>ミンジュン</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_poppo.jpg" alt="ポッポ" loading="lazy"><figcaption>ポッポ</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_moko.jpg" alt="モコモコ" loading="lazy"><figcaption>モコモコ</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_pan.jpg" alt="パンちゃん" loading="lazy"><figcaption>パンちゃん</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_seonbi.jpg" alt="イ・ソンビ" loading="lazy"><figcaption>イ・ソンビ</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_mandu.jpg" alt="マンドゥ師匠" loading="lazy"><figcaption>マンドゥ師匠</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_robot.jpg" alt="ハングルロボ" loading="lazy"><figcaption>ハングルロボ</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_haneul.jpg" alt="ハヌル先輩" loading="lazy"><figcaption>ハヌル先輩</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_pika.jpg" alt="ピカ" loading="lazy"><figcaption>ピカ</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_bora.jpg" alt="ボラちゃん" loading="lazy"><figcaption>ボラちゃん</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_kaeguri.jpg" alt="ケグリ監督" loading="lazy"><figcaption>ケグリ監督</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_seojun.jpg" alt="ソジュン室長" loading="lazy"><figcaption>ソジュン室長</figcaption></figure>
-        <figure><img src="../assets/img/nyangul/cast_kim.jpg" alt="キム先生" loading="lazy"><figcaption>キム先生</figcaption></figure>
-      </div>
-      <p class="note">※登場するアイドル・キャラクターはすべて架空です。</p>
-    </div>
-  </section>
-
-  <!-- price -->
-  <section class="section tinted" id="price">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Price</p>
-        <h2><span style="white-space:nowrap">無料で始めて、</span><span style="white-space:nowrap">気に入ったら買い切り。</span></h2>
-        <p>入門〜初中級のコース、ストーリー全8章、ミニゲームのレベル1〜3、辞書、教本の第1・2課などは無料で遊べます（無料版は広告あり）。プレミアムは1回払いの買い切りで、定期購入ではありません。同じ Apple アカウントなら、機種変更しても「購入を復元」でそのまま。</p>
-      </div>
-      <div class="price-card">
-        <span class="sale-badge">発売記念セール · 2027年2月28日まで</span>
-        <p class="price"><span class="was">2,000円</span>1,400円 <small>買い切り（30%OFF）</small></p>
-        <ul>
-          <li>中級・上級コース（TOPIK 3〜6級レベル）</li>
-          <li>広告なし</li>
-          <li>ミニゲームのレベル4・5とエンドレス</li>
-          <li>にゃんグル教本 全40課</li>
-          <li>TOPIK形式のミニ模試（全160問・毎回ちがう問題）・各種検定</li>
-          <li>推し写真の設定（アイコン・壁紙・ホームの絵・クリア画面）</li>
-          <li>限定衣装・キャラの声・毎日1回トレカガチャ無料・コイン1.5倍</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- faq -->
-  <section class="section" style="padding-top:0">
-    <div class="wrap faq-short doc" style="padding-block:0">
-      <p class="label" style="margin-top:56px">FAQ</p>
-      <h2 style="border-top:0;margin-top:6px;padding-top:0">よくあるご質問</h2>
-      <div class="faq">
-        <details><summary>韓国語がまったく読めなくても大丈夫？</summary><p>大丈夫です。入門コースと教本の超入門は、ハングルの文字のしくみと口の形から始まります。</p></details>
-        <details><summary>iPad でも使えますか？</summary><p>はい。iPhone と iPad の両方に対応しています。iCloud で記録が同期されるので、外では iPhone、家では iPad で続きから遊べます。iPad では Apple Pencil での書き取りもできます。</p></details>
-        <details><summary>英語でも使えますか？</summary><p>はい。アプリの設定で表示を英語にすると、教本も含めて英語で学べます。</p></details>
-        <details><summary>課金でガチャを回せますか？</summary><p>いいえ。トレカのコインはゲームやミッションで集めるもので、お金では買えません。課金はプレミアムの買い切り1回だけです。</p></details>
-      </div>
-      <p class="note">ほかのご質問は <a href="support.html">サポートページ</a> へ。</p>
-    </div>
-  </section>
+<section class="ds-hero">
+<div class="wrap grid">
+<div>
+<div class="app-name rise">
+<img alt="にゃんグルのアイコン" src="../assets/img/nyangul/icon.png"/>
+<div><b>にゃんグル</b><small data-budoux="1"><span>Nyangul · iPhone · iPad</span><br/><span>日本語／English</span></small></div>
+</div>
+<h1 class="rise d2">推しと一緒に、<br/><span style="white-space:nowrap">韓国語で</span><span style="white-space:nowrap">デビュー！</span></h1>
+<p class="lead rise d3" data-budoux="1">ハングルの​口の​形から、​文法・敬語・最新の​若者​言葉まで。<b>​ゲーム、​ストーリー、​教本、​トレカ集め、​着せ替え、​推し写真。</b>​「もう​1回やりたい」が​続いて、​気づけば​韓国語が​読める​・聞ける​・書ける​・話せる。​推しが​いる​人も、​韓国ドラマ好きも、​遊びながら​学べる​韓国語学習ゲームです。</p>
+<div class="btn-row rise d3">
+<!-- ★ 公開後に App Store の URL と公式バッジ画像に差し替える -->
+<a class="btn btn-play" href="#play">🎈 ブラウザで遊んでみる</a>
+<span aria-disabled="true" class="btn btn-primary">App Store（近日公開）</span>
+</div>
+<div class="launch rise d3" data-budoux="1">
+<span>発売記念セール · 202​7年2月28日まで</span>
+<b>プレミアム​（​買い切り） <span style="white-space:nowrap">2,000円 → 1,400円</span></b>
+</div>
+</div>
+<div class="photo rise d2"><img alt="ユナ・テヒョン・ネコのニャンがステージで踊るにゃんグルのイラスト" src="../assets/img/nyangul/home_hero.jpg"/></div>
+</div>
+<div class="wrap">
+<div aria-label="にゃんグルの中身" class="stats rise d3">
+<div><b>5</b><span>段階のコース</span></div>
+<div><b>8</b><span>章のストーリー</span></div>
+<div><b>24</b><span>課の教本</span></div>
+<div><b>8</b><span>種のミニゲーム</span></div>
+<div><b>21</b><span>人のキャラ</span></div>
+<div><b>96</b><span>枚のトレカ</span></div>
+</div>
+</div>
+</section>
+<!-- web体験：バルーンキャッチ -->
+<section class="section tinted nyplay" id="play">
+<div class="wrap nyplay-wrap">
+<div class="nyplay-copy">
+<p class="label">Play now</p>
+<h2><span style="white-space:nowrap">アプリの中のゲームを、</span><span style="white-space:nowrap">ここで1回。</span></h2>
+<p>にゃんグルに入っている8種のミニゲームのひとつ「バルーンキャッチ」を、ブラウザでそのまま遊べます。DJハムが言った韓国語の風船を、空に逃げる前にタップ！</p>
+<ul>
+<li>全5問・約1分。登録もダウンロードもいりません</li>
+<li>アプリ版は約3,000語・レベル5まで、エンドレスモードも</li>
+<li>最初は音なし。音を出したい時だけ、右下のボタンでオンにできます</li>
+</ul>
+</div>
+<div data-img="../assets/img/nyangul/" id="nyplay">
+<div aria-label="バルーンキャッチ（体験版）" class="nyplay-stage" role="application">
+<div class="nyplay-screen nyplay-lobby">
+<img alt="ハングルの風船とユナ・テヒョン・ニャン、DJハムのイラスト" class="art" src="../assets/img/nyangul/game_balloon.jpg"/>
+<p class="nyplay-title">バルーンキャッチ</p>
+<p class="nyplay-rules nyplay-card">DJハムが韓国語を言うよ。その言葉が書かれた風船が飛んでいくので、空に逃げる前にタップして割ろう！ ちがう風船や逃がすとライフが減るよ。</p>
+<button class="nyplay-btn" data-act="start" type="button">スタート！</button>
+<p class="nyplay-note">体験版：入門レベルの5問</p>
+<p class="nyplay-note nyplay-sound-note"></p>
+</div>
+<div class="nyplay-screen nyplay-play" hidden="">
+<div class="nyplay-top">
+<span aria-label="ライフ" class="nyplay-hearts" role="img"></span>
+<span aria-live="polite" class="nyplay-combo"></span>
+<span class="nyplay-round"></span>
+<span class="nyplay-pill nyplay-score"></span>
+</div>
+<div class="nyplay-callout nyplay-card nyplay-hint">
+<img alt="DJハム" src="../assets/img/nyangul/cast_ham.jpg"/>
+<span class="txt"><small></small><b aria-live="polite"></b></span>
+<button aria-label="もう一度聞く" class="nyplay-speak" data-act="say" type="button">🔊</button>
+<button aria-label="ゆっくり聞く" class="nyplay-speak slow" data-act="slow" type="button">🐢</button>
+</div>
+<div class="nyplay-sky"></div>
+</div>
+<div class="nyplay-screen nyplay-result" hidden="">
+<img alt="" class="pic" src="../assets/img/nyangul/react_trio_perfect.jpg"/>
+<p class="nyplay-title">クリア！</p>
+<div aria-hidden="true" class="nyplay-stars">★★★</div>
+<p class="nyplay-score"></p>
+<ul aria-label="今日の単語" class="nyplay-words nyplay-card"></ul>
+<div class="nyplay-cta nyplay-card"><strong>続きはアプリで！</strong>すごろく式コース・全8章のストーリー・トレカ集め。ゲームはあと7種類あります。</div>
+<div class="nyplay-actions">
+<button class="nyplay-btn sub" data-act="start" type="button">もう1回</button>
+<!-- ★ 公開後に App Store の URL に差し替える -->
+<a class="nyplay-btn" href="#price" style="text-decoration:none;font-size:16px;padding:10px 18px">アプリの料金を見る</a>
+</div>
+</div>
+<button aria-pressed="false" class="nyplay-mute" data-act="mute" type="button">🔇 音オフ</button>
+</div>
+</div>
+</div>
+</section>
+<div class="wrap"><hr class="stitch"/></div>
+<!-- difference -->
+<section class="section" id="features">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Why Nyangul</p>
+<h2><span style="white-space:nowrap">よくある韓国語アプリと、</span><span style="white-space:nowrap">ここがちがう。</span></h2>
+<p data-budoux="1">単語を​覚えるだけ、​問題を​解くだけでは​続きません。​にゃんグルは​「勉強」を​「遊び」と​「推し活」の​中に​溶かし​こみました。</p>
+</div>
+<table class="compare">
+<thead><tr><th scope="col"></th><th scope="col">よくある学習アプリ</th><th class="us" scope="col">にゃんグル</th></tr></thead>
+<tbody>
+<tr><td>続ける理由</td><td class="them">連続記録だけ</td><td class="us">ストーリー・トレカ・着せ替え・推しの好感度・毎日のミッション</td></tr>
+<tr><td>学び方</td><td class="them">単語カードと選択問題</td><td class="us">コース＋教本で体系的に、8種のゲームで反復、ドラマのセリフで実践</td></tr>
+<tr><td>書く</td><td class="them">ほぼ対応なし</td><td class="us">指・Apple Pencil の手書き判定、書き取りラッシュ</td></tr>
+<tr><td>打つ</td><td class="them">日本語キーボードのまま</td><td class="us">韓国の若い人と同じ並びのキーボードで、タイピングとメッセージ返信</td></tr>
+<tr><td>話す・聞く</td><td class="them">音声を聞くだけ</td><td class="us">声で答えて発音を採点（ヨントン発音診断）、キャラの声で読み上げ</td></tr>
+<tr><td>実力の確認</td><td class="them">正答率だけ</td><td class="us">TOPIK形式のミニ模試で、級の目安と分野別の正答率</td></tr>
+<tr><td>自分らしさ</td><td class="them">—</td><td class="us">推しの写真をアイコン・壁紙・ホーム・クリア画面に</td></tr>
+<tr><td>料金</td><td class="them">月額のサブスクが多い</td><td class="us">無料で始めて、気に入ったら買い切り（定期購入なし）</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- course -->
+<section class="section tinted">
+<div class="wrap split">
+<div class="photo"><img alt="本の階段をのぼってトロフィーを目指すキャラたち" src="../assets/img/nyangul/onboarding_3.jpg" style="object-position: center 30%"/></div>
+<div>
+<p class="label">Course</p>
+<h2><span style="white-space:nowrap">すごろく式のコースで、</span><span style="white-space:nowrap">入門から上級へ。</span></h2>
+<p data-budoux="1">ハングルの​読み方から​始まって、​初級・​初中級・中級・上級の​5段階。​ステージは​10問前後で、​6割正解で​合格、​8割で​ハイレベル、​全問正解で​パーフェクト。​まちがえた​問題は​その​場で​聞き直せて、​苦手な​単語は​自動で​復習に​出てきます。</p>
+<ul class="checks">
+<li data-budoux="1">入門：母音・子音・パッチムを、​音と​口の​形で</li>
+<li data-budoux="1">各段階の​最後は​卒業試験。​合格すると​次の​段階へ</li>
+<li data-budoux="1">入門〜初中級​（約185ステージ）は​無料。​中級・​上級は​プレミアムで</li>
+</ul>
+</div>
+</div>
+<div class="wrap">
+<div class="thumb-row">
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/level_intro.jpg"/><figcaption data-budoux="1">入門</figcaption></figure>
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/level_beginner.jpg"/><figcaption data-budoux="1">初級</figcaption></figure>
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/level_elementary.jpg"/><figcaption data-budoux="1">初中級</figcaption></figure>
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/level_intermediate.jpg"/><figcaption data-budoux="1">中級</figcaption></figure>
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/level_advanced.jpg"/><figcaption data-budoux="1">上級</figcaption></figure>
+</div>
+</div>
+</section>
+<!-- story -->
+<section class="section">
+<div class="wrap split rev">
+<div>
+<p class="label">Story mode</p>
+<h2><span style="white-space:nowrap">練習生から、</span><span style="white-space:nowrap">デビューステージへ。</span></h2>
+<p data-budoux="1">主人公は​ユナ・テヒョン・ネコの​ニャンから​選べて、​名前と​誕生日も​自由に。​スカウト、​練習生の​初日、​屋台で​腹ごしらえ、​チムジルバンで​作戦会議、​ドラマ OST の​撮影、​はじめての​ファンミーティング…。​全8章の​物語の​中で、​章ごとに​韓国語の​課題を​クリアしていきます。</p>
+<ul class="checks">
+<li data-budoux="1">章ごとに​推しとの​イベントと​会話</li>
+<li data-budoux="1">課題は​クイズ・リスニング・ドラマの​セリフなど​章ごとに​ちがう</li>
+<li data-budoux="1">最終章は​卒業試験に​合格して​デビュー！</li>
+</ul>
+</div>
+<div class="photo"><img alt="紙吹雪が舞うデビューステージの背景" src="../assets/img/nyangul/story_ch8.jpg" style="object-position: center 35%"/></div>
+</div>
+<div class="wrap">
+<div class="thumb-row">
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/story_ch1.jpg"/><figcaption data-budoux="1">第1章 スカウト</figcaption></figure>
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/story_ch3.jpg"/><figcaption data-budoux="1">第3章 屋台</figcaption></figure>
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/story_ch6.jpg"/><figcaption data-budoux="1">第6章 ドラマOST</figcaption></figure>
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/home_hero_5.jpg"/><figcaption data-budoux="1">第7章 ファンミ</figcaption></figure>
+<figure><img alt="" loading="lazy" src="../assets/img/nyangul/story_ch8.jpg"/><figcaption data-budoux="1">第8章 デビュー</figcaption></figure>
+</div>
+</div>
+</section>
+<!-- textbook -->
+<section class="section tinted">
+<div class="wrap split">
+<div>
+<p class="label">Textbook</p>
+<h2><span style="white-space:nowrap">にゃんグル教本、</span><span style="white-space:nowrap">全40課。</span></h2>
+<p data-budoux="1">ゲームだけでは​身に​つきに​くい​「しくみ」は、​教本でしっかり。​ㅡ と ㅜ の​口の​形の​ちがいのような​超​入門から、​助詞・活用・変則・敬語、​TOPIK 3〜6級の​重要文法、​書き言葉と​作文の​書き方、​パンマル​（ため口）、​略語・新語・推し活用語まで。​例文は​すべて​読み上げ​（ゆっくり​再生つき）、​各課の​最後に​ミニクイズ。</p>
+<ul class="checks">
+<li data-budoux="1">超​入門・初級・中級・​上級／若者​言葉の​4段階</li>
+<li data-budoux="1">「갓생」​「꾸안꾸」​「최애」など、​SNS や​ファンの​言葉も</li>
+<li data-budoux="1">第1・2課は​無料。​英語表示に​すると​本文も​すべて​英語に</li>
+</ul>
+</div>
+<div aria-label="教本のページのイメージ" class="lesson-mock">
+<p class="lv" data-budoux="1">第2課・超​入門</p>
+<h4>基本の母音と口の形</h4>
+<p data-budoux="1" style="color:var(--muted);font-size:14px">ㅜ は​唇を​丸く​突き出す​「ウ」。​ㅡ は​唇を​横に​引いたまま​（​「イ」の​口の​まま）​出す​「ウ」です。</p>
+<div class="ex"><div><b>우유</b><br/><span>牛乳</span></div><span>🔊 🐢</span></div>
+<div class="ex"><div><b>그</b><br/><span>その</span></div><span>🔊 🐢</span></div>
+<div class="q">Q. 唇を横に引いたまま出す「ウ」は？<br/><span class="ok">ㅡ</span><span>ㅜ</span><span>ㅗ</span></div>
+</div>
+</div>
+</section>
+<!-- games -->
+<section class="section" id="games">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Mini games</p>
+<h2><span style="white-space:nowrap">8種類のミニゲームで、</span><span style="white-space:nowrap">遊ぶほど身につく。</span></h2>
+<p data-budoux="1">ゲームごとに​鍛えられる​力が​ちが​います。​どれも​レベル1〜5と​エンドレスの​6段階で、​★を​集めると​次の​レベルと​衣装が​開きます。​スコアは Game Center の​ランキングで、​世界中の​プレイヤーと​競えます。</p>
+</div>
+<div class="game-grid">
+<article class="game"><img alt="スピードクイズ" loading="lazy" src="../assets/img/nyangul/game_speed.jpg"/><div><p class="tag" data-budoux="1">単語・瞬発力</p><h3 data-budoux="1">スピードクイズ</h3><p data-budoux="1">60秒で​何問とけるか。​コンボで​スコアが​伸びる</p></div></article>
+<article class="game"><img alt="神経衰弱" loading="lazy" src="../assets/img/nyangul/game_memory.jpg"/><div><p class="tag" data-budoux="1">単語・記憶</p><h3 data-budoux="1">神経衰弱</h3><p data-budoux="1">韓国語と​日本語の​カードを​ペアに</p></div></article>
+<article class="game"><img alt="ハングル積み木" loading="lazy" src="../assets/img/nyangul/game_blocks.jpg"/><div><p class="tag" data-budoux="1">文字の​しく​み</p><h3 data-budoux="1">ハングル積み木</h3><p data-budoux="1">子音と​母音を​組み立てて​文字を​つくる</p></div></article>
+<article class="game"><img alt="バルーンキャッチ" loading="lazy" src="../assets/img/nyangul/game_balloon.jpg"/><div><p class="tag" data-budoux="1">リスニング</p><h3 data-budoux="1">バルーンキャッチ</h3><p data-budoux="1">聞こえた​言葉の​風船を​タップ</p></div></article>
+<article class="game"><img alt="書き取りラッシュ" loading="lazy" src="../assets/img/nyangul/game_writing.jpg"/><div><p class="tag" data-budoux="1">書く</p><h3 data-budoux="1">書き取りラッシュ</h3><p data-budoux="1">指や Apple Pencil で​早書き勝負</p></div></article>
+<article class="game"><img alt="タイピングラッシュ" loading="lazy" src="../assets/img/nyangul/game_typing.jpg"/><div><p class="tag" data-budoux="1">打つ</p><h3 data-budoux="1">タイピングラッシュ</h3><p data-budoux="1">落ちてくる​言葉を​下に​着く​前に​打ち返す</p></div></article>
+<article class="game"><img alt="ドラマ名セリフ劇場" loading="lazy" src="../assets/img/nyangul/game_drama.jpg"/><div><p class="tag" data-budoux="1">フレーズ・​聞く</p><h3 data-budoux="1">ドラマ名セリフ劇場</h3><p data-budoux="1">名セリフの​（　）に​入る​言葉を​当てる</p></div></article>
+<article class="game"><img alt="トッポくんの屋台" loading="lazy" src="../assets/img/nyangul/game_shop.jpg"/><div><p class="tag" data-budoux="1">数え方・​聞く</p><h3 data-budoux="1">トッポくんの​屋台</h3><p data-budoux="1">注文を​聞いて、​料理と​数を​そろえて​出す</p></div></article>
+</div>
+<p class="note" data-budoux="1">さらに、​キャラごとの​「キャラワールド」​（21の​ワールド）で、​プチゲームを​次々に​クリアする​モードも。​ゲームの​レベル1〜3は​無料で​遊べます。</p>
+</div>
+</section>
+<!-- cards -->
+<section class="section tinted" id="cards">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Trading cards</p>
+<h2><span style="white-space:nowrap">キラキラのトレカを、</span><span style="white-space:nowrap">全96枚コンプリート。</span></h2>
+<p data-budoux="1">ゲーム・ミッション・ログインで​コインを​ためて、​トレカガチャへ。​カプセルが​ゆれて、​虹色の​光が​出たら SR 以上が​確定！​カードは​1枚ず​つめくって​開けます。​コインは​ゲームで​集める​もので、​お金では​買えません。</p>
+</div>
+<div class="banner-img"><img alt="カプセルガチャからホログラムのカードが飛び出すイラスト" loading="lazy" src="../assets/img/nyangul/gacha_banner.jpg"/></div>
+<div aria-label="レア度" class="rarity">
+<span>N</span><span>R</span><span>SR</span><span class="ssr">SSR キラ（虹色に光る）</span><span class="sp">SP スペシャル（1%）</span><span>誕生日カード</span>
+</div>
+<div class="card-row">
+<figure><img alt="ユナの SSR カード" loading="lazy" src="../assets/img/nyangul/card_ssr_yuna.jpg"/></figure>
+<figure><img alt="ソジュン室長の SSR カード" loading="lazy" src="../assets/img/nyangul/card_ssr_seojun.jpg"/></figure>
+<figure><img alt="タルギちゃんの SSR カード" loading="lazy" src="../assets/img/nyangul/card_ssr_talgi.jpg"/></figure>
+<figure><img alt="SP カード「3人の楽屋ショット」" loading="lazy" src="../assets/img/nyangul/card_sp_6.jpg"/></figure>
+<figure><img alt="SP カード「ニャンのお昼寝」" loading="lazy" src="../assets/img/nyangul/card_sp_9.jpg"/></figure>
+</div>
+<ul class="checks" style="margin-top:22px">
+<li data-budoux="1">21人​それぞれに N・R・SR・SSR の​4枚。​4枚そろうと​「コンプ」で​ボーナスコイン</li>
+<li data-budoux="1">SSR は​全員に​専用の​イラスト。​主人公3人には SP カードも</li>
+<li data-budoux="1">キャラの​誕生日には​お祝い​イベントと、​その​日だけの​誕生日カード</li>
+</ul>
+</div>
+</section>
+<!-- wardrobe -->
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Wardrobe</p>
+<h2><span style="white-space:nowrap">楽屋で着せ替え、</span><span style="white-space:nowrap">全36着。</span></h2>
+<p data-budoux="1">ユナ・テヒョン・ニャンに​12着ずつ。​ゲームの★、​キャラワールドの​制覇、​毎日の​目標達成の​スタンプで、​新しい​衣装が​届きます。​選んだ​衣装は、​コースや​ゲームの​中の​キャラにも​反映されます。</p>
+</div>
+<div class="outfit-row">
+<figure><img alt="天使のステージ衣装" loading="lazy" src="../assets/img/nyangul/outfit_yuna_angel.jpg"/><figcaption data-budoux="1">天使の​ステージ衣装</figcaption></figure>
+<figure><img alt="韓服（ユナ）" loading="lazy" src="../assets/img/nyangul/outfit_yuna_hanbok.jpg"/><figcaption data-budoux="1">韓服​（ユナ）</figcaption></figure>
+<figure><img alt="プリンセス" loading="lazy" src="../assets/img/nyangul/outfit_yuna_princess.jpg"/><figcaption data-budoux="1">プリンセス</figcaption></figure>
+<figure><img alt="カフェ店員" loading="lazy" src="../assets/img/nyangul/outfit_yuna_cafe.jpg"/><figcaption data-budoux="1">カフェ店員</figcaption></figure>
+<figure><img alt="王子さま" loading="lazy" src="../assets/img/nyangul/outfit_taehyung_prince.jpg"/><figcaption data-budoux="1">王子さま</figcaption></figure>
+<figure><img alt="シェフ" loading="lazy" src="../assets/img/nyangul/outfit_taehyung_chef.jpg"/><figcaption data-budoux="1">シェフ</figcaption></figure>
+<figure><img alt="韓服（テヒョン）" loading="lazy" src="../assets/img/nyangul/outfit_taehyung_hanbok.jpg"/><figcaption data-budoux="1">韓服​（テヒョン）</figcaption></figure>
+<figure><img alt="王さま" loading="lazy" src="../assets/img/nyangul/outfit_nyan_king.jpg"/><figcaption data-budoux="1">王さま</figcaption></figure>
+<figure><img alt="宇宙飛行士" loading="lazy" src="../assets/img/nyangul/outfit_nyan_space.jpg"/><figcaption data-budoux="1">宇宙飛行士</figcaption></figure>
+<figure><img alt="スーパースター" loading="lazy" src="../assets/img/nyangul/outfit_nyan_superstar.jpg"/><figcaption data-budoux="1">スーパースター</figcaption></figure>
+</div>
+</div>
+</section>
+<!-- photos -->
+<section class="section tinted">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Your oshi</p>
+<h2><span style="white-space:nowrap">好きな写真に、</span><span style="white-space:nowrap">まるごと差し替え。</span></h2>
+<p data-budoux="1">自分で​撮った・手に​入れた​推しの​写真を、​アプリの​あちこちに。​指でずらして​位置を、​ピンチで​大きさを​決めてから​保存できます。​写真は​端末の​中だけに​保存され、​外部に​送られる​ことは​ありません。</p>
+</div>
+<div class="slot-grid">
+<div class="slot"><span class="big">👤</span><h3 data-budoux="1">推しの​アイコン</h3><p data-budoux="1">トーク・ヨントン・ホームに​出る、​推しの​顔アイコン。</p></div>
+<div class="slot"><span class="big">🏠</span><h3 data-budoux="1">ホームの​大きな​絵</h3><p data-budoux="1">コース画面いちばん上の​絵を、​最大5枚の​写真で​日替わりに。</p></div>
+<div class="slot"><span class="big">🖼️</span><h3 data-budoux="1">壁紙</h3><p data-budoux="1">コースや​トークの​背景に。​文字が​読みやすい​暗さも​調整できます。</p></div>
+<div class="slot"><span class="big">🎉</span><h3 data-budoux="1">クリア画面</h3><p data-budoux="1">ステージや​ゲームを​クリアしたら、​最大10枚の​写真から​ランダムで​ごほうび。</p></div>
+</div>
+</div>
+</section>
+<!-- talk -->
+<section class="section">
+<div class="wrap split">
+<div class="photo"><img alt="ビデオ通話の画面のユナ" src="../assets/img/nyangul/call_yuna.jpg" style="object-position: center 20%"/></div>
+<div>
+<p class="label">Talk &amp; video call</p>
+<h2><span style="white-space:nowrap">推しと韓国語で、</span><span style="white-space:nowrap">おしゃべり。</span></h2>
+<p data-budoux="1">推しとの​トークは、​選んで​答えるか、​声で​答えるか。​ヨントン​（ビデオ通話）​発音診断では、​推しに​伝わる​発音かを​20フレーズで​採点します。​話すほど​好感度が​上がり、​100%に​なると​特別な​演出と​メッセージが。</p>
+<ul class="checks">
+<li data-budoux="1">毎日​変わる​話題と、​好感度で​開く​エピソード</li>
+<li data-budoux="1">「今日の​あいさつ」で​毎日​推しと​ひとこと</li>
+<li data-budoux="1">会わない​日が​続くと​好感度が​少しずつ下がる…​毎日​会いに​来てね</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- write & type -->
+<section class="section tinted">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Write · Type · Listen · Speak</p>
+<h2><span style="white-space:nowrap">読む・聞く・書く・</span><span style="white-space:nowrap">打つ・話す、</span><span style="white-space:nowrap">ぜんぶ。</span></h2>
+<p data-budoux="1">「読めるけど​書けない」​「聞けるけど​話せない」を​なくすために、​5つの​力を​それぞれの​練習で。</p>
+</div>
+<div class="features">
+<div class="feature"><div class="ico">✍️</div><h3 data-budoux="1">手書き・Apple Pencil</h3><p data-budoux="1">指で​書いた​ハングルを​判定。​iPad なら Apple Pencil で、​ノートに​書くように​本格的な​書き取りを。</p></div>
+<div class="feature"><div class="ico">⌨️</div><h3 data-budoux="1">タイピング</h3><p data-budoux="1">韓国の​若い​人と​同じ​並びの​キーボードで​練習。​iPhone の​韓国語キーボードにも​切り替えられます。</p></div>
+<div class="feature"><div class="ico">💬</div><h3 data-budoux="1">メッセージ返信</h3><p data-budoux="1">推しから​届いた​メッセージに、​韓国語で​返事を​打つ。​実際の​やりとりで​そのまま​使える​30問。</p></div>
+<div class="feature"><div class="ico">🎧</div><h3 data-budoux="1">リスニング</h3><p data-budoux="1">聞いて​意味を​選ぶ・​聞こえた​通りに​書く。​10問1セットで、​ゆっくり​再生も​できます。</p></div>
+<div class="feature"><div class="ico">🗣️</div><h3 data-budoux="1">会話モード</h3><p data-budoux="1">場面ごとの​会話に、​3択で​答えるか、​自分で​話して・書いて​答えるか。​ヒントつき。</p></div>
+<div class="feature"><div class="ico">📚</div><h3 data-budoux="1">辞書・ジャンル別</h3><p data-budoux="1">全単語を​検索できる​辞書と、​カテゴリ・場面ごとの​10問セット。​苦手な​単語だけの​表示も。</p></div>
+</div>
+</div>
+</section>
+<!-- exam -->
+<section class="section">
+<div class="wrap split rev">
+<div>
+<p class="label">Exam mode</p>
+<h2><span style="white-space:nowrap">TOPIK形式の、</span><span style="white-space:nowrap">ミニ模試。</span></h2>
+<p data-budoux="1">ヒントも​日本語訳もなし。​時間​制限​つきで、​リスニングは​1問2回まで。​TOPIK I・IIあわせて​160問の​問題バンクから、​1回25問を​毎回​ちがう​組み合わせで​出すミニ模試と、​語彙・文法・リスニングの​検定で、​今の​実力を​確かめられます。​終わったら​級の​目安と​分野別の​正答率、​まちがえた​問題の​解説まで。</p>
+<p class="note" data-budoux="1">※TOPIK形式の​問題・級の​目安は​本アプリの​オリジナルで、​実際の​試験とは​関係ありません。​1回の​問題数は​本番より​少ない​「ミニ模試」です。​読み上げ・リスニングは​iPhoneの​読み上げ音声です。</p>
+</div>
+<div class="photo"><img alt="試験に向けて勉強するキャラたち" loading="lazy" src="../assets/img/nyangul/exam_hero.jpg"/></div>
+</div>
+</section>
+<!-- daily -->
+<section class="section tinted">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Every day</p>
+<h2><span style="white-space:nowrap">毎日開きたくなる、</span><span style="white-space:nowrap">しかけ。</span></h2>
+</div>
+<div class="features">
+<div class="feature"><div class="ico">✅</div><h3 data-budoux="1">デイリーミッション</h3><p data-budoux="1">毎日​変わる​3つの​ミッション。​全部​クリアで​ボーナスコイン。</p></div>
+<div class="feature"><div class="ico">🔥</div><h3 data-budoux="1">1日の​目標と​連続記録</h3><p data-budoux="1">自分で​決めた​目標XPを​達成すると​スタンプと​コイン。​目標が​高い​ほど​ごほうびも​大きく。</p></div>
+<div class="feature"><div class="ico">🎂</div><h3 data-budoux="1">誕生日イベント</h3><p data-budoux="1">キャラの​誕生日には​お祝いの​演出と、​その​日だけの​誕生日カード。​主人公の​誕生日は​好きな​日に​設定できます。</p></div>
+</div>
+</div>
+</section>
+<!-- cast -->
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Characters</p>
+<h2><span style="white-space:nowrap">個性ゆたかな、</span><span style="white-space:nowrap">21人の仲間たち。</span></h2>
+<p data-budoux="1">DJ の​ハムスター、​ハモる​三つ子の​イチゴ、​ドラマの​名監督の​カエル、​財閥3世の​室長まで。​キャラ図鑑では、​それぞれの​プロフィールと​口ぐせ​（読み上げつき）が​見られます。</p>
+</div>
+<div class="cast-grid">
+<figure><img alt="ユナ" loading="lazy" src="../assets/img/nyangul/cast_yuna.jpg"/><figcaption data-budoux="1">ユナ</figcaption></figure>
+<figure><img alt="テヒョン" loading="lazy" src="../assets/img/nyangul/cast_taehyung.jpg"/><figcaption data-budoux="1">テヒョン</figcaption></figure>
+<figure><img alt="ニャン" loading="lazy" src="../assets/img/nyangul/cast_nyan.jpg"/><figcaption data-budoux="1">ニャン</figcaption></figure>
+<figure><img alt="DJハム" loading="lazy" src="../assets/img/nyangul/cast_ham.jpg"/><figcaption data-budoux="1">DJハム</figcaption></figure>
+<figure><img alt="タルギちゃん" loading="lazy" src="../assets/img/nyangul/cast_talgi.jpg"/><figcaption data-budoux="1">タルギちゃん</figcaption></figure>
+<figure><img alt="トッポくん" loading="lazy" src="../assets/img/nyangul/cast_toppo.jpg"/><figcaption data-budoux="1">トッポくん</figcaption></figure>
+<figure><img alt="パクおばちゃん" loading="lazy" src="../assets/img/nyangul/cast_imo.jpg"/><figcaption data-budoux="1">パクおばちゃん</figcaption></figure>
+<figure><img alt="プンオ社長" loading="lazy" src="../assets/img/nyangul/cast_bungeo.jpg"/><figcaption data-budoux="1">プンオ社長</figcaption></figure>
+<figure><img alt="ミンジュン" loading="lazy" src="../assets/img/nyangul/cast_minjun.jpg"/><figcaption data-budoux="1">ミンジュン</figcaption></figure>
+<figure><img alt="ポッポ" loading="lazy" src="../assets/img/nyangul/cast_poppo.jpg"/><figcaption data-budoux="1">ポッポ</figcaption></figure>
+<figure><img alt="モコモコ" loading="lazy" src="../assets/img/nyangul/cast_moko.jpg"/><figcaption data-budoux="1">モコモコ</figcaption></figure>
+<figure><img alt="パンちゃん" loading="lazy" src="../assets/img/nyangul/cast_pan.jpg"/><figcaption data-budoux="1">パンちゃん</figcaption></figure>
+<figure><img alt="イ・ソンビ" loading="lazy" src="../assets/img/nyangul/cast_seonbi.jpg"/><figcaption data-budoux="1">イ・ソンビ</figcaption></figure>
+<figure><img alt="マンドゥ師匠" loading="lazy" src="../assets/img/nyangul/cast_mandu.jpg"/><figcaption data-budoux="1">マンドゥ師匠</figcaption></figure>
+<figure><img alt="ハングルロボ" loading="lazy" src="../assets/img/nyangul/cast_robot.jpg"/><figcaption data-budoux="1">ハングルロボ</figcaption></figure>
+<figure><img alt="ハヌル先輩" loading="lazy" src="../assets/img/nyangul/cast_haneul.jpg"/><figcaption data-budoux="1">ハヌル先輩</figcaption></figure>
+<figure><img alt="ピカ" loading="lazy" src="../assets/img/nyangul/cast_pika.jpg"/><figcaption data-budoux="1">ピカ</figcaption></figure>
+<figure><img alt="ボラちゃん" loading="lazy" src="../assets/img/nyangul/cast_bora.jpg"/><figcaption data-budoux="1">ボラちゃん</figcaption></figure>
+<figure><img alt="ケグリ監督" loading="lazy" src="../assets/img/nyangul/cast_kaeguri.jpg"/><figcaption data-budoux="1">ケグリ監督</figcaption></figure>
+<figure><img alt="ソジュン室長" loading="lazy" src="../assets/img/nyangul/cast_seojun.jpg"/><figcaption data-budoux="1">ソジュン室長</figcaption></figure>
+<figure><img alt="キム先生" loading="lazy" src="../assets/img/nyangul/cast_kim.jpg"/><figcaption data-budoux="1">キム先生</figcaption></figure>
+</div>
+<p class="note" data-budoux="1">※登場する​アイドル・キャラクターは​すべて​架空です。</p>
+</div>
+</section>
+<!-- price -->
+<section class="section tinted" id="price">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Price</p>
+<h2><span style="white-space:nowrap">無料で始めて、</span><span style="white-space:nowrap">気に入ったら買い切り。</span></h2>
+<p data-budoux="1">入門〜初中級の​コース、​ストーリー全8章、​ミニゲームの​レベル1〜3、​辞書、​教本の​第1・2課などは​無料で​遊べます​（無料版は​広告あり）。​プレミアムは​1回払いの​買い切りで、​定期購入ではありません。​同じ Apple アカウントなら、​機種変更しても​「購入を​復元」で​そのまま。</p>
+</div>
+<div class="price-card">
+<span class="sale-badge">発売記念セール · 2027年2月28日まで</span>
+<p class="price" data-budoux="1"><span class="was">2,000円</span>1,400円 <small>買い切り​（30%OFF）</small></p>
+<ul>
+<li data-budoux="1">中級・​上級コース​（TOPIK 3〜6級レベル）</li>
+<li data-budoux="1">広告なし</li>
+<li data-budoux="1">ミニゲームの​レベル4・5と​エンドレス</li>
+<li data-budoux="1">に​ゃんグル教本 全4​0課</li>
+<li data-budoux="1">TOPIK形式の​ミニ模試​（全1​60問・​毎回​ちがう​問題）​・各種検定</li>
+<li data-budoux="1">推し写真の​設定​（アイコン・壁紙・ホームの​絵・クリア画面）</li>
+<li data-budoux="1">限定衣装・キャラの​声・毎日​1回トレカガチャ無料・コイン1.5倍</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- faq -->
+<section class="section" style="padding-top:0">
+<div class="wrap faq-short doc" style="padding-block:0">
+<p class="label" style="margin-top:56px">FAQ</p>
+<h2 style="border-top:0;margin-top:6px;padding-top:0">よくあるご質問</h2>
+<div class="faq">
+<details><summary data-budoux="1">韓国語が​まったく​読めなくても​大丈夫？</summary><p data-budoux="1">大丈夫です。​入門コースと​教本の​超入門は、​ハングルの​文字の​しくみと​口の​形から​始まります。</p></details>
+<details><summary data-budoux="1">iPad でも​使えますか？</summary><p data-budoux="1">はい。​iPhone と iPad の​両方に​対応しています。​iCloud で​記録が​同期されるので、​外では iPhone、​家では iPad で​続きから​遊べます。​iPad では Apple Pencil での​書き取りも​できます。</p></details>
+<details><summary data-budoux="1">英語でも​使えますか？</summary><p data-budoux="1">はい。​アプリの​設定で​表示を​英語に​すると、​教本も​含めて​英語で​学べます。</p></details>
+<details><summary data-budoux="1">課金で​ガチャを​回せますか？</summary><p data-budoux="1">いいえ。​トレカの​コインは​ゲームや​ミッションで​集める​もので、​お金では​買えません。​課金は​プレミアムの​買い切り1回だけです。</p></details>
+</div>
+<p class="note" data-budoux="1">ほかの​ご質問は <a href="support.html">サポートページ</a> へ。</p>
+</div>
+</section>
 </main>
 
 <footer class="site-footer">
