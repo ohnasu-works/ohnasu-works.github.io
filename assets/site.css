@@ -534,7 +534,7 @@ body.ny .price-card { border: 2px solid var(--ink); box-shadow: 0 6px 0 var(--in
 .faq-short { max-width: 760px; }
 
 /* ================= studio top: two apps side by side ================= */
-.hero-apps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.hero-apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .hero-app { display: grid; gap: 0; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 18px 40px -26px rgb(0 0 0 / .45); transition: transform .2s ease; }
 .hero-app:hover { transform: translateY(-3px); }
 .hero-app .shot { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; background: var(--soft); }
@@ -562,6 +562,7 @@ body.ny .price-card { border: 2px solid var(--ink); box-shadow: 0 6px 0 var(--in
 /* ---- 体験への入口（トップのアプリカード） ---- */
 .hero-app { position: relative; }
 .try-tag { position: absolute; top: 10px; left: 10px; z-index: 1; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; background: #fff; color: #1F1D22; box-shadow: 0 4px 14px -4px rgb(0 0 0 / .35); }
+.try-tag.gold { background: #F7EBD3; color: #5C4520; border: 1px solid #D9B97E; }
 .try-tag.pop { background: #FFC928; color: #2B2135; border: 2px solid #2B2135; box-shadow: 0 3px 0 #2B2135; }
 @media (prefers-reduced-motion: no-preference) { .try-tag.pop { animation: tagBob 2.4s ease-in-out infinite; } }
 @keyframes tagBob { 50% { transform: translateY(-3px); } }
@@ -589,6 +590,7 @@ body.ny .price-card { border: 2px solid var(--ink); box-shadow: 0 6px 0 var(--in
 .ds-hero .photo.real-hero .iphone { position: absolute; right: 0; bottom: 0; width: 29%; border: 6px solid #1B1917; border-radius: 26px; box-shadow: 0 24px 40px -18px rgb(0 0 0 / .55); }
 .app-card .media.ds-media { background: linear-gradient(160deg, var(--soft), color-mix(in srgb, var(--brand) 12%, var(--soft))); padding: 18px; }
 .app-card .media.ds-media img { object-fit: contain; border: 6px solid #1B1917; border-radius: 16px; background: #1B1917; }
+.app-card .media.gm-media { background: radial-gradient(ellipse at 50% 40%, #FFFFFF 0%, #F7F0E4 45%, #E6D6BB 100%); }
 
 /* 見出しの改行：句読点の切れ目でだけ折り返す（「予定/も、」のような変な改行を防ぐ） */
 .phr { display: inline-block; }
@@ -629,3 +631,19 @@ body.gm .section-head h2, body.gm .ds-hero h1 { font-family: var(--font-serif); 
 .gm-glow img { width: min(58%, 300px); height: auto; border-radius: 22%; box-shadow: 0 24px 60px rgba(120, 90, 40, .28); }
 .gm-promise { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 @media (max-width: 820px) { .gm-promise { grid-template-columns: 1fr; } }
+/* トップ：3アプリ並び */
+.hero-apps .hero-app .row b { font-size: 15.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hero-apps .try-tag { font-size: 11px; padding: 4px 9px; white-space: nowrap; }
+.hero-apps .hero-app:nth-child(3) { margin-top: 0; }
+@media (max-width: 640px) {
+  .hero-apps { grid-template-columns: repeat(3, 64%); overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 2px 22px; margin: 0 -2px; -webkit-overflow-scrolling: touch; }
+  .hero-apps .hero-app { scroll-snap-align: start; }
+}
+/* アプリ一覧：3本そろって並べる */
+@media (min-width: 1000px) {
+  .app-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+  .app-card .body .btn-row { flex-direction: column; align-items: stretch; }
+  .app-card .body .btn-row .btn { justify-content: center; text-align: center; }
+}
+.app-card .body { display: flex; flex-direction: column; gap: 14px; }
+.app-card .body .btn-row { margin-top: auto; padding-top: 4px; }
