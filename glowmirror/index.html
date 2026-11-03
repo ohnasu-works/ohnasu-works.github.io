@@ -95,47 +95,20 @@
       <div class="gmtry-copy">
         <p class="label">Try it</p>
         <h2><span class="phr">この鏡、</span><span class="phr">ブラウザで試せます。</span></h2>
-        <p>グロウミラーの基本の操作を、このページでそのまま体験できます。「鏡をひらく」を押して、カメラの使用を許可してください。カメラが使えない時は、見本の写真で試せます。</p>
+        <p>アプリと同じボタンの並びで、鏡の操作をこのページで体験できます。「鏡をひらく」を押して、カメラの使用を許可してください。カメラが使えない時は、見本の写真で試せます。3秒さわらないとボタンが薄くなるのも、アプリと同じです。</p>
         <ul class="checks" style="margin-top:16px">
-          <li><b>反転</b>：相手から見た、いつもと逆の顔</li>
-          <li><b>ライト</b>：画面のふちを光らせて顔を明るく</li>
-          <li><b>ガイド</b>：眉やチークの左右バランスに</li>
-          <li><b>静止画</b>：押した瞬間で止まる（もう一度押すと戻る）</li>
-          <li><b>ズーム</b>：上のつまみで拡大</li>
+          <li><b>全部隠す</b>：ボタンを消して鏡だけに（右下の「表示」で戻る）</li>
+          <li><b>ライト</b>：画面の上と下が光って顔を明るく</li>
+          <li><b>静止画</b>（まん中）：押した瞬間で止まる。▶で鏡に戻る</li>
+          <li><b>10秒動画</b>：録画して、スロー・コマ送りで確認</li>
+          <li><b>ツール</b>：反転・ガイド・リセット・タイマー</li>
         </ul>
-        <p style="font-size:14px">映像はこのページの中だけで表示され、どこにも送られません。保存もされません。アプリの4K画質や10秒動画、ビフォーアフターは、App Store版でどうぞ。</p>
+        <p style="font-size:14px">映像や10秒動画はこのページの中だけで表示され、どこにも送られず、保存もされません。下の「鏡をとじる」を押すか、ページを離れるとカメラは止まります。</p>
       </div>
-      <div class="gmtry-side" id="gmtry"
-        data-no-camera="カメラが使えないため、見本の写真で表示しています"
-        data-mirror-on="鏡（いつもの見え方）" data-mirror-off="反転（相手から見た顔）"
-        data-light-on="ライト オン" data-light-off="ライト オフ"
-        data-guide-on="左右対称ガイド オン" data-guide-off="ガイド オフ"
-        data-frozen="止めました" data-resumed="鏡に戻りました"
-        data-resume="ページに戻りました。もう一度押すと鏡がひらきます">
-        <div class="phone">
-          <div class="screen">
-            <div class="island"></div>
-            <div class="gm-mirror">
-              <video playsinline muted></video>
-              <canvas></canvas>
-              <img class="fallback" src="../assets/img/glowmirror/ja-demo.jpg" alt="見本の写真：口紅を塗る女性" hidden>
-              <div class="gm-guide" aria-hidden="true"><i class="v"></i><i class="h1"></i><i class="h2"></i></div>
-            </div>
-            <label class="gm-zoom"><span>1x</span><input type="range" min="1" max="3" step="0.05" value="1" aria-label="ズーム"><span>3x</span></label>
-            <div class="gm-badge" role="status" aria-live="polite"></div>
-            <div class="gm-controls">
-              <button type="button" data-act="flip" aria-pressed="false" aria-label="反転"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M9 7 3 17h6z"/><path d="m15 7 6 10h-6z"/></svg></button>
-              <button type="button" data-act="light" aria-pressed="false" aria-label="ライト"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></button>
-              <button type="button" class="shutter" data-act="freeze" aria-pressed="false" aria-label="静止画"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="6" width="3.2" height="12" rx="1"/><rect x="13.8" y="6" width="3.2" height="12" rx="1"/></svg></button>
-              <button type="button" data-act="guide" aria-pressed="false" aria-label="左右対称ガイド"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 4v16M4 12h16"/></svg></button>
-            </div>
-            <div class="gm-start">
-              <p>カメラを使って、あなたの顔を映します。<br>映像はこの端末の中だけで表示されます。</p>
-              <button type="button">鏡をひらく</button>
-            </div>
-          </div>
-        </div>
-        <p class="gmtry-hint">※ アプリの鏡の画面をもとにした体験用の見本です。実際のアプリとは細部が異なります。</p>
+      <div class="gmtry-side" id="gmtry" data-lang="ja" data-demo="../assets/img/glowmirror/ja-demo.jpg">
+        <div class="phone"><div class="screen"></div></div>
+        <button type="button" class="gm-off" hidden>鏡をとじる（カメラを止める）</button>
+        <p class="gmtry-hint">※ アプリの鏡の画面をもとにした体験用の見本です。4K画質や光の再現などはアプリ版でどうぞ。</p>
       </div>
     </div>
   </section>
