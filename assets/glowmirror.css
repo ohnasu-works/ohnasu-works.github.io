@@ -118,8 +118,8 @@
 .gx-bottom.col .gx-row { display: flex; justify-content: center; gap: 10px; }
 
 /* ヒーロー：アプリ名を大きく */
-.gm-name { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
-.gm-name img { width: 76px; height: 76px; border-radius: 18px; box-shadow: 0 10px 24px rgba(120, 90, 40, .22); flex: none; }
+.gm-name { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.gm-name img { width: 52px; height: 52px; border-radius: 12px; flex: none; }
 .gm-name b { display: block; font-family: var(--font-serif); font-size: clamp(26px, 3vw, 34px); line-height: 1.2; color: var(--ink); }
 .gm-name small { display: block; margin-top: 4px; font-size: 13.5px; color: var(--muted); letter-spacing: .02em; }
 /* 料金の横：ダウンロード */
