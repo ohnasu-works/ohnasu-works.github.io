@@ -683,3 +683,9 @@ body.ny .stats span { white-space: nowrap; letter-spacing: -.02em; }
   .app-card::before { border-radius: var(--radius) var(--radius) 0 0; }
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .app-card { border-color: color-mix(in srgb, var(--ink) 22%, transparent); } }
+/* 枠をもう一段濃く */
+.app-card { border: 2px solid color-mix(in srgb, var(--ink) 32%, transparent); }
+.app-card .body { border-top-color: color-mix(in srgb, var(--ink) 18%, transparent); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .app-card { border-color: color-mix(in srgb, var(--ink) 38%, transparent); } }
+/* 言葉の途中で改行しない（対応ブラウザでは文節ごとに折り返す） */
+.app-card p, .app-card li, .app-soon { word-break: auto-phrase; line-break: strict; }
