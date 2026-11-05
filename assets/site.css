@@ -689,3 +689,7 @@ body.ny .stats span { white-space: nowrap; letter-spacing: -.02em; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .app-card { border-color: color-mix(in srgb, var(--ink) 38%, transparent); } }
 /* 言葉の途中で改行しない（対応ブラウザでは文節ごとに折り返す） */
 .app-card p, .app-card li, .app-soon { word-break: auto-phrase; line-break: strict; }
+/* 色の帯は枠の上辺そのものに（角の丸みに沿わせて、はみ出す線をなくす） */
+.app-card::before { content: none !important; }
+.app-card { border-top: 6px solid var(--app-c) !important; }
+.app-card .media { border-radius: calc(var(--radius) - 4px) calc(var(--radius) - 4px) 0 0; }
