@@ -14,7 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Mono:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=M+PLUS+Rounded+1c:wght@700;800;900&display=swap">
-<link rel="stylesheet" href="../assets/site.css?v=4">
+<link rel="stylesheet" href="../assets/site.css?v=5">
+<link rel="stylesheet" href="../assets/nyangul-play.css">
+<link rel="stylesheet" href="../assets/nyanpass-play.css?v=4">
 <style>
 .np-hero-art { aspect-ratio: 1 / 1; max-width: 420px; justify-self: center; width: 100%; border: 3px solid var(--ink); box-shadow: 0 8px 0 var(--ink); border-radius: 28px; background: radial-gradient(circle at 30% 30%, #fff6 0 14%, transparent 15%) 0 0 / 46px 46px, var(--soft); display: grid; place-items: center; text-align: center; padding: 24px; }
 .np-hero-art .big { font-size: clamp(72px, 18vw, 120px); line-height: 1; }
@@ -24,10 +26,9 @@
 .nb { white-space: nowrap; }
 .np-portrait { aspect-ratio: 4 / 5 !important; max-width: 440px; justify-self: center; width: 100%; }
 .np-story img { aspect-ratio: 9 / 16 !important; object-position: center 30%; }
-.np-cast { grid-template-columns: repeat(7, 1fr); }
-@media (max-width: 820px) { .np-cast { grid-template-columns: repeat(7, 1fr); } }
-@media (max-width: 640px) { .np-cast { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 480px) { .np-story { grid-template-columns: repeat(3, 1fr); } }
+.np-cast { grid-template-columns: repeat(10, 1fr); }
+@media (max-width: 820px) { .np-cast { grid-template-columns: repeat(5, 1fr); } }
+@media (max-width: 480px) { .np-cast { grid-template-columns: repeat(4, 1fr); } .np-story { grid-template-columns: repeat(3, 1fr); } }
 .compare th, .compare td { word-break: keep-all; overflow-wrap: anywhere; }
 .compare td:first-child { white-space: nowrap; }
 </style>
@@ -40,11 +41,12 @@
       <span>Oh!nasu Works <small>No.04 にゃんパス</small></span>
     </a>
     <nav class="nav" aria-label="ページ内メニュー">
-      <a href="#features">できること</a>
+      <a href="#play">遊んでみる</a>
+      <a class="hide-sm" href="#features">できること</a>
       <a class="hide-sm" href="#kakomon">過去問</a>
       <a class="hide-sm" href="#exam">模擬試験</a>
       <a href="#price">料金</a>
-      <a href="support.html">サポート</a>
+      <a class="hide-xs" href="support.html">サポート</a>
     </nav>
   </div>
 </header>
@@ -54,13 +56,14 @@
 <div>
 <div class="app-name rise">
 <img alt="にゃんパスのアイコン" src="img/icon.webp"/>
-<div><b>ITパスポート にゃんパス</b><small data-budoux="1"><span>NyanPass · iPhone · iPad</span></small></div>
+<div><b><span class="nb">ITパスポート</span> <span class="nb">にゃんパス</span></b><small data-budoux="1"><span>NyanPass · iPhone · iPad</span></small></div>
 </div>
 <h1 class="rise d2"><span class="nb">しゃべる猫と、</span><br><span class="nb">ITパスポートに</span><span class="nb">合格！</span></h1>
 <p class="lead rise d3" data-budoux="1">人類で​初めて​しゃべった​猫・ニャンが、​国家試験に​挑戦!?​<b>過去問​2,000問以上、​本番形式の​模擬試験、​シラバス順の​教本、​全8章の​ストーリー、​キャラの​ミニゲーム。</b>​勉強に​必要な​ものは​無料で、​「もう​1問」が​止まらない​ITパスポートの​勉強アプリです。</p>
 <div class="btn-row rise d3">
 <!-- ★ 公開後に App Store の URL と公式バッジ画像に差し替える -->
 <span aria-disabled="true" class="btn btn-primary">App Store（近日公開）</span>
+<a class="btn btn-play" href="#play">⚡ ブラウザで遊んでみる</a>
 <a class="btn btn-ghost" href="#price">料金を見る</a>
 </div>
 <div class="launch rise d3" data-budoux="1">
@@ -82,6 +85,59 @@
 </div>
 </section>
 <div class="wrap"><hr class="stitch"/></div>
+<!-- web体験：スピードクイズ -->
+<section class="section tinted nyplay npplay" id="play">
+<div class="wrap nyplay-wrap">
+<div class="nyplay-copy">
+<p class="label">Play now</p>
+<h2><span class="nb">アプリの中の</span><span class="nb">ゲームを、</span><span class="nb">ここで1回。</span></h2>
+<p data-budoux="1">にゃんパスに​入っている​8種類の​ミニゲームの​ひとつ​「スピードクイズ」を、​ブラウザで​そのまま​遊べます。​ニャンが​出す​意味に​合う​用語を、​4つから​すばやく​選ぼう！</p>
+<ul>
+<li data-budoux="1">30秒・​登録も​ダウンロードも​いりません</li>
+<li data-budoux="1">アプリ版は​818語の​用語と​過去問2,000問以上。​レベル5と​エンドレスも</li>
+<li data-budoux="1">最初は​音なし。​音を​出したい​時だけ、​右下の​ボタンで​オンに​できます</li>
+</ul>
+</div>
+<div id="npplay">
+<div aria-label="スピードクイズ（体験版）" class="nyplay-stage" role="application">
+<div class="nyplay-screen nyplay-lobby">
+<img alt="スピードクイズに挑むニャンとユナ・テヒョンのイラスト" class="art" src="img/game_speed.webp"/>
+<p class="nyplay-title">スピードクイズ</p>
+<p class="nyplay-rules nyplay-card" data-budoux="1">ニャンが​IT用語の​意味を​出すよ。​その意味に​合う​用語を、​4つの​中から​タップ！​30秒で​何問​正解できるかな？​続けて​正解すると​コンボで​点数アップ。</p>
+<button class="nyplay-btn" data-act="start" type="button">スタート！</button>
+<p class="nyplay-note" data-budoux="1">体験版：​基本の​用語54語から​出題</p>
+</div>
+<div class="nyplay-screen nyplay-play" hidden="">
+<div class="nyplay-top">
+<span class="np-time">30秒</span>
+<span aria-live="polite" class="nyplay-combo"></span>
+<span class="nyplay-pill nyplay-score">0点</span>
+</div>
+<div class="np-timebar" aria-hidden="true"><i></i></div>
+<div class="np-qcard nyplay-card">
+<img alt="" src="img/cast_nyan.webp"/>
+<div><small class="np-field"></small><p class="np-meaning" aria-live="polite"></p></div>
+</div>
+<p class="np-ask">この意味の用語はどれ？</p>
+<div class="np-choices"></div>
+</div>
+<div class="nyplay-screen nyplay-result" hidden="">
+<p class="nyplay-title">タイムアップ！</p>
+<div aria-hidden="true" class="nyplay-stars">★★★</div>
+<p class="nyplay-score"></p>
+<div class="np-say-wrap"><img alt="ニャン" src="img/cast_nyan.webp"/><p class="np-say nyplay-card"></p></div>
+<ul aria-label="出題された用語" class="nyplay-words nyplay-card"></ul>
+<div class="nyplay-cta nyplay-card" data-budoux="1"><strong>続きはアプリで！</strong>過去問2,000問以上・​本番形式の​模擬試験・​全8章の​ストーリー。​ゲームは​あと7種類​あります。</div>
+<div class="nyplay-actions">
+<button class="nyplay-btn sub" data-act="start" type="button">もう1回</button>
+<a class="nyplay-btn" href="#price" style="text-decoration:none;font-size:16px;padding:10px 18px">アプリの料金を見る</a>
+</div>
+</div>
+<button aria-pressed="false" class="nyplay-mute" data-act="mute" type="button">🔇 音オフ</button>
+</div>
+</div>
+</div>
+</section>
 <section class="section" id="features">
 <div class="wrap">
 <div class="section-head">
@@ -158,7 +214,7 @@
 <div class="wrap">
 <div class="section-head">
 <p class="label">Mini games</p>
-<h2><span class="nb">8種類のミニゲームで、</span><span class="nb">遊ぶほど覚える。</span></h2>
+<h2><span class="nb">8種類の</span><span class="nb">ミニゲームで、</span><span class="nb">遊ぶほど覚える。</span></h2>
 <p data-budoux="1">ゲームごとに​鍛えられる​力が​ちがいます。​どれも​レベル1〜5と​エンドレスの​6段階で、​★を​集めると​次の​レベルと​衣装が​開きます。​スコアは​Game Center の​ランキングで​競えます。</p>
 </div>
 <div class="game-grid">
@@ -247,6 +303,7 @@
 </div>
 </section>
 </main>
+<script src="../assets/nyanpass-play.js?v=2" defer></script>
 <footer class="site-footer">
   <div class="wrap">
     <span>© 2026 Oh!nasu Works</span>

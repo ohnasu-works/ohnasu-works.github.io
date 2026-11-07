@@ -1,0 +1,49 @@
+/* にゃんパス web体験「スピードクイズ」：にゃんグルの nyplay の見た目に、4択用の部品を足す */
+.npplay .nyplay-stage {
+  background:
+    radial-gradient(60px 26px at 18% 14%, #fff 60%, transparent 62%),
+    radial-gradient(44px 20px at 26% 11%, #fff 60%, transparent 62%),
+    radial-gradient(70px 28px at 82% 30%, #fff 60%, transparent 62%),
+    linear-gradient(#FFB36B, #FFD9A8 45%, #FFF1DC);
+}
+.npplay .nyplay-copy li::before { content: "🐾"; }
+.np-timebar { flex: none; margin: 2px 14px 0; height: 14px; border: 2.5px solid var(--p-ink); border-radius: 999px; background: #fff; overflow: hidden; box-shadow: 0 2px 0 var(--p-ink); }
+.np-timebar i { display: block; height: 100%; width: 100%; background: var(--p-mint); transition: width .1s linear; }
+.np-timebar i.hurry { background: var(--p-red); }
+.np-time { font-size: 13px; font-weight: 900; color: var(--p-ink); min-width: 3em; text-align: center; }
+.np-qcard { flex: none; position: relative; margin: 10px 14px 0; padding: 12px 14px 14px; display: flex; gap: 10px; align-items: flex-start; }
+.np-qcard img { width: 54px; height: 54px; border-radius: 50%; border: 2.5px solid var(--p-ink); object-fit: cover; flex: none; background: #fff; }
+.np-qcard small { display: inline-block; font-size: 11px; font-weight: 900; color: #fff; background: var(--p-purple); border: 2px solid var(--p-ink); border-radius: 8px; padding: 1px 8px; margin-bottom: 4px; }
+.np-meaning { margin: 0; font-size: 16px; font-weight: 900; line-height: 1.55; word-break: keep-all; overflow-wrap: anywhere; }
+.np-ask { margin: 10px 14px 0; font-size: 12px; font-weight: 900; color: #7A4B12; text-align: center; }
+.np-choices { display: grid; gap: 10px; padding: 8px 14px 56px; }
+.np-choice {
+  appearance: none; border: 3px solid var(--p-ink); border-radius: 16px; box-shadow: 0 4px 0 var(--p-ink); background: #fff; color: var(--p-ink);
+  font: inherit; font-weight: 900; font-size: 18px; padding: 11px 12px; cursor: pointer; word-break: keep-all; overflow-wrap: anywhere; line-height: 1.3;
+  transition: transform .08s, box-shadow .08s; -webkit-tap-highlight-color: transparent;
+}
+.np-choice:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--p-ink); }
+.np-choice.ok { background: var(--p-mint); color: #fff; text-shadow: 0 2px 0 rgba(43,33,53,.45); }
+.np-choice.ng { background: var(--p-red); color: #fff; animation: npShake .3s; }
+.np-pop { position: absolute; right: 12px; top: 6px; font-family: "Dela Gothic One", sans-serif; font-size: 24px; color: var(--p-yellow); -webkit-text-stroke: 1.5px var(--p-ink); paint-order: stroke fill; text-shadow: 0 3px 0 var(--p-ink); animation: npUp .8s forwards; pointer-events: none; }
+.np-pop.boo { color: #fff; font-size: 18px; }
+.npplay .nyplay-words li { flex-wrap: wrap; }
+.npplay .nyplay-words .k { font-family: inherit; font-size: 15px; font-weight: 900; }
+.npplay .nyplay-words .m { order: 3; width: 100%; font-size: 12px; font-weight: 700; color: var(--p-sub); word-break: keep-all; overflow-wrap: anywhere; }
+.np-say { word-break: keep-all; overflow-wrap: anywhere; margin: 0; font-weight: 900; font-size: 14px; display: flex; align-items: center; gap: 8px; text-align: left; padding: 8px 12px; width: 100%; box-sizing: border-box; }
+.np-say-wrap { display: flex; align-items: center; gap: 10px; width: 100%; }
+.np-say-wrap img { width: 64px; height: 64px; border-radius: 50%; border: 2.5px solid var(--p-ink); object-fit: cover; flex: none; background: #fff; }
+@keyframes npShake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+@keyframes npUp { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-24px); } }
+.npplay .nyplay-stars { color: var(--p-yellow); -webkit-text-stroke: 1.5px var(--p-ink); paint-order: stroke fill; }
+.npplay .nyplay-stars .off { color: #fff; }
+.npplay .nyplay-result .nyplay-score { word-break: keep-all; overflow-wrap: anywhere; }
+/* 小さいスマホでも問題文と4択が全部入るよう、高さは中身に合わせて確保する */
+.npplay .nyplay-stage { max-height: none; aspect-ratio: auto; height: 640px; }
+@media (max-width: 400px) { .npplay .nyplay-stage { height: 580px; } }
+.npplay .nyplay-result { padding-bottom: 60px; }
+@media (max-width: 360px) {
+  .np-choice { font-size: 16px; padding: 9px 10px; }
+  .np-meaning { font-size: 15px; }
+  .np-qcard img { width: 44px; height: 44px; }
+}

@@ -719,3 +719,5 @@ body.ny .stats span { white-space: nowrap; letter-spacing: -.02em; }
 /* フッター：アプリ4つ＋そのほか */
 @media (min-width: 900px) { .fg-cols { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
 @media (min-width: 641px) and (max-width: 899px) { .fg-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+/* 幅の狭いスマホ（iPhone SE など）でヘッダーがはみ出さないように */
+@media (max-width: 360px) { .nav .hide-xs { display: none; } .nav { gap: 8px; font-size: 11.5px; } .brand { font-size: 15px; gap: 6px; } .brand .mark { width: 26px; height: 26px; } }
