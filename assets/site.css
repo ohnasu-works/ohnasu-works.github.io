@@ -726,3 +726,4 @@ body.ny .stats span { white-space: nowrap; letter-spacing: -.02em; }
 .compare th, .compare td { word-break: keep-all; overflow-wrap: break-word; }
 .compare td:first-child { white-space: nowrap; }
 @media (max-width: 360px) { .compare th, .compare td { padding: 9px 8px; } }
+@media (max-width: 360px) { .compare td.them, .compare thead th { font-size: 12px; } }
