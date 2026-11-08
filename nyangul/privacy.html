@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* 日本語以外のブラウザなら英語ページへ（?lang=ja か、日本語を選んだことがある時はそのまま） */
+(function(){try{if(/[?&]lang=ja(&|$)/.test(location.search))return;var s=null;try{s=localStorage.getItem('nyangul.lang')}catch(e){}if(s==='ja')return;var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();if(!l||l.indexOf('ja')===0)return;location.replace('en/privacy.html'+location.hash)}catch(e){}})();
+</script>
+<link rel="alternate" hreflang="ja" href="https://ohnasu-works.github.io/nyangul/privacy.html">
+<link rel="alternate" hreflang="en" href="https://ohnasu-works.github.io/nyangul/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://ohnasu-works.github.io/nyangul/en/privacy.html">
 <title>にゃんグル プライバシーポリシー</title>
 <link rel="icon" href="../assets/img/favicon.png">
 <link rel="apple-touch-icon" href="../assets/img/nyangul/icon.png">
@@ -22,6 +29,7 @@
       <a href="index.html">アプリ紹介</a>
       <a href="privacy.html">プライバシー</a>
       <a href="support.html">サポート</a>
+      <a href="en/privacy.html" lang="en" hreflang="en" onclick="try{localStorage.setItem('nyangul.lang','en')}catch(e){}">English</a>
     </nav>
   </div>
 </header>

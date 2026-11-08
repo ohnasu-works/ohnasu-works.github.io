@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* 日本語以外のブラウザなら英語ページへ（?lang=ja か、日本語を選んだことがある時はそのまま） */
+(function(){try{if(/[?&]lang=ja(&|$)/.test(location.search))return;var s=null;try{s=localStorage.getItem('nyangul.lang')}catch(e){}if(s==='ja')return;var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();if(!l||l.indexOf('ja')===0)return;location.replace('en/'+location.hash)}catch(e){}})();
+</script>
+<link rel="alternate" hreflang="ja" href="https://ohnasu-works.github.io/nyangul/">
+<link rel="alternate" hreflang="en" href="https://ohnasu-works.github.io/nyangul/en/">
+<link rel="alternate" hreflang="x-default" href="https://ohnasu-works.github.io/nyangul/en/">
 <title>にゃんグル｜ゲームで覚える韓国語</title>
 <meta name="description" content="にゃんグル — 推しと一緒にデビューを目指す、韓国語学習ゲーム。8,000語以上の単語と3,400文以上の例文、自然な発音の収録音声。すごろく式のコース、全8章のストーリー、40課の教本、8種類のミニゲーム、トレカ集め、着せ替え、推し写真の差し替え、手書き・キーボードで答える問題、発音採点、TOPIK形式のミニ模試まで。買い切りで、ずっと遊べる。">
 <meta property="og:title" content="にゃんグル｜ゲームで覚える韓国語">
@@ -32,6 +39,7 @@
       <a class="hide-sm" href="#cards">トレカ</a>
       <a href="#price">料金</a>
       <a class="hide-xs" href="support.html">サポート</a>
+      <a href="en/index.html" lang="en" hreflang="en" aria-label="English" onclick="try{localStorage.setItem('nyangul.lang','en')}catch(e){}">EN</a>
     </nav>
   </div>
 </header>

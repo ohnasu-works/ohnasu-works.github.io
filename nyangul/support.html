@@ -3,6 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+/* 日本語以外のブラウザなら英語ページへ（?lang=ja か、日本語を選んだことがある時はそのまま） */
+(function(){try{if(/[?&]lang=ja(&|$)/.test(location.search))return;var s=null;try{s=localStorage.getItem('nyangul.lang')}catch(e){}if(s==='ja')return;var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').toLowerCase();if(!l||l.indexOf('ja')===0)return;location.replace('en/support.html'+location.hash)}catch(e){}})();
+</script>
+<link rel="alternate" hreflang="ja" href="https://ohnasu-works.github.io/nyangul/support.html">
+<link rel="alternate" hreflang="en" href="https://ohnasu-works.github.io/nyangul/en/support.html">
+<link rel="alternate" hreflang="x-default" href="https://ohnasu-works.github.io/nyangul/en/support.html">
 <title>にゃんグル サポート</title>
 <link rel="icon" href="../assets/img/favicon.png">
 <link rel="apple-touch-icon" href="../assets/img/nyangul/icon.png">
@@ -22,6 +29,7 @@
       <a href="index.html">アプリ紹介</a>
       <a href="privacy.html">プライバシー</a>
       <a href="support.html">サポート</a>
+      <a href="en/support.html" lang="en" hreflang="en" onclick="try{localStorage.setItem('nyangul.lang','en')}catch(e){}">English</a>
     </nav>
   </div>
 </header>
@@ -31,7 +39,7 @@
 <p class="updated">よくあるご質問と、お問い合わせ先です。</p>
 <h2>よくあるご質問</h2>
 <div class="faq">
-<details><summary>無料で遊べますか？</summary><p>すべてのコース、ミニゲームのレベル1〜3、辞書、教本の第1・2課などは無料で遊べます。すべての機能を使うには、プレミアム（1回払いの買い切り）をご購入ください。</p></details>
+<details><summary>無料で遊べますか？</summary><p>入門〜初中級のコース、ストーリー全8章、ミニゲームのレベル1〜3、辞書、教本の第1・2課などは無料で遊べます。すべての機能を使うには、プレミアム（1回払いの買い切り）をご購入ください。</p></details>
 <details><summary>プレミアムの料金はいくらですか？</summary><p>通常 2,000円の買い切りです。発売記念セールとして、2027年2月28日までは 1,400円でご購入いただけます。定期購入ではないため、自動で課金されることはありません。</p></details>
 <details><summary>購入を復元するには？</summary><p>アプリの購入画面にある「購入を復元」をタップしてください。同じ Apple アカウントなら、機種変更や再インストールのあとも使えます。</p></details>
 <details><summary>マイクが反応しません／声で答えられません</summary><p>iPhone の「設定 › にゃんグル」で「マイク」と「音声認識」がオンになっているか確認してください。ほかのアプリが録音中だったり、Bluetooth のイヤホンをつないでいたりすると、うまく聞き取れないことがあります。</p></details>

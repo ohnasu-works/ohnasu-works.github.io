@@ -3,24 +3,50 @@
  *   DJハムが韓国語を言う → その言葉の風船が下から上がる → 空に逃げる前にタップして割る
  *   ちがう風船を割る・逃がすとライフが減る（ライフ3）
  * 単語はアプリの単語データ（レベル1）から抜粋。読み上げはブラウザの韓国語音声を使う。
+ * <html lang="en..."> のページ（nyangul/en/）では、画面の文字と単語の意味を英語で出す。
  */
 (function () {
   'use strict';
   var root = document.getElementById('nyplay');
   if (!root) return;
 
-  // ---- 単語（アプリの VocabularyData・レベル1から）----
+  // ---- 表示言語（英語ページでは英語）----
+  var EN = /^en/i.test(document.documentElement.lang || '');
+  var T = EN ? {
+    hintListen: 'Pop the balloon with the word you hear!', hintMeaning: 'Pop the balloon that means this!',
+    hint: 'Hint: ', eq: ' = ', miss: 'Miss!', lives: 'Lives ',
+    altClear: 'Yuna, Taehyung and Nyan cheering', altOver: 'Nyan the cat in sunglasses',
+    perfect: 'Perfect!', clear: 'Clear!', over: 'Game Over',
+    score: function (sc, n, ok) { return 'Score ' + sc + '  ·  ' + ok + ' of ' + n + ' correct'; },
+    listen: function (w) { return 'Listen to ' + w; },
+    soundOff: '🔇 Sound off', soundOn: '🔊 Sound on',
+    soundOffLabel: 'Sound is off. Tap to turn on sound effects and voice', soundOnLabel: 'Sound is on. Tap to mute',
+    noteOff: '🔇 You can play without sound', noteOn: '🔊 Sound effects and voice are on'
+  } : {
+    hintListen: '聞こえた言葉の風船を割ろう！', hintMeaning: 'この意味の風船を割ろう！',
+    hint: 'ヒント：', eq: ' ＝ ', miss: 'ミス！', lives: 'ライフ ',
+    altClear: 'ユナ・テヒョン・ニャンが大喜びしているイラスト', altOver: 'サングラスのネコ、ニャン',
+    perfect: 'パーフェクト！', clear: 'クリア！', over: 'ゲームオーバー',
+    score: function (sc, n, ok) { return 'スコア ' + sc + '　・　' + n + '問中 ' + ok + '問正解'; },
+    listen: function (w) { return w + ' を聞く'; },
+    soundOff: '🔇 音オフ', soundOn: '🔊 音オン',
+    soundOffLabel: '音はオフです。押すと効果音と読み上げが鳴ります', soundOnLabel: '音はオンです。押すと音を消します',
+    noteOff: '🔇 音なしで遊べます', noteOn: '🔊 効果音と読み上げが鳴ります'
+  };
+
+  // ---- 単語（アプリの VocabularyData・レベル1から）[韓国語, 日本語の意味, ジャンル, 英語の意味] ----
   var WORDS = [
-    ['안녕하세요', 'こんにちは', 'greet'], ['감사합니다', 'ありがとうございます', 'greet'], ['미안해요', 'ごめんなさい', 'greet'], ['괜찮아요', '大丈夫です', 'greet'],
-    ['엄마', 'お母さん', 'family'], ['아빠', 'お父さん', 'family'], ['친구', '友達', 'family'], ['동생', '弟・妹', 'family'],
-    ['오늘', '今日', 'time'], ['내일', '明日', 'time'], ['어제', '昨日', 'time'], ['지금', '今', 'time'],
-    ['밥', 'ご飯', 'food'], ['물', '水', 'food'], ['김치', 'キムチ', 'food'], ['커피', 'コーヒー', 'food'],
-    ['집', '家', 'place'], ['학교', '学校', 'place'], ['회사', '会社', 'place'], ['가게', '店', 'place'],
-    ['가다', '行く', 'verb'], ['오다', '来る', 'verb'], ['먹다', '食べる', 'verb'], ['마시다', '飲む', 'verb'],
-    ['사랑해요', '愛してます', 'emo'], ['보고 싶어요', '会いたいです', 'emo'], ['행복해요', '幸せです', 'emo'], ['슬퍼요', '悲しいです', 'emo'],
-    ['노래', '歌', 'stage'], ['가수', '歌手', 'stage'], ['춤', 'ダンス', 'stage'], ['팬', 'ファン', 'stage'],
-    ['바다', '海', 'nature'], ['날씨', '天気', 'nature'], ['비', '雨', 'nature'], ['버스', 'バス', 'nature']
+    ['안녕하세요', 'こんにちは', 'greet', 'Hello'], ['감사합니다', 'ありがとうございます', 'greet', 'Thank you'], ['미안해요', 'ごめんなさい', 'greet', "I'm sorry"], ['괜찮아요', '大丈夫です', 'greet', "It's okay"],
+    ['엄마', 'お母さん', 'family', 'Mom'], ['아빠', 'お父さん', 'family', 'Dad'], ['친구', '友達', 'family', 'Friend'], ['동생', '弟・妹', 'family', 'Younger sibling'],
+    ['오늘', '今日', 'time', 'Today'], ['내일', '明日', 'time', 'Tomorrow'], ['어제', '昨日', 'time', 'Yesterday'], ['지금', '今', 'time', 'Now'],
+    ['밥', 'ご飯', 'food', 'Rice / a meal'], ['물', '水', 'food', 'Water'], ['김치', 'キムチ', 'food', 'Kimchi'], ['커피', 'コーヒー', 'food', 'Coffee'],
+    ['집', '家', 'place', 'Home'], ['학교', '学校', 'place', 'School'], ['회사', '会社', 'place', 'Company'], ['가게', '店', 'place', 'Store'],
+    ['가다', '行く', 'verb', 'To go'], ['오다', '来る', 'verb', 'To come'], ['먹다', '食べる', 'verb', 'To eat'], ['마시다', '飲む', 'verb', 'To drink'],
+    ['사랑해요', '愛してます', 'emo', 'I love you'], ['보고 싶어요', '会いたいです', 'emo', 'I miss you'], ['행복해요', '幸せです', 'emo', "I'm happy"], ['슬퍼요', '悲しいです', 'emo', "I'm sad"],
+    ['노래', '歌', 'stage', 'Song'], ['가수', '歌手', 'stage', 'Singer'], ['춤', 'ダンス', 'stage', 'Dance'], ['팬', 'ファン', 'stage', 'Fan'],
+    ['바다', '海', 'nature', 'Sea'], ['날씨', '天気', 'nature', 'Weather'], ['비', '雨', 'nature', 'Rain'], ['버스', 'バス', 'nature', 'Bus']
   ];
+  function mean(w) { return EN ? w[3] : w[1]; }
   var ROUNDS = 5, LIVES = 3, CHOICES = 3, RISE = 7.2; // RISE: 風船が下から上まで上がる秒数
   var COLORS = ['#FF5C93', '#37A7FF', '#1FCB8B', '#FF8C2E', '#7B61FF'];
   var IMG = root.getAttribute('data-img') || '../assets/img/nyangul/';
@@ -125,8 +151,8 @@
       sky.appendChild(el);
       return { el: el, lane: lanes[i], delay: Math.random() * 0.9, speed: 0.88 + Math.random() * 0.24, sway: Math.random() * 6, popped: false };
     });
-    $('.nyplay-hint small').textContent = (koVoice && !muted) ? '聞こえた言葉の風船を割ろう！' : 'この意味の風船を割ろう！';
-    $('.nyplay-hint b').textContent = 'ヒント：' + item[1];
+    $('.nyplay-hint small').textContent = (koVoice && !muted) ? T.hintListen : T.hintMeaning;
+    $('.nyplay-hint b').textContent = T.hint + mean(item);
     $('.nyplay-round').textContent = (st.round + 1) + ' / ' + ROUNDS;
     st.t0 = performance.now() + 500;
     speak(item[0]);
@@ -195,9 +221,9 @@
       setTimeout(function () { speak(q.item[0]); }, 250);
     }
     st.log.push({ w: q.item, ok: correct });
-    $('.nyplay-hint b').textContent = q.item[0] + ' ＝ ' + q.item[1];
+    $('.nyplay-hint b').textContent = q.item[0] + T.eq + mean(q.item);
     var f = document.createElement('div'); f.className = 'nyplay-flash';
-    f.textContent = correct ? '+' + gain : 'ミス！';
+    f.textContent = correct ? '+' + gain : T.miss;
     f.style.color = correct ? '#FFC928' : '#FF4757';
     stage.querySelector('.nyplay-play').appendChild(f);
     renderTop();
@@ -211,7 +237,7 @@
     var h = '';
     for (var i = 0; i < LIVES; i++) h += i < st.lives ? '❤️' : '🤍';
     $('.nyplay-hearts').textContent = h;
-    $('.nyplay-hearts').setAttribute('aria-label', 'ライフ ' + st.lives);
+    $('.nyplay-hearts').setAttribute('aria-label', T.lives + st.lives);
     $('.nyplay-score').textContent = '⭐ ' + st.score;
     var c = $('.nyplay-combo');
     c.textContent = st.combo + ' COMBO!';
@@ -227,18 +253,18 @@
     (cleared ? SE.clear : SE.over)();
     var r = scr.result;
     r.querySelector('.pic').src = IMG + (cleared ? 'react_trio_perfect.jpg' : 'cast_nyan.jpg');
-    r.querySelector('.pic').alt = cleared ? 'ユナ・テヒョン・ニャンが大喜びしているイラスト' : 'サングラスのネコ、ニャン';
-    r.querySelector('.nyplay-title').textContent = okCount === ROUNDS ? 'パーフェクト！' : cleared ? 'クリア！' : 'ゲームオーバー';
+    r.querySelector('.pic').alt = cleared ? T.altClear : T.altOver;
+    r.querySelector('.nyplay-title').textContent = okCount === ROUNDS ? T.perfect : cleared ? T.clear : T.over;
     r.querySelector('.nyplay-stars').textContent = '★★★'.slice(0, stars) + '☆☆☆'.slice(0, 3 - stars);
-    r.querySelector('.nyplay-score').textContent = 'スコア ' + st.score + '　・　' + st.log.length + '問中 ' + okCount + '問正解';
+    r.querySelector('.nyplay-score').textContent = T.score(st.score, st.log.length, okCount);
     var ul = r.querySelector('.nyplay-words'); ul.innerHTML = '';
     st.log.forEach(function (l) {
       var li = document.createElement('li');
       li.innerHTML = '<span class="k"></span><span class="j"></span><span class="ok">' + (l.ok ? '⭕' : '❌') + '</span>';
       li.querySelector('.k').textContent = l.w[0];
-      li.querySelector('.j').textContent = l.w[1];
+      li.querySelector('.j').textContent = mean(l.w);
       if (canSpeak && koVoice) {
-        var b = document.createElement('button'); b.type = 'button'; b.textContent = '🔊'; b.setAttribute('aria-label', l.w[0] + ' を聞く');
+        var b = document.createElement('button'); b.type = 'button'; b.textContent = '🔊'; b.setAttribute('aria-label', T.listen(l.w[0]));
         b.addEventListener('click', function () { speak(l.w[0], false, true); });
         li.insertBefore(b, li.firstChild);
       }
@@ -254,12 +280,12 @@
   root.querySelector('[data-act="slow"]').addEventListener('click', function () { if (st.q) speak(st.q.item[0], true, true); });
   var muteBtn = root.querySelector('[data-act="mute"]');
   function syncMute() {
-    muteBtn.textContent = muted ? '🔇 音オフ' : '🔊 音オン';
+    muteBtn.textContent = muted ? T.soundOff : T.soundOn;
     muteBtn.setAttribute('aria-pressed', muted ? 'false' : 'true');
-    muteBtn.setAttribute('aria-label', muted ? '音はオフです。押すと効果音と読み上げが鳴ります' : '音はオンです。押すと音を消します');
+    muteBtn.setAttribute('aria-label', muted ? T.soundOffLabel : T.soundOnLabel);
     muteBtn.classList.toggle('on', !muted);
     var note = root.querySelector('.nyplay-sound-note');
-    if (note) note.textContent = muted ? '🔇 音なしで遊べます' : '🔊 効果音と読み上げが鳴ります';
+    if (note) note.textContent = muted ? T.noteOff : T.noteOn;
   }
   muteBtn.addEventListener('click', function () {
     muted = !muted;
