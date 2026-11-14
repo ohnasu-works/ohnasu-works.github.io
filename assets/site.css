@@ -736,3 +736,5 @@ body.ny .stats span { white-space: nowrap; letter-spacing: -.02em; }
 .shot-row .wide { grid-column: span 2; }
 @media (max-width: 760px) { .shot-row { grid-template-columns: repeat(2, 1fr); } }
 .new-badge { display: inline-block; background: #FF4F8B; color: #fff; font-weight: 800; font-size: 12px; padding: 3px 10px; border-radius: 999px; border: 2px solid var(--ink); margin-left: 8px; vertical-align: middle; }
+/* 明るい色の上の白文字を読みやすく（見本画面の「正解！」） */
+.lesson-mock .q span.ok { color: #12321F; }

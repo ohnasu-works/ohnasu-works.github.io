@@ -3,8 +3,11 @@
   --p-pink: #FF5C93; --p-purple: #7B61FF; --p-sky: #37A7FF; --p-mint: #1FCB8B;
   --p-orange: #FF8C2E; --p-yellow: #FFC928; --p-red: #FF4757; --p-ink: #2B2135; --p-sub: #76698A;
   font-family: "M PLUS Rounded 1c", "Zen Kaku Gothic New", system-ui, sans-serif;
-  color: var(--p-ink);
 }
+/* 左の説明文はページの文字色に合わせる（ダークモードでも読めるように）。ゲーム画面の中だけ濃い色の文字 */
+.nyplay-copy { color: var(--ink); }
+.nyplay-copy p { color: var(--muted); }
+.nyplay-stage { color: var(--p-ink); }
 .nyplay-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 420px); gap: 48px; align-items: center; }
 @media (max-width: 860px) { .nyplay-wrap { grid-template-columns: 1fr; gap: 24px; } }
 .nyplay-copy .label { margin-bottom: 8px; }
