@@ -31,17 +31,21 @@
 <main class="wrap doc">
 <p class="label">Privacy policy</p>
 <h1>Daystitch Privacy Policy</h1>
-<p class="updated">Last updated: November 7, 2026</p>
+<p class="updated">Last updated: November 14, 2026</p>
 <h2>1. Information we collect</h2>
 <p>The developer of Daystitch (“the App”) does not collect or store any personal information about you.</p>
-<p>The only exception: if you choose an external AI (ChatGPT or Gemini) in Settings, the content needed for an AI feature is sent directly to OpenAI or Google using your own API key when you use that feature (see “4. Third-party services”). It never passes through the developer’s servers.</p>
+<p>Content needed for AI processing leaves your device only in these cases (see “4. Third-party services”):</p>
+<ul>
+<li><b>Daystitch AI (AI minutes)</b>: when an AI Minutes subscriber creates minutes, the transcript text (never the audio) is sent through the developer’s relay server to Google’s Gemini API. The relay server does not store the text. To enforce usage limits, it records only a random ID created on your device and daily/monthly usage counts (characters and requests). This ID cannot identify you</li>
+<li><b>External AI (ChatGPT or Gemini)</b>: if you choose one in Settings and enter your own API key, the content needed for an AI feature is sent directly to OpenAI or Google when you use it. It never passes through the developer’s servers</li>
+</ul>
 <h2>2. Data the App handles and where it is stored</h2>
 <p>The following data is stored only on your device and in your own iCloud (if iCloud sync is on). The developer cannot view or access it.</p>
 <ul>
 <li>Events, to-dos, habits, notes (handwriting, photos, text, stickers and moods) and templates</li>
 <li>Handwriting recognition results (processed on your device with Apple’s Vision framework)</li>
 <li>Audio recordings and their transcripts, summaries and minutes (audio is stored on your device; transcription happens on your device by default)</li>
-<li>AI assistant processing (by default handled by the on-device Apple Intelligence model, and nothing leaves your device; see section 4 if you choose an external AI)</li>
+<li>AI processing (AI minutes are handled by Daystitch AI; see sections 1 and 4)</li>
 <li>API keys for external AI (stored only in your device’s Keychain; never sent to iCloud or to the developer)</li>
 <li>Settings such as themes and enabled features (on your device only)</li>
 </ul>
@@ -60,18 +64,19 @@
 <ul>
 <li><b>Apple WeatherKit</b>: to get weather data (subject to Apple’s privacy policy)</li>
 <li><b>Apple iCloud (CloudKit)</b>: to sync your data between your own devices</li>
-<li><b>Apple Intelligence (Foundation Models)</b>: the default AI assistant. It runs on your device and does not send data to external AI services</li>
+<li><b>Daystitch AI (Google Gemini API)</b>: used for AI minutes in the AI Minutes plan. When you create minutes, the transcript text is sent through the developer’s relay server (Cloudflare Workers) to Google’s Gemini API, and the minutes text is returned. The relay server does not store the text. Content is handled under Google’s Gemini API terms</li>
+<li><b>Apple Intelligence (Foundation Models)</b>: used if you choose it in Settings. It runs on your device and does not send data to external AI services</li>
 <li><b>OpenAI (ChatGPT) / Google (Gemini)</b>: used only if you choose one in Settings, agree, and enter your own API key. When you tap an AI button, the text needed for that task (events, to-dos, note text, recording transcripts, or the recording audio itself if you turn on “Transcribe recordings with external AI”) is sent. It is handled under each company’s privacy policy and API terms (on the free tier of the Gemini API, content may be used by Google to improve its services). You can switch back to Apple Intelligence and delete your API key at any time</li>
 <li>OpenAI Privacy Policy: <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">https://openai.com/policies/privacy-policy</a></li>
 <li>Google Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></li>
 <li><b>Apple Watch</b>: your iPhone sends today’s and tomorrow’s events and today’s to-dos to your paired Apple Watch (device-to-device via Apple’s WatchConnectivity; nothing is sent to the developer)</li>
-<li><b>App Store / StoreKit</b>: to purchase and manage subscriptions (payment information is handled by Apple; the developer never receives it)</li>
+<li><b>App Store / StoreKit</b>: to purchase and manage the one-time purchase and subscriptions (payment information is handled by Apple; the developer never receives it)</li>
 <li>No advertising, analytics or tracking services are used</li>
 </ul>
 <h2>5. Deleting your data</h2>
 <p>Deleting the App removes the data on your device. Data synced to iCloud can be deleted in the Settings app under [your name] › iCloud › Manage Account Storage › Daystitch. Backup files are kept wherever you saved them.</p>
 <h2>6. Children’s privacy</h2>
-<p>The developer does not collect personal information. Using an external AI is optional; please follow the age requirements in each provider’s terms.</p>
+<p>The developer does not collect personal information. Using AI minutes or an external AI is optional; please follow the age requirements in Google’s and OpenAI’s terms.</p>
 <h2>7. Contact</h2>
 <p>ohnasu.works@gmail.com</p>
 </main>
