@@ -272,6 +272,11 @@ td.en{font-family:var(--en);font-weight:700}
 .missed b{display:block;font-size:19px}
 .missed b{font-family:var(--en)}
 @media (prefers-reduced-motion:reduce){.pop,#banner div{animation-duration:.01s}}
+.node span{font-size:22px;font-weight:900;background:#fff;border:2.5px solid var(--ink);border-radius:14px;padding:2px 10px;white-space:pre;color:var(--ink);line-height:1.15;text-align:center;box-shadow:0 3px 0 var(--ink);position:absolute;z-index:2}
+.node.sb span{top:calc(100% + 6px);left:50%;transform:translateX(-50%)}
+.node.sr span{left:calc(100% + 8px);top:50%;transform:translateY(-50%)}
+.node.sl span{right:calc(100% + 8px);top:50%;transform:translateY(-50%)}
+#mapBox{overflow:visible}
 </style>
 
 <div id="app">
@@ -1269,14 +1274,20 @@ function audioInit(){if(HTMLA){htmlAudioInit();return}try{if(!AC){AC=new (window
 /* stage map: node positions are % of the map picture */
 const LEVELS=[["Lv1","スターター通り","ミス・ビー",true,50,84],["Lv2","フューチャー通り","ウィル",false,68,66],["Lv3","トロフィー広場","ミスター・ハヴ",false,43,57],["Lv4","ホテル街","コンシェルジュ・セブン",false,73,46],["Lv5","イフの花園","マダム・イフ",false,32,38],["Lv6","ロジック研究所","ドクター・ロジック",false,68,31],["卒業","サイレンス城","キング・サイレンス",false,66,13]];
 let selLv=0;
+/* stage names: beside the circle on the sea side (l / r), the middle ones below (b) */
+const LSIDE=["b","r","l","r","l","r","b"];
+function twoLines(nm){for(const s of ["研究所","通り","広場","花園"])if(nm.endsWith(s)&&nm.length>s.length+1)return nm.slice(0,-s.length)+"\n"+s;return null}
+function fitLabel(sp,nm,sd){if($("#stageSel").hidden)return;const W=$("#stageSel").getBoundingClientRect();const r=sp.getBoundingClientRect();
+  if(r.left<W.left+6||r.right>W.right-6){const t=twoLines(nm);if(t){sp.textContent=t;sp.classList.add("two")}
+    const r2=sp.getBoundingClientRect();if(r2.left<W.left+6||r2.right>W.right-6){const k=Math.max(.6,(sd==="r"?W.right-6-r2.left:r2.right-W.left-6)/r2.width);sp.style.fontSize=(22*k)+"px"}}}
 function renderStages(){const B=$("#mapBox");B.querySelectorAll(".node,.mapNyan").forEach(n=>n.remove());$("#mapImg").src=SPR.map;
   LEVELS.forEach(([lv,nm,boss,open,x,y],i)=>{const n=el("button","node"+(open?" open":" lock")+(i===selLv?" sel":""));n.style.left=x+"%";n.style.top=y+"%";
-    n.appendChild(el("i",null,open?String(i+1):"🔒"));n.appendChild(el("span",null,nm));n.onclick=()=>{selLv=i;se("kira1",1.2,.4);renderStages()};B.appendChild(n)});
+    n.appendChild(el("i",null,open?String(i+1):"🔒"));const sd=LSIDE[i];n.classList.add("s"+sd);const sp=el("span",null,nm);n.appendChild(sp);n.onclick=()=>{selLv=i;se("kira1",1.2,.4);renderStages()};B.appendChild(n);requestAnimationFrame(()=>fitLabel(sp,nm,sd))});
   const [lv,nm,boss,open,x,y]=LEVELS[selLv];const ny=document.createElement("img");ny.className="mapNyan";ny.src=SPR.nyan;ny.style.left=x+"%";ny.style.top=y+"%";B.appendChild(ny);
   $("#msName").textContent=lv+"　"+nm;$("#msSub").textContent=open?"ボス："+boss+"　／　be動詞":"ボス：？？？　／　準備中";
   $("#msBoss").src=open?SPR.boss:SPR.gobbles[3];$("#msBoss").classList.toggle("lockImg",!open);
   requestAnimationFrame(()=>$("#stageSel").style.setProperty("--sheetH",($("#mapSheet").offsetHeight+16)+"px"));$("#startBtn").disabled=!open;$("#startBtn").textContent=open?"ストーリーから始める":"準備中";$("#mapSheet").querySelector(".diffRow").style.display=open?"":"none"}
-$("#gameBtn").onclick=()=>{audioInit();renderStages();renderDiff();$("#stageSel").hidden=false};
+$("#gameBtn").onclick=()=>{audioInit();$("#stageSel").hidden=false;renderStages();renderDiff()};
 $("#selBack").onclick=()=>$("#stageSel").hidden=true;
 $("#studyBtn").onclick=()=>{G.missed=G.missed||[];$("#learnBtn").onclick()};
 $("#howBtn").onclick=()=>$("#howto").hidden=false;$("#howClose").onclick=()=>$("#howto").hidden=true;
@@ -1361,7 +1372,7 @@ Promise.all([...SPR.gobbles.map(tex),tex(SPR.mid),tex(SPR.boss),tex(SPR.bossFree
 });
 
 /* website trial: open straight on the stage map */
-try{renderStages();renderDiff();$("#stageSel").hidden=false}catch(e){}
+try{$("#stageSel").hidden=false;renderStages();renderDiff()}catch(e){}
 </script>
 
 </body>
