@@ -634,8 +634,11 @@ function say(t,o){ if(!voiceOn) return; try{ speechSynthesis.cancel(); const u=n
 
 /* ---------- three.js scene ---------- */
 const stageEl=$("#stage");
-const renderer=new THREE.WebGLRenderer({canvas:$("#c"),antialias:true,alpha:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+const LOWP=matchMedia("(pointer: coarse)").matches; let PR=Math.min(devicePixelRatio,LOWP?1.5:2);
+const renderer=new THREE.WebGLRenderer({canvas:$("#c"),antialias:!LOWP,alpha:true,powerPreference:"high-performance"});
+renderer.setPixelRatio(PR);
+/* adaptive resolution: when frames are slow, lower the pixel ratio step by step */
+let fpsN=0,fpsT=0,fpsLast=0;function fpsWatch(now){if(fpsLast){const d=now-fpsLast;if(d<200){fpsT+=d;fpsN++}}fpsLast=now;if(fpsN>=45){const avg=fpsT/fpsN;fpsN=0;fpsT=0;if(avg>21&&PR>0.75){PR=Math.max(0.75,PR-0.25);renderer.setPixelRatio(PR);resize()}}}
 renderer.outputEncoding=THREE.sRGBEncoding;
 const scene=new THREE.Scene();
 scene.fog=new THREE.Fog(0xd8d8de,40,110);
@@ -1314,7 +1317,7 @@ $("#dexBtn").onclick=()=>{$("#dexGrid").hidden=false;openDex()};$("#dexClose").o
 let last=performance.now();
 function loop(now){
   const dt=Math.min(.05,(now-last)/1000);last=now;
-  if(G.paused){const d=(now-(G.pLast||now));G.pLast=now;G.t0+=d;if(G.packList)G.packList.forEach(p=>{p.t0+=d});if(G.freezeUntil)G.freezeUntil+=d;renderer.render(scene,camera);requestAnimationFrame(loop);return}
+  if(G.paused){const d=(now-(G.pLast||now));G.pLast=now;G.t0+=d;if(G.packList)G.packList.forEach(p=>{p.t0+=d});if(G.freezeUntil)G.freezeUntil+=d;fpsWatch(performance.now());renderer.render(scene,camera);requestAnimationFrame(loop);return}
   G.pLast=now;
   for(let i=tweens.length-1;i>=0;i--){const t=tweens[i];t.t+=dt;const k=Math.min(1,t.t/t.dur);t.fn(k);if(k>=1){tweens.splice(i,1);t.done&&t.done()}}
   for(let i=parts.length-1;i>=0;i--){const p=parts[i];p.life+=dt;if(p.smoke){const g=1+p.life*1.6;p.s.scale.set(p.sc*g,p.sc*g,1)}else p.v.y-=9*dt;p.s.position.addScaledVector(p.v,dt);p.s.material.opacity=1-p.life/p.max;p.s.material.rotation+=dt*4;if(p.life>=p.max){scene.remove(p.s);parts.splice(i,1)}}
@@ -1347,7 +1350,7 @@ function loop(now){
   {const fwd=new THREE.Vector3(G.lookBias||0,1.6,camera.position.z-12);let want=G.lookAt||fwd;
    if(!G.lookAt&&G.enemy&&(G.state==="fight"||G.enc&&!small())){want=fwd.clone().lerp(G.enemy.position,.8)}
    lookCur.lerp(want,1-Math.exp(-dt*5));camera.lookAt(lookCur);}
-  renderer.render(scene,camera);requestAnimationFrame(loop);
+  fpsWatch(performance.now());renderer.render(scene,camera);requestAnimationFrame(loop);
 }
 const DK=["props","shops","folks","park","gobbles2"];
 Promise.all([...SPR.gobbles.map(tex),tex(SPR.mid),tex(SPR.boss),tex(SPR.bossFree),...DK.map(k=>Promise.all(SPR[k].map(tex))),tex(SPR.skyline)]).then(arr=>{
