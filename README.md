@@ -8,6 +8,7 @@
 - daystitch/privacy.html … プライバシーポリシー（App Store に登録する URL）
 - daystitch/support.html … サポート（App Store に登録する URL）
 - nyangul/index.html・privacy.html・support.html … にゃんグルの紹介・プライバシー・サポート
+- nyanglish/index.html・privacy.html・support.html … にゃんグリッシュの紹介（ブラウザのタイピング体験つき）・プライバシー・サポート
 - assets/img/ohnasu-mark.png・favicon.png・ohnasu-icon.png … Oh!nasu Works のナスのアイコン
 - assets/site.css … 全ページ共通のデザイン
 - assets/img/ … 写真・アイコン

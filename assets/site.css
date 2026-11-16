@@ -738,3 +738,38 @@ body.ny .stats span { white-space: nowrap; letter-spacing: -.02em; }
 .new-badge { display: inline-block; background: #FF4F8B; color: #fff; font-weight: 800; font-size: 12px; padding: 3px 10px; border-radius: 999px; border: 2px solid var(--ink); margin-left: 8px; vertical-align: middle; }
 /* 明るい色の上の白文字を読みやすく（見本画面の「正解！」） */
 .lesson-mock .q span.ok { color: #12321F; }
+
+/* ---------- 5アプリ並び（にゃんグリッシュ追加） ---------- */
+.try-tag.mint { background: #DDF8EC; color: #0B5A41; border: 2px solid #0B5A41; box-shadow: 0 3px 0 #0B5A41; }
+.app-card.app-eg { --app-c: #12A57A; }
+/* トップの絵：大きい画面は3列（上3枚・下2枚を中央に）。絵を少し小さくして5枚でも窮屈にしない */
+@media (min-width: 641px) {
+  .hero-apps { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; max-width: 540px; padding-bottom: 8px; }
+  .hero-apps .hero-app { grid-column: span 2; }
+  .hero-apps .hero-app:nth-child(4) { grid-column: 2 / span 2; }
+  .hero-apps .hero-app:nth-child(5) { grid-column: 4 / span 2; }
+  .hero-apps .hero-app:nth-child(even), .hero-apps .hero-app:nth-child(even):hover { transform: none; }
+  .hero-apps .hero-app:hover { transform: translateY(-3px); }
+  .hero-apps .hero-app:nth-child(2) { margin-top: 18px; }
+  .hero-app .shot { aspect-ratio: 1 / 1; }
+  .hero-apps .hero-app .row { padding: 8px 8px; gap: 6px; }
+  .hero-apps .hero-app .row img { width: 28px; height: 28px; border-radius: 8px; }
+  .hero-apps .hero-app .row b { font-size: clamp(11.5px, 1.05vw, 13.5px); }
+  .hero-apps .hero-app .row small { font-size: 10px; }
+  .hero-apps .try-tag { font-size: 10px; padding: 3px 7px; top: 7px; left: 7px; }
+}
+@media (max-width: 640px) {
+  .hero-apps { grid-template-columns: repeat(5, 62%); }
+}
+/* 新しいアプリの印 */
+.hero-new::after { content: "NEW"; position: absolute; top: 7px; right: 7px; z-index: 1; font: 800 10px/1 var(--font-display); padding: 4px 7px; border-radius: 999px; background: #FF4F8B; color: #fff; border: 2px solid #2B2134; }
+/* アプリ一覧：大きい画面は2列。5本目（最新）は横長に1枚で大きく */
+@media (min-width: 1000px) {
+  .app-grid > .app-card:nth-child(5) { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); grid-template-rows: auto; }
+  .app-grid > .app-card:nth-child(5) .media { min-width: 0; aspect-ratio: auto; height: 100%; min-height: 360px; border-radius: calc(var(--radius) - 4px) 0 0 calc(var(--radius) - 4px); }
+  .app-grid > .app-card:nth-child(5) .body { min-width: 0; background: var(--surface); }
+  .app-grid > .app-card:nth-child(5) .media img { height: 100%; object-fit: cover; }
+  .app-grid > .app-card:nth-child(5) .body { border-top: 0; border-left: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+}
+/* フッター：アプリ5つ＋そのほか */
+@media (min-width: 900px) { .fg-cols { grid-template-columns: repeat(6, minmax(0, 1fr)); } }

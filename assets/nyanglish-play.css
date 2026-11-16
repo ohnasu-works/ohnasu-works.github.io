@@ -1,0 +1,85 @@
+/* にゃんグリッシュ skin: mint & sunny yellow, Wordia pop */
+body.ny.eg {
+  --brand: #12A57A; --btn: #12A57A; --btn-ink: #FFFFFF; --accent: #FF8A3D; --soft: #E3FBF1; --line: #CDEFE0;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body.ny.eg { --brand: #5FE0B4; --btn: #5FE0B4; --btn-ink: #10261E; --soft: #17302A; --line: #24453B; }
+}
+:root[data-theme="dark"] body.ny.eg { --brand: #5FE0B4; --btn: #5FE0B4; --btn-ink: #10261E; --soft: #17302A; --line: #24453B; }
+.eg .eg-badge { display: inline-block; border: 2px solid var(--ink); border-radius: 999px; padding: 2px 12px; font-weight: 700; font-size: 13px; background: #fff; color: #222; margin: 2px 4px 2px 0; }
+.eg .eg-badge.new { background: #FFC928; }
+.eg .nb { white-space: nowrap; }
+.eg .ds-hero .photo { aspect-ratio: 4 / 5 !important; }
+
+/* 6 skills */
+.skills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 860px) { .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .skills { grid-template-columns: 1fr; } }
+.skill { border: 2px solid var(--ink); border-radius: 20px; padding: 18px 18px 16px; background: var(--surface); box-shadow: 0 5px 0 var(--ink); }
+.skill .k { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.skill .k i { font-style: normal; font-size: 26px; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; border: 2px solid var(--ink); background: var(--soft); flex: none; }
+.skill h3 { margin: 0; font-size: 19px; }
+.skill h3 small { display: block; font-size: 12px; color: var(--muted); font-family: var(--font-mono, monospace); letter-spacing: .04em; }
+.skill p { margin: 0; font-size: 14.5px; line-height: 1.75; }
+.skill .how { margin-top: 10px; font-size: 13px; color: var(--muted); }
+
+/* wide images */
+.eg-wide { border: 3px solid var(--ink); border-radius: 22px; overflow: hidden; box-shadow: 0 6px 0 var(--ink); background: var(--soft); }
+.eg-wide img { width: 100%; display: block; }
+.eg-bosses { width: 100%; display: block; margin-top: 18px; }
+.eg-zukan { width: 100%; display: block; margin-top: 10px; }
+
+/* device row */
+.eg-devices { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+@media (max-width: 760px) { .eg-devices { grid-template-columns: 1fr; } }
+.eg-devices div { border: 2px solid var(--ink); border-radius: 18px; padding: 14px 16px; background: var(--surface); }
+.eg-devices b { display: block; font-size: 17px; margin-bottom: 4px; }
+.eg-devices p { margin: 0; font-size: 14px; line-height: 1.7; }
+
+/* ---------- typing demo ---------- */
+.typ-stage { --p-ink: #1F2A44; --p-yellow: #FFD23F; --p-pink: #12A57A; position: relative; width: 100%; max-width: 440px; margin: 0 auto;
+  aspect-ratio: 9 / 13; border: 3px solid var(--p-ink); border-radius: 26px; overflow: hidden; box-shadow: 0 8px 0 var(--p-ink);
+  background: linear-gradient(#8FD8FF, #DFF6FF 55%, #BFE8B0 56%, #9FD488); color: var(--p-ink); font-family: "M PLUS Rounded 1c", var(--font-body), sans-serif; user-select: none; }
+.typ-stage * { box-sizing: border-box; }
+.typ-screen { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; }
+.typ-screen[hidden] { display: none; }
+.typ-lobby { justify-content: center; gap: 12px; padding: 22px; text-align: center; background: rgb(255 255 255 / .55); }
+.typ-lobby img.art { width: 72%; max-width: 300px; filter: drop-shadow(0 6px 0 rgb(0 0 0 / .15)); }
+.typ-title { font-family: "Dela Gothic One", "M PLUS Rounded 1c", sans-serif; font-size: 30px; line-height: 1.1; margin: 0; color: var(--p-yellow);
+  -webkit-text-stroke: 2px var(--p-ink); paint-order: stroke fill; text-shadow: 0 4px 0 var(--p-ink); transform: rotate(-3deg); }
+.typ-card { background: #fff; border: 2.5px solid var(--p-ink); border-radius: 16px; padding: 10px 14px; font-size: 14px; line-height: 1.7; font-weight: 700; }
+.typ-btn { appearance: none; border: 3px solid var(--p-ink); border-radius: 18px; box-shadow: 0 5px 0 var(--p-ink); background: var(--p-pink); color: #fff;
+  font: inherit; font-weight: 900; font-size: 20px; padding: 10px 26px; cursor: pointer; }
+.typ-btn:active { transform: translateY(4px); box-shadow: 0 1px 0 var(--p-ink); }
+.typ-btn.sub { background: #fff; color: var(--p-ink); }
+.typ-top { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 10px 12px; font-weight: 900; }
+.typ-pill { background: #fff; border: 2.5px solid var(--p-ink); border-radius: 999px; padding: 2px 12px; font-size: 15px; }
+.typ-combo { color: #FF5A7A; font-size: 16px; min-width: 70px; text-align: center; -webkit-text-stroke: .5px var(--p-ink); }
+.typ-field { position: relative; flex: 1; width: 100%; }
+.typ-foe { position: absolute; left: 50%; bottom: 8%; transform: translateX(-50%) scale(.35); transform-origin: 50% 100%; width: 46%; text-align: center; transition: transform .1s linear; }
+.typ-foe img { width: 100%; filter: drop-shadow(0 6px 0 rgb(0 0 0 / .18)); }
+.typ-foe.hit { animation: typHit .45s ease-out forwards; }
+@keyframes typHit { 30% { filter: brightness(2); } 100% { opacity: 0; transform: translateX(-50%) scale(.2) rotate(30deg); } }
+.typ-word { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); width: 92%; text-align: center; }
+.typ-word .ja { font-size: 14px; font-weight: 800; background: #fff; border: 2.5px solid var(--p-ink); border-radius: 12px; display: inline-block; padding: 2px 10px; }
+.typ-word .en { margin-top: 8px; font-family: "DM Mono", ui-monospace, monospace; font-size: 32px; font-weight: 700; letter-spacing: .06em; }
+.typ-word .en .ok { color: #12A57A; }
+.typ-word .en .rest { color: var(--p-ink); opacity: .35; }
+.typ-word .en .miss { color: #FF4F6E; }
+.typ-input { width: 86%; margin: 0 auto 12px; font: 700 20px "DM Mono", ui-monospace, monospace; text-align: center; padding: 8px; border: 3px solid var(--p-ink); border-radius: 14px; background: #fff; color: var(--p-ink); }
+.typ-hearts { font-size: 18px; letter-spacing: 2px; }
+.typ-result { justify-content: center; gap: 10px; padding: 20px; text-align: center; background: rgb(255 255 255 / .75); }
+.typ-result .big { font-family: "Dela Gothic One", sans-serif; font-size: 40px; color: var(--p-yellow); -webkit-text-stroke: 2px var(--p-ink); paint-order: stroke fill; text-shadow: 0 4px 0 var(--p-ink); }
+.typ-list { list-style: none; margin: 0; padding: 8px 12px; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-height: 120px; overflow: auto; }
+.typ-list li { background: var(--soft, #E3FBF1); border-radius: 8px; padding: 1px 8px; font-size: 13px; }
+.typ-note { font-size: 12px; opacity: .75; margin: 0; }
+.typ-mute { position: absolute; right: 10px; bottom: 10px; z-index: 3; appearance: none; border: 2px solid var(--p-ink); border-radius: 999px; background: #fff; font: inherit; font-size: 12px; font-weight: 800; padding: 3px 10px; cursor: pointer; color: var(--p-ink); }
+.typ-hands { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; width: 92%; margin: 0 auto 10px; font: 700 11px "DM Mono", monospace; }
+.typ-hands span { text-align: center; padding: 3px 0; border-radius: 6px; border: 1.5px solid var(--p-ink); background: #fff; }
+.typ-hands span.on { background: var(--p-yellow); }
+/* keep the sound button off the input box */
+.typ-mute { bottom: auto; top: 50px; }
+/* device notes stack in the half-width column */
+.eg-devices { grid-template-columns: 1fr !important; }
+.eg-devices div { display: grid; grid-template-columns: 70px 1fr; align-items: center; gap: 10px; }
+.eg-devices b { margin: 0; }
