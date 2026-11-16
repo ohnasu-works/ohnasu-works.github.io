@@ -1356,6 +1356,9 @@ Promise.all([...SPR.gobbles.map(tex),tex(SPR.mid),tex(SPR.boss),tex(SPR.bossFree
   $("#nyanImg").src=SPR.nyan;$("#titleNyan").src=SPR.nyan;$("#kaKen").src=SPR.ken;$("#kaRin").src=SPR.rin;$("#kaG1").src=SPR.gobbles[0];$("#kaG2").src=SPR.gobbles[6];$("#kaD1").src=SPR.gobbles[7];$("#kaD2").src=SPR.gobbles2[9];resize();requestAnimationFrame(loop);
   G.state="title";hud.call&&Object.assign(G,{life:5,score:0,combo:0});hud();
 });
+
+/* website trial: open straight on the stage map */
+try{renderStages();renderDiff();$("#stageSel").hidden=false}catch(e){}
 </script>
 
 </body>
