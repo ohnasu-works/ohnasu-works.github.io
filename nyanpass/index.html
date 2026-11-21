@@ -31,6 +31,11 @@
 @media (max-width: 480px) { .np-cast { grid-template-columns: repeat(4, 1fr); } .np-story { grid-template-columns: repeat(3, 1fr); } }
 .compare th, .compare td { word-break: keep-all; overflow-wrap: anywhere; }
 .compare td:first-child { white-space: nowrap; }
+.np-screens{list-style:none;margin:0;padding:4px 2px 18px;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.np-screens li{flex:0 0 auto;width:min(62vw,250px);scroll-snap-align:start}
+.np-screens img{width:100%;height:auto;display:block;border-radius:18px;border:3px solid var(--ink);box-shadow:0 6px 0 var(--ink)}
+.feature .ico img{width:40px;height:40px;display:block}
+body.ny .feature .ico:has(img){background:transparent}
 </style>
 </head>
 <body class="ny">
@@ -76,11 +81,32 @@
 <div aria-label="にゃんパスの中身" class="stats rise d3">
 <div><b>2,057</b><span>問の過去問</span></div>
 <div><b>100</b><span>問の模擬試験</span></div>
-<div><b>24</b><span>課の教本</span></div>
+<div><b>32</b><span>課の教本</span></div>
 <div><b>818</b><span>語の用語集</span></div>
 <div><b>8</b><span>章のストーリー</span></div>
 <div><b>21</b><span>人のキャラ</span></div>
 </div>
+</div>
+</section>
+<div class="wrap"><hr class="stitch"/></div>
+<section class="section" id="screens">
+<div class="wrap">
+<div class="section-head">
+<p class="label">Screens</p>
+<h2><span class="nb">アプリの画面を</span><span class="nb">のぞいてみる。</span></h2>
+<p data-budoux="1">ホームから​模擬試験・​勉強・​コース・​ゲームへ​ひとっとび。​横に​スクロールして​ご覧ください。</p>
+</div>
+<ul class="np-screens">
+<li><img src="img/screens/s1.webp" alt="ホーム画面（模擬試験・勉強・コース・ゲームの入口）" loading="lazy" width="600" height="1305"></li>
+<li><img src="img/screens/s2.webp" alt="過去問を解いて解説を読む画面" loading="lazy" width="600" height="1305"></li>
+<li><img src="img/screens/s3.webp" alt="模擬試験のメニュー画面" loading="lazy" width="600" height="1305"></li>
+<li><img src="img/screens/s4.webp" alt="勉強のメニュー（教本・用語集・計算ドリルなど）" loading="lazy" width="600" height="1305"></li>
+<li><img src="img/screens/s5.webp" alt="用語を1つずつ覚えるコースの画面" loading="lazy" width="600" height="1305"></li>
+<li><img src="img/screens/s6.webp" alt="8種類のミニゲームの一覧" loading="lazy" width="600" height="1305"></li>
+<li><img src="img/screens/s7.webp" alt="ストーリー第1章でニャンが登場する場面" loading="lazy" width="600" height="1305"></li>
+<li><img src="img/screens/s8.webp" alt="相棒のユナとのあいさつ画面" loading="lazy" width="600" height="1305"></li>
+<li><img src="img/screens/s9.webp" alt="きろく（合格までの目安・学習カレンダー）" loading="lazy" width="600" height="1305"></li>
+</ul>
 </div>
 </section>
 <div class="wrap"><hr class="stitch"/></div>
@@ -203,12 +229,15 @@
 <h2><span class="nb">読んで、解いて、</span><span class="nb">遊んで覚える。</span></h2>
 </div>
 <div class="features">
-<div class="feature"><div class="ico">🗺️</div><h3 data-budoux="1">1マスずつ​進む、​ステージ式の​コース</h3><p data-budoux="1">3分野の​用語を​10問ずつの​ステージで。​6割正解で​合格、​全問正解で​パーフェクト。​ライバル対決や​中間テストの​イベントマスも。​苦手な​用語は​自動で​復習に。</p></div>
-<div class="feature"><div class="ico">📘</div><h3 data-budoux="1">にゃんパス教本</h3><p data-budoux="1">シラバス順の​全32課。​損益分岐点・​稼働率・​2進数などの​計算も、​例つきで​やさしく。​各課に​ミニクイズ。</p></div>
-<div class="feature"><div class="ico">🔎</div><h3 data-budoux="1">用語集</h3><p data-budoux="1">818語を​用語・読み・​意味で​検索。​苦手な​用語だけの​表示も​できます。</p></div>
-<div class="feature"><div class="ico">🎮</div><h3 data-budoux="1">キャラワールド</h3><p data-budoux="1">21のワールドで、​意味あて・​略語の​正式名・​どの分野？・​○×・​仲間はずれ・​計算の​プチゲームを​次々に。</p></div>
-<div class="feature"><div class="ico">⚡</div><h3 data-budoux="1">8種類の​ミニゲーム</h3><p data-budoux="1">スピードクイズ・​計算ラッシュ・​セキュリティ防衛など、​遊び方が​ぜんぶ​ちがう​8つの​ゲーム。​<a href="#games">くわしく見る</a></p></div>
-<div class="feature"><div class="ico">🃏</div><h3 data-budoux="1">トレカと​着せ替え</h3><p data-budoux="1">ゲームで​ためた​コインで​トレカガチャ​（コインは​お金では​買えません）。​ユナ・​テヒョン・​ニャンの​衣装は​全36着。相棒との​トークでは、​毎日1つ​新しい​IT用語の​話題が​届きます。​苦手な​分野の​アドバイスや、​いっしょに​過ごした​日数で​開く​思い出の​エピソードも。</p></div>
+<div class="feature"><div class="ico"><img src="img/ui/course.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">1マスずつ​進む、​ステージ式の​コース</h3><p data-budoux="1">3分野の​用語を​10問ずつの​ステージで。​6割正解で​合格、​全問正解で​パーフェクト。​ライバル対決や​中間テストの​イベントマスも。​苦手な​用語は​自動で​復習に。</p></div>
+<div class="feature"><div class="ico"><img src="img/ui/textbook.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">にゃんパス教本</h3><p data-budoux="1">シラバス順の​全32課。​損益分岐点・​稼働率・​2進数などの​計算も、​例つきで​やさしく。​各課に​ミニクイズ。</p></div>
+<div class="feature"><div class="ico"><img src="img/ui/glossary.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">用語集</h3><p data-budoux="1">818語を​用語・読み・​意味で​検索。​苦手な​用語だけの​表示も​できます。</p></div>
+<div class="feature"><div class="ico"><img src="img/ui/quiz.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">キャラワールド</h3><p data-budoux="1">21のワールドで、​意味あて・​略語の​正式名・​どの分野？・​○×・​仲間はずれ・​計算の​プチゲームを​次々に。</p></div>
+<div class="feature"><div class="ico"><img src="img/ui/minigame.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">8種類の​ミニゲーム</h3><p data-budoux="1">スピードクイズ・​計算ラッシュ・​セキュリティ防衛など、​遊び方が​ぜんぶ​ちがう​8つの​ゲーム。​<a href="#games">くわしく見る</a></p></div>
+<div class="feature"><div class="ico"><img src="img/ui/cards.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">トレカと​着せ替え</h3><p data-budoux="1">ゲームで​ためた​コインで​トレカガチャ​（コインは​お金では​買えません）。​ユナ・​テヒョン・​ニャンの​衣装は​全36着。</p></div>
+<div class="feature"><div class="ico"><img src="img/ui/partner.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">相棒と​いっしょに</h3><p data-budoux="1">相棒との​トークでは、​毎日1つ​新しい​IT用語の​話題が​届きます。​苦手な​分野の​アドバイスや、​いっしょに​過ごした​日数で​開く​思い出の​エピソードも。​ホームの​相棒は​好きな​場所に​動かせます。</p></div>
+<div class="feature"><div class="ico"><img src="img/ui/mission.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">デイリーミッション</h3><p data-budoux="1">毎日3つの​ミッション。​クリアすると​コインが​自動で​もらえて、​3つ​全部で​ボーナスも。</p></div>
+<div class="feature"><div class="ico"><img src="img/ui/record.webp" alt="" width="40" height="40"></div><h3 data-budoux="1">合格までの​目安と​学習カレンダー</h3><p data-budoux="1">模擬試験の​最高点と​合格ライン600点、​過去問の​正答率、​覚えた​用語の​数が​ひと目で。​勉強した​日は​カレンダーに​色がつきます。</p></div>
 </div>
 </div>
 </section>
