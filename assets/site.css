@@ -775,3 +775,13 @@ body.ny .stats span { white-space: nowrap; letter-spacing: -.02em; }
 }
 /* フッター：アプリ5つ＋そのほか */
 @media (min-width: 900px) { .fg-cols { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+.app-card.app-ms { --app-c: #D0391C; }
+/* 6本目（Mekuri Scan）を追加：5本目と6本目を2列に並べる（横長1枚の形はやめる） */
+@media (min-width: 1000px) {
+  .app-grid > .app-card:nth-child(5) { grid-column: auto; display: flex; flex-direction: column; }
+  .app-grid > .app-card:nth-child(5) .media { height: auto; min-height: 0; border-radius: calc(var(--radius) - 4px) calc(var(--radius) - 4px) 0 0; }
+  .app-grid > .app-card:nth-child(5) .media img { height: 100%; object-fit: cover; }
+  .app-grid > .app-card:nth-child(5) .body { border-left: 0; border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+}
+.app-card.app-ms .media img { object-fit: cover; object-position: 50% 18%; }
+@media (min-width: 900px) { .fg-cols { grid-template-columns: repeat(7, minmax(0, 1fr)); } }

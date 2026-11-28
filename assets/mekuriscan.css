@@ -1,0 +1,100 @@
+/* Mekuri Scan ページ専用（site.css の上に乗せる）。紙の色・墨色・朱色の3色 */
+body.ms {
+  --bg: #FFFFFF; --surface: #FFFFFF; --soft: #F5F4F0; --ink: #17171A; --muted: #55545C; --line: #E3E1DB;
+  --brand: #17171A; --btn: #17171A; --btn-ink: #FFFFFF; --accent: #D0391C;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body.ms {
+    --bg: #111113; --surface: #1A1A1D; --soft: #1F1F23; --ink: #F2F1EE; --muted: #ABA9B1; --line: #2F2F34;
+    --brand: #F2F1EE; --btn: #F2F1EE; --btn-ink: #111113; --accent: #EE5A3C;
+  }
+}
+:root[data-theme="dark"] body.ms {
+  --bg: #111113; --surface: #1A1A1D; --soft: #1F1F23; --ink: #F2F1EE; --muted: #ABA9B1; --line: #2F2F34;
+  --brand: #F2F1EE; --btn: #F2F1EE; --btn-ink: #111113; --accent: #EE5A3C;
+}
+body.ms .section-head h2, body.ms .ms-hero h1 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; }
+body.ms .label { color: var(--accent); }
+.phr { white-space: nowrap; display: inline-block; }
+[data-budoux] { word-break: keep-all; overflow-wrap: anywhere; }
+
+/* ヒーロー */
+.ms-hero { padding-block: clamp(30px, 5vw, 64px); }
+.ms-hero .grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+@media (max-width: 860px) { .ms-hero .grid { grid-template-columns: 1fr; } }
+.ms-hero h1 { font-size: clamp(34px, 5.4vw, 62px); line-height: 1.2; }
+.ms-hero h1 em { font-style: normal; color: var(--accent); }
+.ms-hero .lead { margin-top: 18px; font-size: clamp(16px, 1.9vw, 19px); color: var(--muted); max-width: 32em; }
+.ms-hero .btn-row { margin-top: 26px; }
+.ms-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 28px; }
+.ms-stats div { padding: 14px 10px; border-radius: 16px; background: var(--soft); text-align: center; }
+.ms-stats b { display: block; font-family: var(--font-display); font-size: clamp(22px, 2.6vw, 30px); line-height: 1.2; color: var(--accent); }
+.ms-stats span { font-size: 12px; color: var(--muted); white-space: nowrap; letter-spacing: -.02em; display: block; }
+@media (max-width: 560px) { .ms-stats { grid-template-columns: 1fr 1fr; } }
+
+/* ヒーローの絵：カードと本を机に広げたイメージ */
+.ms-stage { position: relative; aspect-ratio: 1 / .92; border-radius: 28px; overflow: hidden;
+  background: radial-gradient(ellipse at 50% 40%, #FFFFFF 0%, #F5F4F0 50%, #E6E2D8 100%); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ms-stage { background: radial-gradient(ellipse at 50% 40%, #2A2A2F 0%, #1C1C20 55%, #121214 100%); } }
+:root[data-theme="dark"] .ms-stage { background: radial-gradient(ellipse at 50% 40%, #2A2A2F 0%, #1C1C20 55%, #121214 100%); }
+.ms-stage img { position: absolute; border-radius: 10px; box-shadow: 0 18px 34px -12px rgb(0 0 0 / .45); }
+.ms-stage .phone { position: absolute; left: 50%; top: 6%; width: 34%; transform: translateX(-50%); border-radius: 22px; box-shadow: 0 30px 60px -20px rgb(0 0 0 / .55); z-index: 3; }
+.ms-stage .c1 { width: 22%; left: 6%; top: 14%; transform: rotate(-12deg); }
+.ms-stage .c2 { width: 21%; left: 13%; top: 52%; transform: rotate(8deg); }
+.ms-stage .b1 { width: 24%; right: 5%; top: 10%; transform: rotate(10deg); border-radius: 4px; }
+.ms-stage .b2 { width: 23%; right: 10%; top: 50%; transform: rotate(-7deg); border-radius: 4px; }
+.ms-stage .tag { position: absolute; z-index: 4; padding: 8px 14px; border-radius: 999px; background: rgb(255 255 255 / .9); color: #17171A;
+  font-size: 13px; font-weight: 700; box-shadow: 0 8px 22px rgb(0 0 0 / .16); white-space: nowrap; }
+.ms-stage .tag i { font-style: normal; color: #D0391C; }
+.ms-stage .t1 { left: 4%; bottom: 7%; }
+.ms-stage .t2 { right: 4%; bottom: 7%; }
+
+/* App Store の画面ギャラリー（横スクロール） */
+.ms-gallery { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 4px 18px; margin: 0 -4px; -webkit-overflow-scrolling: touch; }
+.ms-gallery figure { flex: none; width: clamp(180px, 22vw, 230px); margin: 0; scroll-snap-align: start; }
+.ms-gallery img { width: 100%; height: auto; border-radius: 18px; box-shadow: 0 14px 30px -14px rgb(0 0 0 / .45); }
+.ms-gallery figcaption { font-size: 12.5px; color: var(--muted); margin-top: 8px; text-align: center; }
+
+/* 2つの柱（カード・本） */
+.ms-two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 860px) { .ms-two { grid-template-columns: 1fr; } }
+.ms-pillar { border: 1.5px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); display: flex; flex-direction: column; }
+.ms-pillar .media { display: flex; gap: 10px; justify-content: center; align-items: flex-end; padding: 26px 18px 0; background: var(--soft); min-height: 230px; }
+.ms-pillar .media img { width: 26%; border-radius: 8px; box-shadow: 0 14px 26px -12px rgb(0 0 0 / .45); }
+.ms-pillar .media img:nth-child(2) { transform: translateY(-14px); }
+.ms-pillar .media.pages img { width: 36%; border-radius: 3px; }
+.ms-pillar .body { padding: clamp(20px, 3vw, 32px); display: grid; gap: 12px; }
+.ms-pillar h3 { font-family: var(--font-display); font-size: clamp(22px, 2.6vw, 28px); font-weight: 800; }
+.ms-pillar .catno { color: var(--accent); font-weight: 700; }
+
+/* ほかの機能 */
+.ms-feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 860px) { .ms-feats { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .ms-feats { grid-template-columns: 1fr; } }
+.ms-feat { padding: 20px; border-radius: 18px; background: var(--surface); border: 1px solid var(--line); display: grid; gap: 6px; align-content: start; }
+.ms-feat h3 { font-size: 17px; font-weight: 700; }
+.ms-feat p { color: var(--muted); font-size: 14.5px; }
+.ms-feat .catno { color: var(--accent); }
+.tinted { background: var(--soft); }
+
+/* iPad・Mac */
+.ms-ipads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 720px) { .ms-ipads { grid-template-columns: 1fr; } }
+.ms-ipads img { border-radius: 14px; box-shadow: 0 16px 34px -16px rgb(0 0 0 / .45); }
+.ms-ipads figcaption { font-size: 13px; color: var(--muted); margin-top: 8px; text-align: center; }
+.ms-ipads figure { margin: 0; }
+
+/* 約束・料金・FAQ */
+.ms-promise { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 820px) { .ms-promise { grid-template-columns: 1fr; } }
+.ms-buy { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+@media (max-width: 820px) { .ms-buy { grid-template-columns: 1fr; } }
+.ms-price { padding: clamp(22px, 3vw, 32px); border-radius: var(--radius); border: 2px solid var(--ink); background: var(--surface); display: grid; gap: 10px; align-content: start; }
+.ms-price.free { border-color: var(--line); }
+.ms-price .price { font-family: var(--font-display); font-size: clamp(30px, 4vw, 44px); font-weight: 800; line-height: 1.1; }
+.ms-price .price small { font-size: 15px; color: var(--muted); font-weight: 500; margin-left: 6px; }
+.ms-price .sale { display: inline-block; font-size: 13px; font-weight: 700; color: #fff; background: var(--accent); border-radius: 999px; padding: 3px 12px; }
+.ms-faq details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.ms-faq summary { cursor: pointer; font-weight: 700; }
+.ms-faq p { color: var(--muted); margin-top: 8px; }
+.ms-note { font-size: 13px; color: var(--muted); margin-top: 12px; }
